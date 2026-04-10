@@ -177,20 +177,29 @@ const footerFallback: FooterContent = {
   footerColumns: [
     {
       links: [
-        { label: 'Home', link: '/' },
-        { label: 'Who We Are', link: '/who-we-are' },
+        { label: 'What We Do', link: '/what-we-do', isTitle: true },
+        { label: 'Human nutrition', link: '/human-nutrition', isTitle: false },
+        { label: 'Animal health', link: '/animal-health', isTitle: false },
+        { label: 'Veterinary drugs', link: '/veterinary-drugs', isTitle: false },
+        { label: 'Cosmetics', link: '/cosmetics', isTitle: false },
       ],
     },
     {
       links: [
-        { label: 'What We Do', link: '/what-we-do' },
-        { label: 'How We Do It', link: '/how-we-do-it' },
+        { label: 'Who We Are', link: '/who-we-are', isTitle: true },
+        { label: 'Our company', link: '/our-company', isTitle: false },
+        { label: 'Our locations', link: '/our-locations', isTitle: false },
+        { label: 'Our team', link: '/our-team', isTitle: false },
+        { label: 'News', link: '/news', isTitle: false },
       ],
     },
     {
       links: [
-        { label: 'News', link: '/news' },
-        { label: 'Contacts', link: '/contact' },
+        { label: 'How We Do It', link: '/how-we-do-it', isTitle: true },
+        { label: 'Certificates', link: '/certificates', isTitle: false },
+        { label: 'Worldwide warehouses', link: '/worldwide-warehouses', isTitle: false },
+        { label: 'Join Us', link: '/join-us', isTitle: true },
+        { label: 'Contact Us', link: '/contact', isTitle: true },
       ],
     },
   ],

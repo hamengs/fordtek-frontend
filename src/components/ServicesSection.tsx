@@ -42,7 +42,7 @@ export function ServicesSection({ items }: ServicesContent) {
               href={first.buttonLink}
               className={`cursor-pointer w-fit text-white px-8 py-3 rounded-full flex items-center font-bold text-sm transition-all shadow-md hover:shadow-lg ${firstTheme.button}`}
             >
-              {first.buttonText} <span className="ml-3 text-lg">→</span>
+              {first.buttonText} <span className="ml-3 inline-block relative top-[3px] text-lg">→</span>
             </a>
           </div>
           <div className="min-h-[420px] overflow-hidden bg-white">
@@ -59,7 +59,7 @@ export function ServicesSection({ items }: ServicesContent) {
               href={second.buttonLink}
               className={`cursor-pointer w-fit text-white px-8 py-3 rounded-full flex items-center font-bold text-sm transition-all shadow-md hover:shadow-lg ${secondTheme.button}`}
             >
-              {second.buttonText} <span className="ml-3 text-lg">→</span>
+              {second.buttonText} <span className="ml-3 inline-block relative top-[3px] text-lg">→</span>
             </a>
           </div>
 
