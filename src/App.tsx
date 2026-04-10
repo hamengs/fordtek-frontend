@@ -165,7 +165,7 @@ const newsFallback: NewsContent = {
 };
 
 const footerFallback: FooterContent = {
-  copyrightText: '2017-2026 Fordtek.com, Inc',
+  copyrightText: '© 2017-2026 Fordtek.com, Inc',
   phone: '+66 2567883887',
   email: 'service@fordtek.com',
   tagline: 'Global Nutrition & Chemicals Excellence',
