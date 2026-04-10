@@ -1,5 +1,6 @@
 import type { ServicesContent, ServiceItem } from '../types/services';
 
+// Returns the paired background and button colors for each service theme.
 function getThemeClasses(theme: ServiceItem['theme']) {
   if (theme === 'blue') {
     return {
@@ -14,6 +15,8 @@ function getThemeClasses(theme: ServiceItem['theme']) {
   };
 }
 
+// ServicesSection renders the four homepage service blocks with alternating
+// image/text layouts and one final overlay-style panel.
 export function ServicesSection({ items }: ServicesContent) {
   const [first, second, third, fourth] = items;
 
@@ -27,7 +30,9 @@ export function ServicesSection({ items }: ServicesContent) {
   const fourthTheme = getThemeClasses(fourth.theme);
 
   return (
+    // Controls the overall width and spacing of the services area.
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {/* Controls the alternating two-column layout for the first three service items. */}
       <div className="overflow-hidden bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className={`min-h-[420px] p-12 md:p-20 flex flex-col justify-center ${firstTheme.panel}`}>
@@ -73,6 +78,7 @@ export function ServicesSection({ items }: ServicesContent) {
           </div>
         </div>
 
+        {/* Controls the final wide service block that uses text over an image. */}
         <div className="relative min-h-[420px] overflow-hidden bg-white">
           <img src={fourth.imageUrl} alt={fourth.imageAlt} className="w-full h-full object-cover object-center" />
           <div className="absolute inset-y-0 left-0 w-full md:w-[42%] bg-white/70 backdrop-blur-[1px] p-12 md:p-20 flex flex-col justify-center">

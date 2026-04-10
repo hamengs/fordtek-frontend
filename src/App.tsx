@@ -27,6 +27,8 @@ import type { NewsContent } from './types/news';
 import type { ServicesContent } from './types/services';
 import type { FooterContent, MainNavigationContent, TopBarContent } from './types/site-settings';
 
+// Local fallback content keeps the homepage usable when Strapi is unavailable
+// or when the deployed frontend has not been connected to a live CMS yet.
 const heroFallback: HeroContent = {
   title: 'We are Fordtek',
   description: 'Innovating in nutrition and chemicals to bring health to life.',
@@ -81,9 +83,9 @@ const mainNavigationFallback: MainNavigationContent = {
   logoAlt: 'Fordtek logo',
   navlinks: [],
   productLinks: [
-    { label: 'Food', link: '/products/food' },
-    { label: 'Feed', link: '/products/feed' },
-    { label: 'Veterinary', link: '/products/veterinary' },
+    { label: 'Human Nutrition', link: '/products/human-nutrition' },
+    { label: 'Animal Health', link: '/products/animal-health' },
+    { label: 'Veterinary Drugs', link: '/products/veterinary-drugs' },
     { label: 'Cosmetics', link: '/products/cosmetics' },
   ],
 };
@@ -124,7 +126,7 @@ const servicesFallback: ServicesContent = {
       buttonLink: '#',
       imageUrl: cosmeticImg,
       imageAlt: 'Cosmetic materials',
-      theme: 'green',
+      theme: 'blue',
       overlay: true,
     },
   ],
@@ -175,20 +177,20 @@ const footerFallback: FooterContent = {
   footerColumns: [
     {
       links: [
-        { label: 'Home', link: '/Home' },
-        { label: 'Who We Are', link: '/WhoWeAre' },
+        { label: 'Home', link: '/' },
+        { label: 'Who We Are', link: '/who-we-are' },
       ],
     },
     {
       links: [
-        { label: 'What We Do', link: '/WhatWeDo' },
-        { label: 'How We Do It', link: '/HowWeDoIt' },
+        { label: 'What We Do', link: '/what-we-do' },
+        { label: 'How We Do It', link: '/how-we-do-it' },
       ],
     },
     {
       links: [
-        { label: 'News', link: '/News' },
-        { label: 'Contacts', link: '/Contacts' },
+        { label: 'News', link: '/news' },
+        { label: 'Contacts', link: '/contact' },
       ],
     },
   ],
@@ -259,6 +261,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen font-sans text-slate-800 bg-white selection:bg-green-100">
+      {/* This header wraps both navigation rows and handles the hide-on-scroll behavior. */}
       <header
         className={`sticky top-0 z-50 w-full shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 ${
           isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
@@ -268,6 +271,7 @@ export default function App() {
         <MainNavigation {...mainNavigationContent} />
       </header>
 
+      {/* Hero is rendered immediately below the two-row header. */}
       <Hero
         title={heroContent.title}
         description={heroContent.description}
@@ -277,6 +281,7 @@ export default function App() {
         imageAlt={heroContent.imageAlt}
       />
 
+      {/* These sections use fallback content first and then update from Strapi when configured. */}
       <ServicesSection {...servicesContent} />
       <NewsSection {...newsContent} />
       <Footer {...footerContent} />

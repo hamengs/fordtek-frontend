@@ -1,9 +1,15 @@
 import type { NewsApiResponse, NewsContent } from '../types/news';
-import { STRAPI_BASE_URL } from './config';
+import { HAS_STRAPI_BASE_URL, STRAPI_BASE_URL } from './config';
 
+// Fetches the homepage news cards and converts Strapi entries into the
+// compact NewsContent structure expected by NewsSection.
 const NEWS_API_URL = `${STRAPI_BASE_URL}/api/news?populate=*&sort=publishedDate:desc`;
 
 export async function getNewsContent(newsFallback: NewsContent): Promise<NewsContent> {
+  if (!HAS_STRAPI_BASE_URL) {
+    return newsFallback;
+  }
+
   const response = await fetch(NEWS_API_URL);
 
   if (!response.ok) {

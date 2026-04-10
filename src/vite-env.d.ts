@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+// Extends Vite's environment variable typing so frontend code can safely
+// access the optional Strapi base URL in local and deployed environments.
 interface ImportMetaEnv {
   readonly VITE_STRAPI_URL?: string;
 }

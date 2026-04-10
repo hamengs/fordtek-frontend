@@ -6,8 +6,10 @@ import type {
   TopBarApiResponse,
   TopBarContent,
 } from '../types/site-settings';
-import { STRAPI_BASE_URL } from './config';
+import { HAS_STRAPI_BASE_URL, STRAPI_BASE_URL } from './config';
 
+// Site settings API helpers keep navigation and footer fetching in one place,
+// while still returning the fallback-friendly frontend data shapes.
 const SITE_SETTINGS_API_URL =
   `${STRAPI_BASE_URL}/api/site-setting?populate[topBar][populate][leftLinks]=*` +
   '&populate[topBar][populate][rightLinks]=*';
@@ -19,6 +21,10 @@ const FOOTER_API_URL =
   '&populate[footer][populate][socialLinks][populate]=*';
 
 export async function getTopBarContent(topBarFallback: TopBarContent): Promise<TopBarContent> {
+  if (!HAS_STRAPI_BASE_URL) {
+    return topBarFallback;
+  }
+
   const response = await fetch(SITE_SETTINGS_API_URL);
 
   if (!response.ok) {
@@ -44,6 +50,10 @@ export async function getTopBarContent(topBarFallback: TopBarContent): Promise<T
 export async function getMainNavigationContent(
   mainNavigationFallback: MainNavigationContent
 ): Promise<MainNavigationContent> {
+  if (!HAS_STRAPI_BASE_URL) {
+    return mainNavigationFallback;
+  }
+
   const response = await fetch(MAIN_NAVIGATION_API_URL);
 
   if (!response.ok) {
@@ -70,6 +80,10 @@ export async function getMainNavigationContent(
 }
 
 export async function getFooterContent(footerFallback: FooterContent): Promise<FooterContent> {
+  if (!HAS_STRAPI_BASE_URL) {
+    return footerFallback;
+  }
+
   const response = await fetch(FOOTER_API_URL);
 
   if (!response.ok) {

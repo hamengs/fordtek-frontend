@@ -1,3 +1,4 @@
+// Shared navigation, footer, and site settings types used across the header/footer APIs and components.
 export type NavLink = {
   label: string;
   link: string;

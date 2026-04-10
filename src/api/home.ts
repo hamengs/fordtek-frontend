@@ -1,9 +1,15 @@
 import type { ServicesApiResponse, ServicesContent } from '../types/services';
-import { STRAPI_BASE_URL } from './config';
+import { HAS_STRAPI_BASE_URL, STRAPI_BASE_URL } from './config';
 
+// Fetches the homepage service section and maps Strapi media data into the
+// simplified ServicesContent shape used by the React component.
 const HOME_API_URL = `${STRAPI_BASE_URL}/api/home?populate[serviceSection][populate][items][populate]=*`;
 
 export async function getServicesContent(servicesFallback: ServicesContent): Promise<ServicesContent> {
+  if (!HAS_STRAPI_BASE_URL) {
+    return servicesFallback;
+  }
+
   const response = await fetch(HOME_API_URL);
 
   if (!response.ok) {

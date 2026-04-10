@@ -19,6 +19,7 @@ export type HeroApiResponse = {
   };
 };
 
+// Frontend and API types used by the homepage hero section.
 export type HeroContent = {
   title: string;
   description: string;

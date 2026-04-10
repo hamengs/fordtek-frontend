@@ -1,10 +1,12 @@
 import { Twitter, Youtube, Linkedin } from 'lucide-react';
 import logoImg from '../Assets/Images/blogo.svg';
 import type { FooterContent, SocialLink } from '../types/site-settings';
+import { platform } from 'os';
 
+// Picks the correct icon component for each social platform supported by the footer.
 function SocialIcon({ platform }: { platform: SocialLink['platform'] }) {
   if (platform === 'twitter') {
-    return <Twitter className="w-6 h-6" fill="currentColor" stroke="none" />;
+    return <Twitter className="w-6 h-6" fill="currentColor" stroke="none"  />;
   }
 
   if (platform === 'youtube') {
@@ -18,6 +20,24 @@ function SocialIcon({ platform }: { platform: SocialLink['platform'] }) {
   return null;
 }
 
+function getSocialHoverClass(platform:SocialLink['platform']){
+  if(platform==='twitter'){
+    return 'hover:text-sky-500';
+  }
+
+    if (platform === 'youtube') {
+    return 'hover:text-red-600';
+  }
+
+  if (platform === 'linkedin') {
+    return 'hover:text-blue-700';
+  }
+
+  return 'hover:text-slate-700';
+}
+
+// Footer renders the brand mark, contact details, footer link columns,
+// tagline, and social links used at the bottom of the homepage.
 export function Footer({
   copyrightText,
   phone,
@@ -27,21 +47,23 @@ export function Footer({
   footerColumns,
 }: FooterContent) {
   return (
+    // Controls the footer background, top border, and overall vertical spacing.
     <footer className="bg-white border-t border-slate-100 pt-24 pb-12">
+      {/* Controls the footer content width and side padding. */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-20">
-          <div className="flex flex-col md:flex-row md:items-center gap-12">
+        {/* Controls the upper footer layout containing the logo, contact block, and link columns. */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-15">
+          <div className="flex flex-col md:flex-col md:items-center gap-12">
             <div className="flex items-center space-x-3">
               <img src={logoImg} alt="Fordtek logo" className="w-50 h-10" />
             </div>
-            <div className="hidden md:block w-px h-20 bg-slate-200"></div>
             <div className="text-xs text-slate-500 space-y-2 font-medium">
               <p>{copyrightText}</p>
               <p>Tel {phone}</p>
               <p>{email}</p>
             </div>
           </div>
-
+          <div className="hidden md:block w-px h-40 bg-slate-200"></div>
           <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 gap-12 w-full md:w-auto">
             {footerColumns.map((column, index) => (
               <div key={`footer-column-${index}`} className="space-y-4">
@@ -49,7 +71,7 @@ export function Footer({
                   <a
                     key={`${link.label}-${link.link}`}
                     href={link.link}
-                    className="block cursor-pointer text-sm font-bold text-slate-700 hover:text-green-600 transition-colors"
+                    className="block cursor-pointer text-sm font-bold text-slate-700 hover:text-sky-400 transition-colors"
                   >
                     {link.label}
                   </a>
@@ -59,6 +81,7 @@ export function Footer({
           </div>
         </div>
 
+        {/* Controls the lower footer row for the tagline and social icons. */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-100 gap-8">
           <p className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-bold">{tagline}</p>
           <div className="flex space-x-8">
@@ -66,7 +89,7 @@ export function Footer({
               <a
                 key={`${social.platform}-${social.link}`}
                 href={social.link}
-                className="cursor-pointer text-slate-400 transition-colors hover:text-slate-700"
+                className={`cursor-pointer text-slate-400 transition-colors ${getSocialHoverClass(social.platform)}`}
               >
                 <SocialIcon platform={social.platform} />
               </a>

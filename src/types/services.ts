@@ -1,3 +1,4 @@
+// Frontend and API types used by the homepage services section.
 export type ServiceItem = {
   title: string;
   subtitle: string;

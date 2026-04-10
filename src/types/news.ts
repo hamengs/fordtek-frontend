@@ -1,3 +1,4 @@
+// Frontend and API types used by the homepage news section.
 export type NewsItem = {
   title: string;
   summary: string;
