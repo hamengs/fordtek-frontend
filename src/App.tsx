@@ -30,7 +30,7 @@ import type { FooterContent, MainNavigationContent, TopBarContent } from './type
 // Local fallback content keeps the homepage usable when Strapi is unavailable
 // or when the deployed frontend has not been connected to a live CMS yet.
 const heroFallback: HeroContent = {
-  title: 'We are Fordtek',
+  title: 'Welcome to Fordtek',
   description: 'Innovating in nutrition and chemicals to bring health to life.',
   buttonText: 'Explore our Impact',
   buttonLink: '#',

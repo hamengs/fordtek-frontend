@@ -29,7 +29,7 @@ export function Hero({
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative z-10 text-center text-white px-4 max-w-4xl"
+        className="relative z-10 text-center text-white px-1 "
       >
         <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-2xl">{title}</h1>
         <p className="text-xl md:text-2xl mb-10 font-medium max-w-2xl mx-auto opacity-95 leading-relaxed">

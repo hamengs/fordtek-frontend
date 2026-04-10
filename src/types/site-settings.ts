@@ -2,6 +2,7 @@
 export type NavLink = {
   label: string;
   link: string;
+  isTitle: boolean;
   children?: NavLink[];
 };
 

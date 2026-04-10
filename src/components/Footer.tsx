@@ -1,6 +1,7 @@
 import { Twitter, Youtube, Linkedin } from 'lucide-react';
 import logoImg from '../Assets/Images/blogo.svg';
 import type { FooterContent, SocialLink } from '../types/site-settings';
+import type { NavLink } from '../types/site-settings';
 import { platform } from 'os';
 
 // Picks the correct icon component for each social platform supported by the footer.
@@ -34,6 +35,10 @@ function getSocialHoverClass(platform:SocialLink['platform']){
   }
 
   return 'hover:text-slate-700';
+}
+
+function highlightLink(link:NavLink){
+return link.isTitle;
 }
 
 // Footer renders the brand mark, contact details, footer link columns,
@@ -71,7 +76,7 @@ export function Footer({
                   <a
                     key={`${link.label}-${link.link}`}
                     href={link.link}
-                    className="block cursor-pointer text-sm font-bold text-slate-700 hover:text-sky-400 transition-colors"
+                    className={`block cursor-pointer text-sm ${highlightLink(link)?'font-bold':'font-medium'} text-slate-700 hover:text-sky-400 transition-colors`}
                   >
                     {link.label}
                   </a>
