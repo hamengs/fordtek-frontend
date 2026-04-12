@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import logoImg from '../Assets/Images/blogo.svg';
+import logoImg from '../assets/images/logo.svg';
 import type { MainNavigationContent } from '../types/site-settings';
 
 // Renders the second header row beneath the top bar. This row keeps the

@@ -1,8 +1,7 @@
 import { Twitter, Youtube, Linkedin } from 'lucide-react';
-import logoImg from '../Assets/Images/blogo.svg';
+import logoImg from '../assets/images/logo.svg';
 import type { FooterContent, SocialLink } from '../types/site-settings';
 import type { NavLink } from '../types/site-settings';
-import { platform } from 'os';
 
 // Picks the correct icon component for each social platform supported by the footer.
 function SocialIcon({ platform }: { platform: SocialLink['platform'] }) {
