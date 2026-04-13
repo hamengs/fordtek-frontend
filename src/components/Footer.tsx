@@ -1,4 +1,5 @@
 import { Twitter, Youtube, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
 import type { FooterContent, SocialLink } from '../types/site-settings';
 import type { NavLink } from '../types/site-settings';
@@ -40,6 +41,22 @@ function highlightLink(link:NavLink){
 return link.isTitle;
 }
 
+function renderFooterLink(link: NavLink, className: string) {
+  if (link.link.startsWith('/')) {
+    return (
+      <Link to={link.link} className={className}>
+        {link.label}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={link.link} className={className}>
+      {link.label}
+    </a>
+  );
+}
+
 // Footer renders the brand mark, contact details, footer link columns,
 // tagline, and social links used at the bottom of the homepage.
 export function Footer({
@@ -72,13 +89,12 @@ export function Footer({
             {footerColumns.map((column, index) => (
               <div key={`footer-column-${index}`} className="space-y-4">
                 {column.links.map((link) => (
-                  <a
-                    key={`${link.label}-${link.link}`}
-                    href={link.link}
-                    className={`block cursor-pointer text-sm ${highlightLink(link)?'font-bold':'font-medium'} text-slate-700 hover:text-sky-400 transition-colors`}
-                  >
-                    {link.label}
-                  </a>
+                  <div key={`${link.label}-${link.link}`}>
+                    {renderFooterLink(
+                      link,
+                      `block cursor-pointer text-sm ${highlightLink(link)?'font-bold':'font-medium'} text-slate-700 hover:text-sky-400 transition-colors`,
+                    )}
+                  </div>
                 ))}
               </div>
             ))}

@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
 import type { MainNavigationContent } from '../types/site-settings';
 
@@ -14,9 +15,9 @@ export function MainNavigation({ logoAlt, productLinks }: MainNavigationContent)
         {/* Controls the row layout: logo on the left, product links on the right, spacer at the end. */}
         <div className="flex min-h-[74px] items-center justify-between gap-8">
           {/* Controls the logo block on the left side of the product navigation row. */}
-          <a href="/" className="flex shrink-0 items-center" aria-label="Go to homepage">
+          <Link to="/" className="flex shrink-0 items-center" aria-label="Go to homepage">
             <img src={logoImg} alt={logoAlt} className="h-10 w-auto" />
-          </a>
+          </Link>
 
           {/* Controls the product-category text: Food, Feed, Veterinary, Cosmetics. */}
           <nav className="flex flex-1 flex-wrap items-center justify-end pr-1 gap-x-10 gap-y-3 text-[14px] font-semibold uppercase tracking-[0.12em] text-slate-800">

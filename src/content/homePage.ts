@@ -34,13 +34,13 @@ export const topBarFallback: TopBarContent = {
     { label: 'Home', link: '/' },
     {
       label: 'About Us',
-      link: '/about',
+      link: '/about-us',
       children: [
-        { label: 'Our Company', link: '/about/our-company' },
-        { label: 'Our Locations', link: '/about/our-locations' },
-        { label: 'Our Team', link: '/about/our-team' },
-        { label: 'Certificates', link: '/about/certificates' },
-        { label: 'Worldwide Warehouses', link: '/about/worldwide-warehouses' },
+        { label: 'Our Company', link: '/about-us/our-company' },
+        { label: 'Our Locations', link: '/about-us/our-locations' },
+        { label: 'Our Team', link: '/about-us/our-team' },
+        { label: 'Certificates', link: '/about-us/certificates' },
+        { label: 'Worldwide Warehouses', link: '/about-us/worldwide-warehouses' },
       ],
     },
     {

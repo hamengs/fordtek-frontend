@@ -1,5 +1,23 @@
 import { ChevronDown, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import type { TopBarContent } from '../types/site-settings';
+import type { NavLink } from '../types/site-settings';
+
+function renderNavAnchor(item: NavLink, className: string) {
+  if (item.link.startsWith('/')) {
+    return (
+      <Link to={item.link} className={className}>
+        {item.label}
+      </Link>
+    );
+  }
+
+  return (
+    <a href={item.link} className={className}>
+      {item.label}
+    </a>
+  );
+}
 
 // Renders the upper navigation row used for company-level links such as
 // Home, About Us, Join Us, News, and Contact Us. Items can optionally
@@ -28,26 +46,35 @@ export function TopBar({ leftLinks, rightLinks, languageText, languageIconText, 
                   className={`group relative ${hasChildren ? 'mr-10' : 'mr-15'} last:mr-0`}
                 >
                   {/* Controls each visible top-level menu label and its hover color. */}
-                  <a
-                    href={item.link}
-                    className="flex items-center gap-1.5 whitespace-nowrap py-3 text-slate-900 transition-colors hover:text-sky-400"
-                  >
-                    {item.label}
-                    {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
-                  </a>
+                  {item.link.startsWith('/') ? (
+                    <Link
+                      to={item.link}
+                      className="flex items-center gap-1.5 whitespace-nowrap py-3 text-slate-900 transition-colors hover:text-sky-400"
+                    >
+                      {item.label}
+                      {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.link}
+                      className="flex items-center gap-1.5 whitespace-nowrap py-3 text-slate-900 transition-colors hover:text-sky-400"
+                    >
+                      {item.label}
+                      {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
+                    </a>
+                  )}
 
                   {hasChildren ? (
                     <div className="invisible absolute left-0 top-full z-40 w-64 translate-y-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                       {/* Controls the dropdown box appearance and hover reveal behavior. */}
                       <div className="mt-2 rounded-xl border border-slate-200 bg-white p-3 text-slate-900 shadow-2xl">
                         {item.children?.map((child) => (
-                          <a
-                            key={`${child.label}-${child.link}`}
-                            href={child.link}
-                            className="block rounded-lg px-3 py-2.5 text-[13px] font-medium tracking-[0.04em] transition-colors hover:bg-slate-100"
-                          >
-                            {child.label}
-                          </a>
+                          <div key={`${child.label}-${child.link}`}>
+                            {renderNavAnchor(
+                              child,
+                              'block rounded-lg px-3 py-2.5 text-[13px] font-medium tracking-[0.04em] transition-colors hover:bg-slate-100',
+                            )}
+                          </div>
                         ))}
                       </div>
                     </div>
