@@ -52,12 +52,13 @@ export const topBarFallback: TopBarContent = {
       ],
     },
     {
+      //暂时屏蔽，目前不需要下拉菜单
       label: 'News',
       link: '/news',
-      children: [
-        { label: 'Fordtek News', link: '/news/company-news' },
-        { label: 'Trade Shows', link: '/news/trade-shows' },
-      ],
+      // children: [
+      //   { label: 'Fordtek News', link: '/news/company-news' },
+      //   { label: 'Trade Shows', link: '/news/trade-shows' },
+      // ],
     },
     { label: 'Contact Us', link: '/contact' },
   ],
@@ -154,7 +155,7 @@ export const newsFallback: NewsContent = {
 
 export const footerFallback: FooterContent = {
   copyrightText: '© 2017-2026 Fordtek.com, Inc',
-  phone: '+66 2567883887',
+  phone: '+86 2367683887',
   email: 'service@fordtek.com',
   tagline: 'Global Nutrition & Chemicals Excellence',
   socialLinks: [
