@@ -12,34 +12,37 @@ export function Hero({
   imageAlt,
 }: HeroContent) {
   return (
-    // Controls the full hero height and keeps the media and text stacked
-    // inside one relative container.
-    <section className="relative h-[650px] flex items-center justify-center overflow-hidden">
+    <section className="relative flex min-h-screen items-end overflow-hidden">
       {/* Controls the background image that fills the hero area. */}
       <img
         src={imageUrl}
         alt={imageAlt}
-        className="absolute inset-0 w-full h-full object-cover brightness-[0.85]"
+        className="absolute inset-0 h-full w-full object-cover brightness-[0.82]"
       />
-      {/* Controls the dark overlay used to improve text readability on the image. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.42)_0%,rgba(2,6,23,0.14)_26%,rgba(2,6,23,0.54)_100%)]" />
 
-      {/* Controls the visible hero text block and its entrance animation. */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative z-10 text-center text-white px-1 "
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-18 text-white sm:px-10 sm:pb-22 lg:px-16 lg:pb-28"
       >
-        <h1 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight drop-shadow-2xl">{title}</h1>
-        <p className="text-xl md:text-2xl mb-10 font-medium max-w-2xl mx-auto opacity-95 leading-relaxed">
+        <div className="max-w-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/75">
+            Fordtek
+          </p>
+          <h1 className="mt-6 text-5xl font-semibold tracking-[-0.06em] drop-shadow-2xl sm:text-6xl lg:text-8xl">
+            {title}
+          </h1>
+        </div>
+        <p className="mt-8 max-w-2xl text-lg leading-8 font-medium text-white/92 sm:text-xl sm:leading-9 lg:text-2xl">
           {description}
         </p>
         <motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           href={buttonLink}
-          className="inline-block cursor-pointer bg-white text-slate-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition-all shadow-2xl"
+          className="mt-10 inline-block cursor-pointer rounded-full border border-white/30 bg-white/14 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-slate-900 sm:px-10 sm:py-4 sm:text-lg"
         >
           {buttonText}
         </motion.a>

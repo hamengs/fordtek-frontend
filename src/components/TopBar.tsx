@@ -1,5 +1,6 @@
 import { ChevronDown, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoImg from '../assets/images/logo.svg';
 import type { TopBarContent } from '../types/site-settings';
 import type { NavLink } from '../types/site-settings';
 
@@ -23,18 +24,47 @@ function renderNavAnchor(item: NavLink, className: string) {
 // Home, About Us, Join Us, News, and Contact Us. Items can optionally
 // include dropdown children, and the row also keeps the language switcher
 // aligned on the right side of the header.
-export function TopBar({ leftLinks, rightLinks, languageText, languageIconText, isEnabled }: TopBarContent) {
+export function TopBar({
+  leftLinks,
+  rightLinks,
+  languageText,
+  languageIconText,
+  isEnabled,
+  variant = 'default',
+}: TopBarContent & { variant?: 'default' | 'overlay' }) {
   if (!isEnabled) {
     return null;
   }
 
+  const isOverlay = variant === 'overlay';
+  const rootClass = isOverlay
+    ? 'border-b border-slate-200/70 bg-white/96 text-slate-900 backdrop-blur'
+    : 'bg-white text-slate-900';
+  const navClass = isOverlay
+    ? 'text-slate-900 transition-colors hover:text-sky-500'
+    : 'text-slate-900 transition-colors hover:text-sky-400';
+  const utilityClass = isOverlay
+    ? 'whitespace-nowrap text-slate-900 transition-colors hover:text-sky-500'
+    : 'whitespace-nowrap text-slate-900 transition-colors hover:text-black';
+  const languageClass = isOverlay
+    ? 'flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-300 px-3 py-1.5 text-slate-900 transition-colors hover:border-slate-500'
+    : 'flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-400 px-3 py-1.5 text-slate-900 transition-colors hover:border-slate-700 hover:text-black';
+
   return (
-    <div className="bg-white text-slate-900">
+    <div className={rootClass}>
       {/* Controls the overall top bar background and default text color. */}
       {/* Controls the usable width of the top bar content and the left/right padding. */}
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-8">
         {/* Controls the layout of the top bar: the main menu group and the language switcher. */}
-        <div className="flex min-h-12 items-center justify-end gap-7">
+        <div className="flex min-h-12 items-center justify-between gap-7">
+          {isOverlay ? (
+            <Link to="/" className="flex shrink-0 items-center" aria-label="Go to homepage">
+              <img src={logoImg} alt="Fordtek logo" className="h-10 w-auto" />
+            </Link>
+          ) : (
+            <div className="hidden lg:block" />
+          )}
+
           {/* Controls the main top bar menu text: Home, About Us, Join Us, News, Contact Us. */}
           <div className="flex flex-wrap items-center justify-end gap-y-2 text-[12px] font-semibold uppercase tracking-[0.14em]">
             {leftLinks.map((item) => {
@@ -49,7 +79,7 @@ export function TopBar({ leftLinks, rightLinks, languageText, languageIconText, 
                   {item.link.startsWith('/') ? (
                     <Link
                       to={item.link}
-                      className="flex items-center gap-1.5 whitespace-nowrap py-3 text-slate-900 transition-colors hover:text-sky-400"
+                      className={`flex items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
                     >
                       {item.label}
                       {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
@@ -57,7 +87,7 @@ export function TopBar({ leftLinks, rightLinks, languageText, languageIconText, 
                   ) : (
                     <a
                       href={item.link}
-                      className="flex items-center gap-1.5 whitespace-nowrap py-3 text-slate-900 transition-colors hover:text-sky-400"
+                      className={`flex items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
                     >
                       {item.label}
                       {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
@@ -90,7 +120,7 @@ export function TopBar({ leftLinks, rightLinks, languageText, languageIconText, 
               <a
                 key={`${item.label}-${item.link}`}
                 href={item.link}
-                className="whitespace-nowrap text-slate-900 transition-colors hover:text-black"
+                className={utilityClass}
               >
                 {item.label}
               </a>
@@ -99,7 +129,7 @@ export function TopBar({ leftLinks, rightLinks, languageText, languageIconText, 
             {/* Controls the language switch button shown as EN plus the globe icon. */}
             <button
               type="button"
-              className="flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-400 px-3 py-1.5 text-slate-900 transition-colors hover:border-slate-700 hover:text-black"
+              className={languageClass}
             >
               <span>{languageText}</span>
               <Globe className="h-3.5 w-3.5" />
