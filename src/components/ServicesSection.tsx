@@ -76,7 +76,7 @@ export function ServicesSection({ items }: ServicesContent) {
                     {item.subtitle}
                   </p>
                   <span className="mt-8 max-w-xl text-sm leading-7 text-slate-600 sm:text-[15px] lg:text-base">
-                    Explore certified ingredients, dependable sourcing and a product portfolio built for global nutrition and chemical supply.
+                    {item.description}
                   </span>
                   <span
                     className={`mt-8 inline-flex w-fit items-center gap-3 rounded-full border px-6 py-3 text-sm font-semibold transition-all duration-300 group-hover:gap-4 ${theme.button}`}

@@ -38,7 +38,7 @@ export function TopBar({
 
   const isOverlay = variant === 'overlay';
   const rootClass = isOverlay
-    ? 'border-b border-slate-200/70 bg-white/96 text-slate-900 backdrop-blur'
+    ? 'border-b border-slate-200 bg-white text-slate-900'
     : 'bg-white text-slate-900';
   const navClass = isOverlay
     ? 'text-slate-900 transition-colors hover:text-sky-500'
@@ -56,19 +56,19 @@ export function TopBar({
       {/* Controls the usable width of the top bar content and the left/right padding. */}
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-8">
         {/* Controls the layout of the top bar: the main menu group and the language switcher. */}
-        <div className="flex min-h-12 items-center justify-between gap-7">
+        <div className="flex min-h-[64px] items-center justify-between gap-7">
           {isOverlay ? (
             <Link to="/" className="flex shrink-0 items-center" aria-label="Go to homepage">
-              <img src={logoImg} alt="Fordtek logo" className="h-10 w-auto" />
+              <img src={logoImg} alt="Fordtek logo" className="h-11 w-auto" />
             </Link>
           ) : (
             <Link to="/" className="hidden shrink-0 items-center lg:flex" aria-label="Go to homepage">
-              <img src={logoImg} alt="Fordtek logo" className="h-10 w-auto" />
+              <img src={logoImg} alt="Fordtek logo" className="h-11 w-auto" />
             </Link>
           )}
 
           {/* Controls the main top bar menu text: Home, About Us, Join Us, News, Contact Us. */}
-          <div className="flex flex-wrap items-center justify-end gap-y-2 text-[12px] font-semibold uppercase tracking-[0.14em]">
+          <div className="flex flex-wrap items-center justify-end gap-y-2 text-[14px] font-semibold uppercase tracking-[0.14em]">
             {leftLinks.map((item) => {
               const hasChildren = Boolean(item.children?.length);
 
@@ -117,7 +117,7 @@ export function TopBar({
           </div>
 
           {/* Controls the right-side utility area, including optional links and the language switch button. */}
-          <div className="flex items-center gap-3 text-[12px] font-semibold uppercase tracking-[0.14em]">
+          <div className="flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.14em]">
             {rightLinks.map((item) => (
               <a
                 key={`${item.label}-${item.link}`}

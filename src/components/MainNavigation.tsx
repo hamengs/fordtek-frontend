@@ -12,7 +12,7 @@ export function MainNavigation({
   const isOverlay = variant === 'overlay';
   const rootClass = isOverlay
     ? 'border-b border-white/18 bg-transparent'
-    : 'border-t border-slate-300 border-b border-slate-200 bg-white/94 backdrop-blur';
+    : 'border-t border-slate-200 border-b border-slate-200 bg-white';
   const linkClass = isOverlay
     ? 'flex items-center gap-1.5 whitespace-nowrap text-white transition-colors hover:text-white/70'
     : 'flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-sky-400';
@@ -20,9 +20,9 @@ export function MainNavigation({
     <div className={rootClass}>
       {/* Controls the full second-row navigation background and the divider lines. */}
       {/* Controls the content width and horizontal padding of the product navigation row. */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Controls the row layout: logo on the left, product links on the right, spacer at the end. */}
-        <div className="flex min-h-[74px] items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        {/* Controls the row layout:  product links on the right, spacer at the end. */}
+        <div className="flex min-h-[56px] items-center justify-between gap-8">
           <div className="hidden w-[180px] shrink-0 lg:block" />
 
           {/* Controls the product-category text: Food, Feed, Veterinary, Cosmetics. */}

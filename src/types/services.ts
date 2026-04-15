@@ -2,6 +2,7 @@
 export type ServiceItem = {
   title: string;
   subtitle: string;
+  description: string;
   buttonText: string;
   buttonLink: string;
   imageUrl: string;
@@ -31,6 +32,7 @@ export type ServicesApiResponse = {
       items?: Array<{
         title: string;
         subtitle: string;
+        description?: string;
         buttonText: string;
         buttonLink: string;
         imageAlt: string;

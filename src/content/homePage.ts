@@ -84,6 +84,8 @@ export const servicesFallback: ServicesContent = {
     {
       title: 'Human',
       subtitle: 'Nutrition & others',
+      description:
+        'We supply certified, high-grade nutritional ingredients for food, dietary supplements and health industries, with stable global supply and complete quality certifications.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: humanImg,
@@ -93,6 +95,8 @@ export const servicesFallback: ServicesContent = {
     {
       title: 'Animal',
       subtitle: 'Health & Others',
+      description:
+        'We provide a full range of certified nutritional additives and feed raw materials, delivering cost-effective and reliable solutions for global animal farming.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: animalImg,
@@ -102,6 +106,8 @@ export const servicesFallback: ServicesContent = {
     {
       title: 'Veterinary',
       subtitle: 'Drugs & Antibiotics',
+      description:
+        'We distribute standard-compliant veterinary raw materials and APIs, adhering to global pharmacopoeia requirements to ensure animal health and regulatory compliance.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: veterinaryImg,
@@ -111,6 +117,8 @@ export const servicesFallback: ServicesContent = {
     {
       title: 'Cosmetic',
       subtitle: 'materials',
+      description:
+        'We offer high-purity cosmetic raw materials and functional ingredients, supporting stable sourcing and innovative formulation for global care brands.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: cosmeticImg,
@@ -125,7 +133,7 @@ export const newsFallback: NewsContent = {
   items: [
     {
       title: 'Briefly on 2024 in Cosmetics Global',
-      summary: 'Fordtek makes every effort to distribute ingredients globally and in Germany and Vietnam with safety.',
+      summary: 'Fordtek unveiled its newly upgraded booth at In-cosmetics 2024, with the largest exhibition team in the company\'s history.',
       slug: 'briefly-on-2024-in-cosmetics-global',
       coverImageUrl: brieflyImg,
       coverImageAlt: 'Group photo.',
@@ -134,7 +142,7 @@ export const newsFallback: NewsContent = {
     },
     {
       title: "Briefing: Fordtek's debut at VIETSHRIMP",
-      summary: 'Fordtek makes every effort to distribute ingredients globally and in Germany and Vietnam with safety.',
+      summary: 'Fordtek has made remarkable progress in expanding the Southeast Asian market and has been reported in VietFish magazine as an emerging industry representative.',
       slug: 'briefing-fordtek-s-debut-at-vietshrimp',
       coverImageUrl: vietShrimpImg,
       coverImageAlt: '3 people talking.',
@@ -143,7 +151,7 @@ export const newsFallback: NewsContent = {
     },
     {
       title: 'Continuous Hardwork, Diligent Pursuit',
-      summary: 'Fordtek makes every effort to distribute ingredients globally and in Germany and Vietnam with safety.',
+      summary: 'Fordtek made its fourth appearance at IPPE, further strengthened its market layout in Latin America, and is set to establish a new branch in Brazil.',
       slug: 'continuous-hardwork-diligent-pursuit',
       coverImageUrl: hardworkImg,
       coverImageAlt: 'Exhibit.',

@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
       <header
-        className={`fixed inset-x-0 top-0 z-50 w-full bg-white/96 shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur transition-transform duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 w-full bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-transform duration-300 ${
           isFloatingHeaderVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >

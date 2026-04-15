@@ -34,6 +34,7 @@ export async function getServicesContent(servicesFallback: ServicesContent): Pro
       return {
         title: item.title || servicesFallback.items[index]?.title || '',
         subtitle: item.subtitle || servicesFallback.items[index]?.subtitle || '',
+        description: item.description || servicesFallback.items[index]?.description || '',
         buttonText: item.buttonText || servicesFallback.items[index]?.buttonText || 'More',
         buttonLink: item.buttonLink || servicesFallback.items[index]?.buttonLink || '#',
         imageUrl: imagePath ? `${STRAPI_BASE_URL}${imagePath}` : servicesFallback.items[index]?.imageUrl || '',

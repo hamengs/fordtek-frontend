@@ -11,6 +11,10 @@ import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import brieflyImg from '../../assets/images/briefly.jpg';
 import hardworkImg from '../../assets/images/hardwork.jpg';
 import blackForestImg from '../../assets/images/black-forest.jpg';
+import pingguoIcon from '../../assets/images/about-us/pingguo.png';
+import yuerIcon from '../../assets/images/about-us/yuer.png';
+import yaopingIcon from '../../assets/images/about-us/yaoping.png';
+import kouhonIcon from '../../assets/images/about-us/kouhon.png';
 
 const quickLinks = [
   { label: 'Introduction', href: '#introduction' },
@@ -22,26 +26,26 @@ const quickLinks = [
 const businessUnits = [
   {
     title: 'Human Nutrition',
-    description:
-      'Nutritional ingredients for health food, dietary supplements and pharmaceutical applications.',
+    subtitle: 'Human Nutrition&others',
+    icon: pingguoIcon,
     href: '/products/human-nutrition',
   },
   {
     title: 'Animal Health',
-    description:
-      'Reliable nutritional and functional ingredients for livestock, aquaculture and companion animals.',
+    subtitle: 'Animal Health&others',
+    icon: yuerIcon,
     href: '/products/animal-health',
   },
   {
     title: 'Veterinary Drugs',
-    description:
-      'Safe, compliant veterinary APIs, antibiotics and pharmaceutical support for global animal care.',
+    subtitle: 'Veterinary Drugs&antibiotics',
+    icon: yaopingIcon,
     href: '/products/veterinary-drugs',
   },
   {
     title: 'Cosmetics',
-    description:
-      'Functional and active cosmetic ingredients designed for safe, effective personal care products.',
+    subtitle: 'Cosmetic materials',
+    icon: kouhonIcon,
     href: '/products/cosmetics',
   },
 ];
@@ -275,16 +279,18 @@ export default function AboutUs() {
                 <a
                   key={unit.title}
                   href={unit.href}
-                  className="group rounded-[2rem] border border-slate-200 bg-white p-7 shadow-[0_16px_50px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)]"
+                  className="group flex flex-col items-center rounded-[2rem] border border-slate-200 bg-white px-7 py-8 text-center shadow-[0_16px_50px_rgba(15,23,42,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 hover:shadow-[0_24px_60px_rgba(15,23,42,0.08)]"
                 >
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
-                    Fordtek
-                  </p>
-                  <h3 className="mt-10 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-                    {unit.title}
+                  <img
+                    src={unit.icon}
+                    alt={unit.title}
+                    className="h-18 w-18 object-contain opacity-90 transition-transform duration-300 group-hover:scale-105"
+                    style={{ filter: 'hue-rotate(145deg) saturate(1.25) brightness(0.92)' }}
+                  />
+                  <h3 className="mt-8 text-[15px] font-medium tracking-[0.02em] text-slate-700 sm:text-base">
+                    {unit.subtitle}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">{unit.description}</p>
-                  <span className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-slate-900">
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-900">
                     Explore
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
