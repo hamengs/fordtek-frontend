@@ -11,10 +11,10 @@ import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import brieflyImg from '../../assets/images/briefly.jpg';
 import hardworkImg from '../../assets/images/hardwork.jpg';
 import blackForestImg from '../../assets/images/black-forest.jpg';
-import pingguoIcon from '../../assets/images/about-us/pingguo.png';
-import yuerIcon from '../../assets/images/about-us/yuer.png';
-import yaopingIcon from '../../assets/images/about-us/yaoping.png';
-import kouhonIcon from '../../assets/images/about-us/kouhon.png';
+import pingguoIcon from '../../assets/images/about-us/pingguo.svg';
+import yuerIcon from '../../assets/images/about-us/yuer.svg';
+import yaopingIcon from '../../assets/images/about-us/yaoping.svg';
+import kouhonIcon from '../../assets/images/about-us/kouhong.svg';
 
 const quickLinks = [
   { label: 'Introduction', href: '#introduction' },
@@ -285,7 +285,6 @@ export default function AboutUs() {
                     src={unit.icon}
                     alt={unit.title}
                     className="h-18 w-18 object-contain opacity-90 transition-transform duration-300 group-hover:scale-105"
-                    style={{ filter: 'hue-rotate(145deg) saturate(1.25) brightness(0.92)' }}
                   />
                   <h3 className="mt-8 text-[15px] font-medium tracking-[0.02em] text-slate-700 sm:text-base">
                     {unit.subtitle}
