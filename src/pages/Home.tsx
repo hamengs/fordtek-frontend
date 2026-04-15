@@ -35,8 +35,13 @@ export default function Home() {
         imageAlt={heroContent.imageAlt}
       />
 
-      <ServicesSection {...servicesContent} />
-      <NewsSection {...newsContent} />
+      <div className="py-14 sm:py-18 lg:py-20">
+        <ServicesSection {...servicesContent} />
+      </div>
+
+      <div className="pb-16 sm:pb-20 lg:pb-24">
+        <NewsSection {...newsContent} />
+      </div>
       <Footer {...footerContent} />
     </div>
   );
