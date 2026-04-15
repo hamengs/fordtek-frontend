@@ -12,7 +12,7 @@ export function Hero({
   imageAlt,
 }: HeroContent) {
   return (
-    <section className="relative flex min-h-screen items-end overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden">
       {/* Controls the background image that fills the hero area. */}
       <img
         src={imageUrl}
@@ -25,7 +25,7 @@ export function Hero({
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: 'easeOut' }}
-        className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-18 text-white sm:px-10 sm:pb-22 lg:px-16 lg:pb-28"
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 text-white sm:px-10 lg:px-16"
       >
         <div className="max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/75">

@@ -62,7 +62,9 @@ export function TopBar({
               <img src={logoImg} alt="Fordtek logo" className="h-10 w-auto" />
             </Link>
           ) : (
-            <div className="hidden lg:block" />
+            <Link to="/" className="hidden shrink-0 items-center lg:flex" aria-label="Go to homepage">
+              <img src={logoImg} alt="Fordtek logo" className="h-10 w-auto" />
+            </Link>
           )}
 
           {/* Controls the main top bar menu text: Home, About Us, Join Us, News, Contact Us. */}

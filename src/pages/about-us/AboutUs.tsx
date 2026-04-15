@@ -8,7 +8,6 @@ import { Footer } from '../../components/Footer';
 import { MainNavigation } from '../../components/MainNavigation';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import forestImg from '../../assets/images/home-hero.jpg';
 import brieflyImg from '../../assets/images/briefly.jpg';
 import hardworkImg from '../../assets/images/hardwork.jpg';
 import blackForestImg from '../../assets/images/black-forest.jpg';
@@ -85,13 +84,13 @@ export default function AboutUs() {
       </header>
 
       <main>
-        <section className="relative overflow-hidden bg-slate-950">
+        <section className="relative overflow-hidden bg-slate-900">
           <img
-            src={forestImg}
+            src={hardworkImg}
             alt="Fordtek company overview"
-            className="absolute inset-0 h-full w-full object-cover opacity-30"
+            className="absolute inset-0 h-full w-full object-cover opacity-46"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(2,6,23,0.88)_0%,rgba(15,23,42,0.72)_42%,rgba(15,23,42,0.36)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.62)_0%,rgba(30,41,59,0.48)_42%,rgba(51,65,85,0.28)_100%)]" />
 
           <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">
@@ -113,7 +112,7 @@ export default function AboutUs() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="rounded-full border border-white/20 bg-white/8 px-5 py-2.5 text-sm font-medium text-white/90 backdrop-blur-sm transition-colors hover:bg-white/14"
+                  className="rounded-full border border-white/24 bg-white/12 px-5 py-2.5 text-sm font-medium text-white/92 backdrop-blur-sm transition-colors hover:bg-white/18"
                 >
                   {link.label}
                 </a>
@@ -223,28 +222,28 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] bg-slate-950 p-8 text-white sm:p-10 lg:p-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-200">
+          <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#f5f8fc_0%,#eef3f8_100%)] p-8 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:p-10 lg:p-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">
               What it means in practice
             </p>
             <div className="mt-8 space-y-6">
-              <div className="border-b border-white/10 pb-6">
+              <div className="border-b border-slate-200 pb-6">
                 <p className="text-lg font-semibold">High-standard product selection</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   Prioritising dependable quality, compliance and supplier stability over
                   short-term convenience.
                 </p>
               </div>
-              <div className="border-b border-white/10 pb-6">
+              <div className="border-b border-slate-200 pb-6">
                 <p className="text-lg font-semibold">Rigorous service refinement</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   Improving communication, delivery and collaboration details to strengthen
                   the customer experience over time.
                 </p>
               </div>
               <div>
                 <p className="text-lg font-semibold">A reputation built to last</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   Investing in global operations and trustworthy partnerships that create
                   durable confidence in the Fordtek name.
                 </p>
@@ -296,9 +295,9 @@ export default function AboutUs() {
         </section>
 
         <section className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
-          <div className="grid gap-8 rounded-[2.5rem] bg-slate-950 px-8 py-10 text-white sm:px-10 sm:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-14 lg:py-16">
+          <div className="grid gap-8 rounded-[2.5rem] border border-slate-200 bg-[linear-gradient(180deg,#f6f9fc_0%,#eef5fa_100%)] px-8 py-10 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-10 sm:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-14 lg:py-16">
             <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-200">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">
                 Global Presence
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
@@ -306,21 +305,21 @@ export default function AboutUs() {
               </h2>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] border border-white/10 bg-white/6 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">
+              <div className="rounded-[1.75rem] border border-slate-200 bg-white/90 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
                   Market Presence
                 </p>
                 <p className="mt-4 text-3xl font-semibold">9 countries</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   Continuing to expand our international investment footprint.
                 </p>
               </div>
-              <div className="rounded-[1.75rem] border border-white/10 bg-white/6 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">
+              <div className="rounded-[1.75rem] border border-slate-200 bg-white/90 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
                   Customer Reach
                 </p>
                 <p className="mt-4 text-3xl font-semibold">40+ countries</p>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
+                <p className="mt-3 text-sm leading-7 text-slate-600">
                   Serving customers across five continents with responsive support.
                 </p>
               </div>

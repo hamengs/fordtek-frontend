@@ -1,6 +1,4 @@
 import { ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import logoImg from '../assets/images/logo.svg';
 import type { MainNavigationContent } from '../types/site-settings';
 
 // Renders the second header row beneath the top bar. This row keeps the
@@ -18,8 +16,6 @@ export function MainNavigation({
   const linkClass = isOverlay
     ? 'flex items-center gap-1.5 whitespace-nowrap text-white transition-colors hover:text-white/70'
     : 'flex items-center gap-1.5 whitespace-nowrap transition-colors hover:text-sky-400';
-  const logoWrapClass = 'flex shrink-0 items-center';
-
   return (
     <div className={rootClass}>
       {/* Controls the full second-row navigation background and the divider lines. */}
@@ -27,12 +23,7 @@ export function MainNavigation({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Controls the row layout: logo on the left, product links on the right, spacer at the end. */}
         <div className="flex min-h-[74px] items-center justify-between gap-8">
-          {/* Controls the logo block on the left side of the product navigation row. */}
-          {isOverlay ? <div className="hidden w-[180px] shrink-0 lg:block" /> : (
-            <Link to="/" className={logoWrapClass} aria-label="Go to homepage">
-              <img src={logoImg} alt={logoAlt} className="h-10 w-auto" />
-            </Link>
-          )}
+          <div className="hidden w-[180px] shrink-0 lg:block" />
 
           {/* Controls the product-category text: Food, Feed, Veterinary, Cosmetics. */}
           <nav
@@ -56,7 +47,7 @@ export function MainNavigation({
           </nav>
 
           {/* Small spacer used to nudge the product menu slightly away from the far right edge. */}
-          <div className={`hidden shrink-0 lg:block ${isOverlay ? 'w-[180px]' : 'w-[70px]'}`} />
+          <div className="hidden w-[180px] shrink-0 lg:block" />
         </div>
       </div>
     </div>
