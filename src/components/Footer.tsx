@@ -103,7 +103,7 @@ export function Footer({
 
         {/* Controls the lower footer row for the tagline and social icons. */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-100 gap-8">
-          <p className="text-[10px] text-slate-400 uppercase tracking-[0.3em] font-bold">{tagline}</p>
+          <p className="text-[10px] text-slate-400 uppercase tracking-[0.6em] font-bold">{tagline}</p>
           <div className="flex space-x-8">
             {socialLinks.map((social) => (
               <a

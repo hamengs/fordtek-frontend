@@ -489,3 +489,66 @@ Choose one:
 - `src/assets/home/rooftop-garden.jpg`
 - `src/assets/flags`
 - `HANDOFF.md`
+
+---
+
+## Update: 2026-04-16 (Our Team)
+
+### What changed in this round
+
+#### Our Team page was created
+- New page:
+  - `src/pages/about-us/OurTeam.tsx`
+- Route added:
+  - `/about-us/our-team`
+- The page structure now includes:
+  - hero with founder portrait
+  - founder profile section
+  - headquarters leadership cards
+  - overseas team highlights
+  - team culture section
+
+#### Team source material used
+- Team direction and copy were based on:
+  - `欢迎走近唯东202604.pptx`
+- The main proposal Word file was locked by another process during this round, so the team-specific content was pulled from the PPT deck instead.
+- Relevant PPT slides used:
+  - founder
+  - management
+  - overseas employees
+  - team philosophy
+
+#### Local leadership portraits were added
+- Local image assets were copied into:
+  - `src/assets/team`
+- Current portraits added:
+  - `xiong-dong.png`
+  - `liu-qin.jpg`
+  - `tang-xiaoni.jpg`
+  - `zhang-bing.jpg`
+  - `zhang-guoju.jpg`
+
+### Important current state
+
+#### Team page copy status
+- The `Our Team` page has now been revised against the proposal Word document.
+- The current structure follows the document direction:
+  - cover
+  - management profiles
+  - team introduction
+  - employee distribution map
+- The cover line now follows the proposal wording:
+  - `Continuous Hardwork, Diligent Pursuit`
+
+#### Next likely refinement
+- Management cards still mix proposal structure with available local assets.
+- If more formal bio material becomes available for headquarters managers, the next pass should refine:
+  - years-of-service accuracy
+  - experience wording
+  - portrait coverage for overseas managers
+
+### Files most relevant for the next thread
+- `src/pages/about-us/OurTeam.tsx`
+- `src/App.tsx`
+- `src/assets/team`
+- `HANDOFF.md`

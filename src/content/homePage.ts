@@ -6,6 +6,7 @@ import cosmeticImg from '../assets/home/cosmetic.png';
 import brieflyImg from '../assets/home/briefly.jpg';
 import vietShrimpImg from '../assets/home/viet-shrimp.jpg';
 import hardworkImg from '../assets/home/hardwork.jpg';
+import slogan from '../assets/home/slogan.svg'
 import type { HeroContent } from '../types/hero';
 import type { NewsContent } from '../types/news';
 import type { ServicesContent } from '../types/services';
@@ -165,7 +166,7 @@ export const footerFallback: FooterContent = {
   copyrightText: '© 2017-2026 Fordtek.com, Inc',
   phone: '+86 2367683887',
   email: 'service@fordtek.com',
-  tagline: 'Global Nutrition & Chemicals Excellence',
+  tagline: 'Ingredients you can trust',
   socialLinks: [
     { platform: 'twitter', link: '/x.com' },
     { platform: 'youtube', link: '/youtube.com' },

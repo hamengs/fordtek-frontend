@@ -75,10 +75,11 @@ const mapPoints = [
     companyName: 'Fordtek Inc.',
     label: 'USA',
     region: 'Americas',
-    regionCode: 'C.A USA',
+    regionCode: 'CA USA',
     status: 'Subsidiary',
     left: '12%',
     top: '29.8%',
+    address: '2040 S. Carlos Ave Ontario CA 91761',
     description: 'Fordtek established its United States subsidiary in 2017 and later expanded into a larger warehouse location in 2023.',
   },
   {
@@ -90,6 +91,7 @@ const mapPoints = [
     status: 'Subsidiary',
     left: '36%',
     top: '70%',
+    address: 'To be continued',
     description: 'Fordtek established its Brazil subsidiary in 2024 as part of its continuing South American expansion.',
   },
   {
@@ -101,6 +103,7 @@ const mapPoints = [
     status: 'Office',
     left: '32%',
     top: '90%',
+    address: 'To be continued',
     description: "Fordtek's Argentina sales office began operations in 2020 to support customers more directly in the region.",
   },
   {
@@ -112,6 +115,7 @@ const mapPoints = [
     status: 'Subsidiary',
     left: '33%',
     top: '85%',
+    address: 'Rio Branco 1373 501 CP 11100, Montevideo, Otros',
     description: 'Fordtek established its Uruguay subsidiary in 2022, strengthening its South American company network.',
   },
   {
@@ -123,6 +127,7 @@ const mapPoints = [
     status: 'Planned',
     left: '49.2%',
     top: '20%',
+    address: 'To be continued',
     description: 'The Netherlands remains part of Fordtek’s forward-looking European market planning and layout.',
   },
   {
@@ -134,6 +139,7 @@ const mapPoints = [
     status: 'Subsidiary',
     left: '51.3%',
     top: '20%',
+    address: 'Bredeneyer Str. 117 45133 Essen',
     description: 'Fordtek relocated its European subsidiary to Germany in 2022, building a stronger localized base in Europe.',
   },
   {
@@ -145,6 +151,7 @@ const mapPoints = [
     status: 'Headquarters',
     left: '82%',
     top: '35.1%',
+    address: 'C7 No.6 Yuekang Rd. Beibei Distr. 401122',
     description: "Fordtek officially began operations in Chongqing in 2016, and the headquarters continues to anchor the company's global coordination.",
   },
   {
@@ -156,6 +163,7 @@ const mapPoints = [
     status: 'Subsidiary',
     left: '84.5%',
     top: '41.5%',
+    address: 'FLAT/RM 1115, 11/F., SHATIN GALLERIA, 18-24 SHAN MEI STREET, FO TAN, NEW TERRITORIES, HONG KONG',
     description: 'Fordtek established its Hong Kong subsidiary in 2016 as an early step in its international company layout.',
   },
   {
@@ -167,6 +175,7 @@ const mapPoints = [
     status: 'Subsidiary',
     left: '84%',
     top: '48%',
+    address: 'C14-3 Sky Center, No 10 Pho Quang, Ward 2, District Tan Binh, Ho Chi Minh City, Viet Nam',
     description: 'Fordtek established its Vietnam subsidiary in 2019 and began warehouse operations there the same year.',
   },
   {
@@ -178,6 +187,7 @@ const mapPoints = [
     status: 'Subsidiary',
     left: '67%',
     top: '65%',
+    address: 'Global Gateway 8, Rue de la Perle, Providence, Mahe, Seychelles',
     description: 'Seychelles is part of Fordtek’s overseas subsidiary network within its broader global layout.',
   },
 ] as const;
@@ -384,6 +394,14 @@ export default function OurLocations() {
                 <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-slate-500">
                   {selectedCountry.country}
                 </p>
+                <div className="mt-4 rounded-[1.25rem] bg-slate-50 px-4 py-4">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    Address
+                  </p>
+                  <p className="mt-2 text-sm leading-7 text-slate-600">
+                    {selectedCountry.address}
+                  </p>
+                </div>
                 <p className="mt-3 text-base leading-8 text-slate-600">
                   {selectedCountry.description}
                 </p>

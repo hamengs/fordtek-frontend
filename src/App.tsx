@@ -2,6 +2,7 @@ import {Navigate, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/about-us/AboutUs';
 import OurLocations from './pages/about-us/OurLocations';
+import OurTeam from './pages/about-us/OurTeam';
 import JoinUs from './pages/join-us/JoinUs'
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <Route path="/about-us" element={<Navigate to="/about-us/our-company" replace />} />
       <Route path="/about-us/our-company" element={<AboutUs/>}/>
       <Route path="/about-us/our-locations" element={<OurLocations />} />
+      <Route path="/about-us/our-team" element={<OurTeam />} />
       <Route path="/join-us" element={<JoinUs />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
