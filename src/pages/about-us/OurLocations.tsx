@@ -205,7 +205,7 @@ export default function OurLocations() {
             </p>
             <div className="mt-6 max-w-[42rem] lg:max-w-[46rem]">
               <h1 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl lg:text-[4.5rem]">
-                Our Location
+                Our Locations
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl sm:leading-9">
                 From Chongqing to overseas markets, our growing network supports responsive
@@ -239,15 +239,6 @@ export default function OurLocations() {
               alt="Fordtek overseas operations"
               className="h-full min-h-[320px] w-full object-cover"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,transparent_0%,rgba(15,23,42,0.72)_100%)] p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-200">
-                Localized Operations
-              </p>
-              <p className="mt-3 max-w-md text-sm leading-7 text-slate-100">
-                A growing international footprint built through team investment, logistics
-                capability and customer proximity.
-              </p>
-            </div>
           </div>
         </section>
 
