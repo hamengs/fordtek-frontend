@@ -1,11 +1,11 @@
-import forestImg from '../assets/images/home-hero.jpg';
-import humanImg from '../assets/images/human.png';
-import animalImg from '../assets/images/animal.jpg';
-import veterinaryImg from '../assets/images/veterinary.jpg';
-import cosmeticImg from '../assets/images/cosmetic.png';
-import brieflyImg from '../assets/images/briefly.jpg';
-import vietShrimpImg from '../assets/images/viet-shrimp.jpg';
-import hardworkImg from '../assets/images/hardwork.jpg';
+import forestImg from '../assets/home/home-hero.jpg';
+import humanImg from '../assets/home/human.png';
+import animalImg from '../assets/home/animal.jpg';
+import veterinaryImg from '../assets/home/veterinary.jpg';
+import cosmeticImg from '../assets/home/cosmetic.png';
+import brieflyImg from '../assets/home/briefly.jpg';
+import vietShrimpImg from '../assets/home/viet-shrimp.jpg';
+import hardworkImg from '../assets/home/hardwork.jpg';
 import type { HeroContent } from '../types/hero';
 import type { NewsContent } from '../types/news';
 import type { ServicesContent } from '../types/services';
@@ -34,7 +34,7 @@ export const topBarFallback: TopBarContent = {
     { label: 'Home', link: '/' },
     {
       label: 'About Us',
-      link: '/about-us',
+      link: '',
       children: [
         { label: 'Our Company', link: '/about-us/our-company' },
         { label: 'Our Locations', link: '/about-us/our-locations' },

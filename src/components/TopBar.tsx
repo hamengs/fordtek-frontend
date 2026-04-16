@@ -1,6 +1,6 @@
 import { ChevronDown, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoImg from '../assets/images/logo.svg';
+import logoImg from '../assets/home/logo.svg';
 import type { TopBarContent } from '../types/site-settings';
 import type { NavLink } from '../types/site-settings';
 
@@ -71,6 +71,7 @@ export function TopBar({
           <div className="flex flex-wrap items-center justify-end gap-y-2 text-[14px] font-semibold uppercase tracking-[0.14em]">
             {leftLinks.map((item) => {
               const hasChildren = Boolean(item.children?.length);
+              const isClickable = Boolean(item.link);
 
               return (
                 <div
@@ -78,7 +79,7 @@ export function TopBar({
                   className={`group relative ${hasChildren ? 'mr-10' : 'mr-15'} last:mr-0`}
                 >
                   {/* Controls each visible top-level menu label and its hover color. */}
-                  {item.link.startsWith('/') ? (
+                  {isClickable && item.link.startsWith('/') ? (
                     <Link
                       to={item.link}
                       className={`flex items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
@@ -86,7 +87,7 @@ export function TopBar({
                       {item.label}
                       {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
                     </Link>
-                  ) : (
+                  ) : isClickable ? (
                     <a
                       href={item.link}
                       className={`flex items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
@@ -94,6 +95,13 @@ export function TopBar({
                       {item.label}
                       {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
                     </a>
+                  ) : (
+                    <span
+                      className={`flex cursor-default items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
+                    >
+                      {item.label}
+                      {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
+                    </span>
                   )}
 
                   {hasChildren ? (

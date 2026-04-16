@@ -259,3 +259,123 @@ Choose one:
 Please continue from:
 - homepage CMS integration completed for main sections
 - next best step: homepage integration review or news detail page
+
+---
+
+## Update: 2026-04-15
+
+### What changed in this round
+
+#### Home header / hero
+- Home hero was redesigned to behave more like a full-screen cover.
+- The homepage now uses a two-state header system:
+  - an overlay header shown when the page is near the top
+  - a floating white header that appears when scrolling upward away from the top
+- Header behavior is currently implemented directly in:
+  - `src/pages/Home.tsx`
+- Relevant components:
+  - `src/components/TopBar.tsx`
+  - `src/components/MainNavigation.tsx`
+  - `src/components/Hero.tsx`
+
+#### Direct URL refresh on Vercel
+- Added SPA rewrite support for Vercel so direct URL access such as `/about-us` no longer 404s after deployment.
+- New file:
+  - `vercel.json`
+- Note:
+  - this requires redeploying to Vercel
+
+#### Home services content
+- Homepage `services` content was improved so each service item now owns its own long English description.
+- `description` was added into the services content shape and API mapping.
+- Relevant files:
+  - `src/types/services.ts`
+  - `src/content/homePage.ts`
+  - `src/api/home.ts`
+  - `src/components/ServicesSection.tsx`
+
+#### About Us page
+- `src/pages/about-us/AboutUs.tsx` is no longer a placeholder page.
+- It now contains a first-pass single-page design with:
+  - hero / intro
+  - strengths strip
+  - introduction
+  - purpose
+  - values
+  - business units
+  - global presence
+  - next sections block
+- The page still needs visual cleanup and content refinement.
+
+### Important current state
+
+#### About Us business unit icons
+- The manually drawn SVG icons from `Downloads` were copied into the project and are now the active assets.
+- Current files:
+  - `src/assets/images/about-us/pingguo.svg`
+  - `src/assets/images/about-us/yuer.svg`
+  - `src/assets/images/about-us/yaoping.svg`
+  - `src/assets/images/about-us/kouhong.svg`
+- `AboutUs.tsx` currently imports these SVG files directly.
+- Earlier experimental generated SVG icons were removed.
+
+#### About Us business unit layout
+- The current layout is still the card-style version with:
+  - rounded cards
+  - icon on top
+  - subtitle under icon
+  - `Explore` CTA
+- User feedback indicates this is not the desired final direction.
+- The desired direction is closer to the original old-site visual style:
+  - lighter layout
+  - less card-like
+  - more icon-led
+- Do not assume the current business unit layout is approved.
+
+#### About Us hero and dark sections
+- The About Us hero image was temporarily changed to use `hardwork.jpg` as a placeholder.
+- Some originally dark sections were lightened.
+- These visual choices are provisional and may be revised.
+
+### Known issue that happened and resolution
+- There was a dev-server error referencing removed SVG files such as `cosmetics.svg`.
+- Root cause:
+  - Vite HMR cache retained stale references after deleting experimental SVG files.
+- Resolution:
+  - active code now points only to the manually supplied SVG files above
+  - if this happens again, restart `npm run dev`
+  - if needed, delete `node_modules/.vite`
+
+### Recommended next steps
+Choose one:
+
+1. Continue refining the homepage header
+- likely targets:
+  - top/bottom row proportions
+  - pure white top row feel
+  - product-nav spacing
+  - hero text placement
+
+2. Refine About Us visual direction
+- especially:
+  - business unit layout
+  - icon sizing / spacing
+  - hero image choice
+  - final tone of values / global presence sections
+
+3. Normalize content encoding in About Us
+- there are still some text encoding artifacts in `AboutUs.tsx`
+- example:
+  - smart quotes around “Made in China” were previously corrupted in one version
+
+### Files most relevant for the next thread
+- `src/pages/Home.tsx`
+- `src/components/TopBar.tsx`
+- `src/components/MainNavigation.tsx`
+- `src/components/Hero.tsx`
+- `src/components/ServicesSection.tsx`
+- `src/content/homePage.ts`
+- `src/types/services.ts`
+- `src/api/home.ts`
+- `src/pages/about-us/AboutUs.tsx`
+- `vercel.json`

@@ -1,6 +1,6 @@
 import { Twitter, Youtube, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logoImg from '../assets/images/logo.svg';
+import logoImg from '../assets/home/logo.svg';
 import type { FooterContent, SocialLink } from '../types/site-settings';
 import type { NavLink } from '../types/site-settings';
 

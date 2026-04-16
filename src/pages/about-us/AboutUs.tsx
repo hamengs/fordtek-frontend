@@ -8,9 +8,10 @@ import { Footer } from '../../components/Footer';
 import { MainNavigation } from '../../components/MainNavigation';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import brieflyImg from '../../assets/images/briefly.jpg';
-import hardworkImg from '../../assets/images/hardwork.jpg';
-import blackForestImg from '../../assets/images/black-forest.jpg';
+import hqBuildingImg from '../../assets/home/hq-building.jpg';
+import receptionLoungeImg from '../../assets/home/reception-lounge.jpg';
+import meetingRoomImg from '../../assets/home/meeting-room.jpg';
+import rooftopGardenImg from '../../assets/home/rooftop-garden.jpg';
 import pingguoIcon from '../../assets/images/about-us/pingguo.svg';
 import yuerIcon from '../../assets/images/about-us/yuer.svg';
 import yaopingIcon from '../../assets/images/about-us/yaoping.svg';
@@ -90,28 +91,28 @@ export default function AboutUs() {
       <main>
         <section className="relative overflow-hidden bg-slate-900">
           <img
-            src={hardworkImg}
+            src={hqBuildingImg}
             alt="Fordtek company overview"
             className="absolute inset-0 h-full w-full object-cover opacity-46"
           />
           <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.62)_0%,rgba(30,41,59,0.48)_42%,rgba(51,65,85,0.28)_100%)]" />
 
-          <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-16 lg:py-28">
+          <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">
               About Us
             </p>
-            <div className="mt-6 max-w-4xl">
-              <h1 className="text-4xl font-semibold tracking-[-0.05em] text-white sm:text-5xl lg:text-7xl">
+            <div className="mt-6 max-w-[34rem] lg:max-w-[38rem]">
+              <h1 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl lg:text-[4.5rem]">
                 Our Company
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200 sm:text-xl sm:leading-9">
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200 sm:text-xl sm:leading-9">
                 Always focus on you. Fordtek is a global provider of nutritional ingredients
                 and comprehensive chemicals built on dependable sourcing, international reach
                 and responsive service.
               </p>
             </div>
 
-            <div className="mt-12 flex flex-wrap gap-3">
+            <div className="mt-12 flex max-w-2xl flex-wrap gap-3">
               {quickLinks.map((link) => (
                 <a
                   key={link.label}
@@ -130,10 +131,10 @@ export default function AboutUs() {
             {strengths.map(({ icon: Icon, title, value }) => (
               <div
                 key={title}
-                className="rounded-[1.75rem] border border-slate-200 bg-slate-50 px-6 py-6"
+                className="rounded-[1.75rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] px-6 py-6 shadow-[0_12px_30px_rgba(15,23,42,0.04)]"
               >
-                <Icon className="h-5 w-5 text-slate-500" />
-                <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">
+                <Icon className="h-5 w-5 text-sky-700" />
+                <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
                   {title}
                 </p>
                 <p className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-slate-950">
@@ -149,10 +150,10 @@ export default function AboutUs() {
           className="mx-auto grid max-w-7xl gap-14 px-6 py-18 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-16 lg:py-24"
         >
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
               Introduction
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
               A professional distributor connecting high-quality ingredients with global demand.
             </h2>
             <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
@@ -164,9 +165,9 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] bg-slate-100">
+          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-100 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
             <img
-              src={brieflyImg}
+              src={receptionLoungeImg}
               alt="Fordtek introduction"
               className="h-full min-h-[320px] w-full object-cover"
             />
@@ -175,31 +176,31 @@ export default function AboutUs() {
 
         <section
           id="purpose"
-          className="bg-[linear-gradient(180deg,#f8fafc_0%,#eef6fb_100%)]"
+          className="bg-[linear-gradient(180deg,#ffffff_0%,#f4f8fb_100%)]"
         >
           <div className="mx-auto grid max-w-7xl gap-14 px-6 py-18 sm:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-16 lg:py-24">
-            <div className="relative overflow-hidden rounded-[2rem] bg-slate-100">
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-100 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
               <img
-                src={hardworkImg}
+                src={meetingRoomImg}
                 alt="Fordtek purpose"
                 className="h-full min-h-[320px] w-full object-cover"
               />
             </div>
 
             <div className="max-w-2xl lg:ml-auto">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
                 Purpose
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
-                Growing globally alongside “Made in China”.
+              <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
+                Growing globally alongside "Made in China"
               </h2>
               <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-                Since the establishment, Fordtek has remained committed to its original
-                vision of expanding globally alongside “Made in China”, achieving the
-                capability to deliver goods to end users across multiple countries and
-                regions under DDP terms. We continue to build the operational foundation
-                needed to make international supply more direct, more reliable and more
-                responsive for our partners.
+                Since its establishment, Fordtek has remained committed to its original
+                vision of growing globally alongside "Made in China". That commitment has
+                helped us build the capability to deliver goods to end users across multiple
+                countries and regions under DDP terms. We continue to strengthen the
+                operational foundation that makes international supply more direct, more
+                reliable and more responsive for our partners.
               </p>
             </div>
           </div>
@@ -210,10 +211,10 @@ export default function AboutUs() {
           className="mx-auto grid max-w-7xl gap-14 px-6 py-18 sm:px-10 lg:grid-cols-[1fr_1fr] lg:px-16 lg:py-24"
         >
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
               Values
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
               Long-termism as both a value and a way of working.
             </h2>
             <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
@@ -226,7 +227,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-slate-200 bg-[linear-gradient(180deg,#f5f8fc_0%,#eef3f8_100%)] p-8 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:p-10 lg:p-12">
+          <div className="rounded-[2rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] p-8 text-slate-900 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:p-10 lg:p-12">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">
               What it means in practice
             </p>
@@ -262,10 +263,10 @@ export default function AboutUs() {
         >
           <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
             <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
                 Business Units
               </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
+              <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
                 Expanding ingredient categories, one reliable portfolio at a time.
               </h2>
               <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
@@ -299,56 +300,23 @@ export default function AboutUs() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
-          <div className="grid gap-8 rounded-[2.5rem] border border-slate-200 bg-[linear-gradient(180deg,#f6f9fc_0%,#eef5fa_100%)] px-8 py-10 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.06)] sm:px-10 sm:py-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-14 lg:py-16">
-            <div className="max-w-xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">
-                Global Presence
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
-                Built in Chongqing, connected to customers around the world.
-              </h2>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white/90 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  Market Presence
-                </p>
-                <p className="mt-4 text-3xl font-semibold">9 countries</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Continuing to expand our international investment footprint.
-                </p>
-              </div>
-              <div className="rounded-[1.75rem] border border-slate-200 bg-white/90 p-6">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  Customer Reach
-                </p>
-                <p className="mt-4 text-3xl font-semibold">40+ countries</p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Serving customers across five continents with responsive support.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-t border-slate-200 bg-slate-50">
+        <section className="border-t border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#f1f5f9_100%)]">
           <div className="mx-auto grid max-w-7xl gap-8 px-6 py-16 sm:px-10 lg:grid-cols-[1fr_auto] lg:px-16 lg:py-20">
             <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-400">
-                Next Sections
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
+                Looking Ahead
               </p>
               <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-slate-950">
-                Locations, team, certificates and warehouses can branch out from here.
+                Locations, team, certificates and warehouses can grow from this foundation.
               </h2>
               <p className="mt-6 text-base leading-8 text-slate-600">
                 This first pass focuses on the overall About Us tone and structure. We can
                 keep extending it into dedicated subpages once you like the visual direction.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-[2rem] bg-slate-200">
+            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-200 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
               <img
-                src={blackForestImg}
+                src={rooftopGardenImg}
                 alt="Fordtek future sections"
                 className="h-full min-h-[220px] w-full object-cover lg:w-[360px]"
               />
