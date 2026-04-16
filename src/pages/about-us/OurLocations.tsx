@@ -72,8 +72,10 @@ const countries = [
 const mapPoints = [
   {
     country: 'United States',
+    companyName: 'Fordtek Inc.',
     label: 'USA',
     region: 'Americas',
+    regionCode: 'C.A USA',
     status: 'Subsidiary',
     left: '12%',
     top: '29.8%',
@@ -81,8 +83,10 @@ const mapPoints = [
   },
   {
     country: 'Brazil',
+    companyName: 'Fordtek Ingredients Brazil Ltda',
     label: 'Brazil',
     region: 'Americas',
+    regionCode: 'SA BRA',
     status: 'Subsidiary',
     left: '36%',
     top: '70%',
@@ -90,8 +94,10 @@ const mapPoints = [
   },
   {
     country: 'Argentina',
+    companyName: 'Argentina Office',
     label: 'Argentina',
     region: 'Americas',
+    regionCode: 'SA ARG',
     status: 'Office',
     left: '32%',
     top: '90%',
@@ -99,8 +105,10 @@ const mapPoints = [
   },
   {
     country: 'Uruguay',
+    companyName: 'FORDTEK S.A.',
     label: 'Uruguay',
     region: 'Americas',
+    regionCode: 'SA URY',
     status: 'Subsidiary',
     left: '33%',
     top: '85%',
@@ -108,8 +116,10 @@ const mapPoints = [
   },
   {
     country: 'Netherlands',
+    companyName: 'Fordtek B.V.',
     label: 'Netherlands',
     region: 'Europe',
+    regionCode: 'EU NLD',
     status: 'Planned',
     left: '49.2%',
     top: '20%',
@@ -117,8 +127,10 @@ const mapPoints = [
   },
   {
     country: 'Germany',
+    companyName: 'Fordtek GmbH',
     label: 'Germany',
     region: 'Europe',
+    regionCode: 'EU GER',
     status: 'Subsidiary',
     left: '51.3%',
     top: '20%',
@@ -126,8 +138,10 @@ const mapPoints = [
   },
   {
     country: 'Chongqing, China',
+    companyName: 'Fordtek HQ',
     label: 'HQ',
     region: 'Asia',
+    regionCode: 'APAC CN',
     status: 'Headquarters',
     left: '82%',
     top: '35.1%',
@@ -135,8 +149,10 @@ const mapPoints = [
   },
   {
     country: 'Hong Kong, China',
+    companyName: 'Fordtek Limited',
     label: 'Hong Kong',
     region: 'Asia',
+    regionCode: 'APAC HK',
     status: 'Subsidiary',
     left: '84.5%',
     top: '41.5%',
@@ -144,8 +160,10 @@ const mapPoints = [
   },
   {
     country: 'Vietnam',
+    companyName: 'CT Tnhh Fordtek Inc.',
     label: 'Vietnam',
     region: 'Asia',
+    regionCode: 'APAC VN',
     status: 'Subsidiary',
     left: '84%',
     top: '48%',
@@ -153,8 +171,10 @@ const mapPoints = [
   },
   {
     country: 'Seychelles',
+    companyName: 'Best Ingredients Holding Ltd.',
     label: 'Seychelles',
     region: 'Africa',
+    regionCode: 'AF SYC',
     status: 'Subsidiary',
     left: '67%',
     top: '65%',
@@ -353,15 +373,18 @@ export default function OurLocations() {
                   Selected Location
                 </p>
                 <p className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-slate-950">
-                  {selectedCountry.country}
+                  {selectedCountry.companyName}
                 </p>
                 <p className="mt-2 text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
-                  {selectedCountry.region}
+                  {selectedCountry.regionCode}
                 </p>
                 <p className="mt-3 inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">
                   {selectedCountry.status}
                 </p>
-                <p className="mt-4 text-base leading-8 text-slate-600">
+                <p className="mt-4 text-sm font-medium uppercase tracking-[0.18em] text-slate-500">
+                  {selectedCountry.country}
+                </p>
+                <p className="mt-3 text-base leading-8 text-slate-600">
                   {selectedCountry.description}
                 </p>
               </div>

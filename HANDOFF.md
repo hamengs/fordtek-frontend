@@ -25,7 +25,7 @@ All major sections above now have:
 - `types`
 - `api`
 - `component`
-- fallback data in `App.tsx`
+- fallback data in `src/content/homePage.ts`
 
 ## Important Files
 
@@ -189,7 +189,7 @@ API used:
 ## Frontend Implementation Notes
 
 ### Fallback pattern
-Each section still has fallback content in `App.tsx` for resilience:
+Each section still has fallback content in `src/content/homePage.ts` for resilience:
 - `heroFallback`
 - `topBarFallback`
 - `mainNavigationFallback`
@@ -379,3 +379,113 @@ Choose one:
 - `src/api/home.ts`
 - `src/pages/about-us/AboutUs.tsx`
 - `vercel.json`
+
+---
+
+## Update: 2026-04-16
+
+### What changed in this round
+
+#### Asset paths were normalized
+- The user moved many site images into:
+  - `src/assets/home`
+- Code references were updated to use that folder instead of the old `src/assets/images/...` paths where applicable.
+- Relevant files updated:
+  - `src/content/homePage.ts`
+  - `src/components/TopBar.tsx`
+  - `src/components/Footer.tsx`
+  - `src/pages/about-us/AboutUs.tsx`
+  - `src/pages/about-us/OurLocations.tsx`
+
+#### Local flag assets were added
+- Country flags for the `Our Locations` page are no longer loaded from remote URLs.
+- They were downloaded into:
+  - `src/assets/flags`
+- `OurLocations.tsx` now imports the flag images locally.
+
+#### Our Locations page was created and expanded
+- New page:
+  - `src/pages/about-us/OurLocations.tsx`
+- Route added:
+  - `/about-us/our-locations`
+- Current structure follows the document direction:
+  - hero
+  - overseas presence intro
+  - country footprint with flag cards
+  - global layout map
+  - right-side detail cards
+
+#### Our Locations map status
+- A real SVG world map resource was added to the project:
+  - `src/assets/home/world-map.svg`
+- The map currently uses manually positioned clickable points over the SVG.
+- Point positions have now been completed and confirmed by the user.
+- Fallback content for the site is now maintained in:
+  - `src/content/homePage.ts`
+- The current point metadata now reflects the user-provided company status breakdown:
+  - `Chongqing, China` = headquarters
+  - `Hong Kong, China` = subsidiary
+  - `United States` = subsidiary
+  - `Germany` = subsidiary
+  - `Vietnam` = subsidiary
+  - `Seychelles` = subsidiary
+  - `Uruguay` = subsidiary
+  - `Brazil` = subsidiary
+  - `Argentina` = office
+  - `Netherlands` = planned
+
+#### Real office photos replaced placeholder visuals
+- Photos were reviewed from:
+  - `C:\Users\Teresa Tu\Desktop\总部办公楼照片`
+- New local assets copied into `src/assets/home`:
+  - `hq-building.jpg`
+  - `reception-lounge.jpg`
+  - `meeting-room.jpg`
+  - `rooftop-garden.jpg`
+- These were used to replace placeholder imagery on:
+  - `src/pages/about-us/AboutUs.tsx`
+  - `src/pages/about-us/OurLocations.tsx`
+
+#### Hero layout adjustments
+- The `Our Company` and `Our Locations` hero text blocks were narrowed and given larger vertical padding to reduce collisions with the building/logo area in the photos.
+- The user noted the two heroes now feel visually inconsistent in size.
+- Important:
+  - if continuing this area, the next step should likely be to standardize both hero sections with:
+    - the same min-height
+    - the same text-block width rules
+    - the same vertical alignment logic
+
+### Important current state
+
+#### Our Locations content source
+- The `Our Locations` structure and core messaging were based on:
+  - `FORDTEK官网更新方案20260414.docx`
+- The company-status details were further refined using user-provided images showing:
+  - overseas layout
+  - milestones
+
+#### Team page next
+- The user plans to start a new thread and work on team-related content next.
+- Best next step:
+  - build `Our Team`
+- Recommended source material:
+  - `C:\Users\Teresa Tu\Desktop\前员工文件\Company presentation-FORDTEK 2025.pptx`
+- Relevant PPT signals already reviewed:
+  - team member slides exist
+  - management / market-head / HQ role content exists
+  - team-building and moments slides also exist
+
+### Files most relevant for the next thread
+- `src/pages/about-us/AboutUs.tsx`
+- `src/pages/about-us/OurLocations.tsx`
+- `src/components/TopBar.tsx`
+- `src/components/Footer.tsx`
+- `src/content/homePage.ts`
+- `src/App.tsx`
+- `src/assets/home/world-map.svg`
+- `src/assets/home/hq-building.jpg`
+- `src/assets/home/reception-lounge.jpg`
+- `src/assets/home/meeting-room.jpg`
+- `src/assets/home/rooftop-garden.jpg`
+- `src/assets/flags`
+- `HANDOFF.md`
