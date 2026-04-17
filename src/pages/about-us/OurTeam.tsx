@@ -385,7 +385,7 @@ export default function OurTeam() {
             </h2>
           </div>
 
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.18fr_0.82fr]">
+          <div className="mt-12 items-start">
             <div className="rounded-[2.5rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] p-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:p-10 lg:p-12">
               <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-[radial-gradient(circle_at_top,#eef6ff_0%,#f8fbff_34%,#ffffff_100%)] px-3 py-3 sm:px-4 sm:py-4">
                 <div className="relative mx-auto max-w-[920px]">
@@ -411,7 +411,7 @@ export default function OurTeam() {
               </div>
             </div>
 
-            <div className="space-y-5">
+            {/* <div className="space-y-5">
               {distributionGroups.map((group) => (
                 <div
                   key={group.region}
@@ -424,7 +424,7 @@ export default function OurTeam() {
                   <p className="mt-4 text-sm leading-7 text-slate-600">{group.detail}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
       </main>

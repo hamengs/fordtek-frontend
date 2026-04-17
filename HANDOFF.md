@@ -552,3 +552,70 @@ Choose one:
 - `src/App.tsx`
 - `src/assets/team`
 - `HANDOFF.md`
+
+---
+
+## Update: 2026-04-17 (Join Us / Jobs)
+
+### What changed in this round
+
+#### Join Us structure was implemented
+- `Join Us` now follows the proposal split:
+  - `Why Choose Us`
+  - `Jobs`
+- New route behavior:
+  - `/join-us` now redirects to `/join-us/why-choose-us`
+
+#### Why Choose Us page was built
+- File:
+  - `src/pages/join-us/JoinUs.tsx`
+- Current sections:
+  - hero
+  - team culture
+  - team-building / office visuals
+  - benefits
+  - CTA block linking to Jobs
+- Proposal-based content included:
+  - philosophy of strengthening teams while enhancing services
+  - insurance
+  - garden office environment
+  - fitness culture
+  - multilingual working environment
+  - global exhibitions and overseas assignments
+  - great team
+
+#### Jobs page was built
+- New file:
+  - `src/pages/join-us/Jobs.tsx`
+- Route:
+  - `/join-us/jobs`
+- Current sections:
+  - hero
+  - external job-platform cards
+  - alternate email delivery options
+- Proposal-based content included:
+  - external recruitment-platform jump section
+  - resume delivery emails:
+    - `penny.tang@fordtek.com`
+    - `judy.zhu@fordtek.com`
+
+#### App routing was updated
+- File:
+  - `src/App.tsx`
+- New routes:
+  - `/join-us/why-choose-us`
+  - `/join-us/jobs`
+- `/join-us` no longer renders a placeholder page directly
+
+### Important current state
+
+#### External hiring links
+- The proposal only specifies jumping to platforms such as BOSS / Zhaopin.
+- Current implementation links to the platform homepages, not Fordtek-specific listing pages yet.
+- If exact hiring URLs are available later, replace those placeholders in `Jobs.tsx`.
+
+### Files most relevant for the next thread
+- `src/pages/join-us/JoinUs.tsx`
+- `src/pages/join-us/Jobs.tsx`
+- `src/App.tsx`
+- `HANDOFF.md`
