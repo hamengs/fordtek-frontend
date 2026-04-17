@@ -133,9 +133,9 @@ const distributionStats = [
 ];
 
 const distributionPoints = [
-  { label: 'HQ', name: 'Chongqing', left: '82%', top: '35%' },
+  { label: 'CN', name: 'Chongqing', left: '82%', top: '35%' },
   { label: 'EU', name: 'Germany', left: '51.3%', top: '20%' },
-  { label: 'NA', name: 'United States', left: '12%', top: '29.8%' },
+  { label: 'US', name: 'United States', left: '12%', top: '29.8%' },
   { label: 'SA', name: 'South America', left: '33%', top: '83%' },
 ];
 
