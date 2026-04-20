@@ -1,11 +1,9 @@
 import { ArrowRight, Building2, Globe2, ShieldCheck, Users2 } from 'lucide-react';
 import {
   footerFallback,
-  mainNavigationFallback,
   topBarFallback,
 } from '../../content/homePage';
 import { Footer } from '../../components/Footer';
-import { MainNavigation } from '../../components/MainNavigation';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import hqBuildingImg from '../../assets/home/hq-building.jpg';
@@ -85,7 +83,6 @@ export default function AboutUs() {
         }`}
       >
         <TopBar {...topBarFallback} />
-        <MainNavigation {...mainNavigationFallback} />
       </header>
 
       <main>

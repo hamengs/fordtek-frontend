@@ -28,9 +28,6 @@ export function Hero({
         className="relative z-10 mx-auto w-full max-w-7xl px-6 text-white sm:px-10 lg:px-16"
       >
         <div className="max-w-4xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.32em] text-white/75">
-            Fordtek
-          </p>
           <h1 className="mt-6 text-5xl font-semibold tracking-[-0.06em] drop-shadow-2xl sm:text-6xl lg:text-8xl">
             {title}
           </h1>

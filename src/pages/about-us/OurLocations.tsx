@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import {
   footerFallback,
-  mainNavigationFallback,
   topBarFallback,
 } from '../../content/homePage';
 import { Footer } from '../../components/Footer';
-import { MainNavigation } from '../../components/MainNavigation';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import firstFloorEntrance from '../../assets/home/firstFloorEntrance.jpg';
@@ -217,7 +215,6 @@ export default function OurLocations() {
         }`}
       >
         <TopBar {...topBarFallback} />
-        <MainNavigation {...mainNavigationFallback} />
       </header>
 
       <main>

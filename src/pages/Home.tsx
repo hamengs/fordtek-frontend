@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import {
-  mainNavigationFallback,
   topBarFallback,
 } from '../content/homePage';
 import { Footer } from '../components/Footer';
 import { Hero } from '../components/Hero';
-import { MainNavigation } from '../components/MainNavigation';
 import { NewsSection } from '../components/NewsSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { TopBar } from '../components/TopBar';
@@ -53,7 +51,6 @@ export default function Home() {
         }`}
       >
         <TopBar {...topBarFallback} />
-        <MainNavigation {...mainNavigationFallback} />
       </header>
 
       <div className="relative">
@@ -63,7 +60,6 @@ export default function Home() {
           }`}
         >
           <TopBar {...topBarFallback} variant="overlay" />
-          <MainNavigation {...mainNavigationFallback} variant="overlay" />
         </header>
 
         <Hero
@@ -77,11 +73,11 @@ export default function Home() {
       </div>
 
       <div className="pb-16 sm:pb-20 lg:pb-24">
-        <ServicesSection {...servicesContent} />
+        <NewsSection {...newsContent} />
       </div>
 
       <div className="pb-16 sm:pb-20 lg:pb-24">
-        <NewsSection {...newsContent} />
+        <ServicesSection {...servicesContent} />
       </div>
       <Footer {...footerContent} />
     </div>

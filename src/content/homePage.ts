@@ -16,6 +16,13 @@ import type {
   TopBarContent,
 } from '../types/site-settings';
 
+const productLineLinks = [
+  { label: 'Human Nutrition', link: '/products/human-nutrition' },
+  { label: 'Animal Health', link: '/products/animal-health' },
+  { label: 'Veterinary Drugs', link: '/products/veterinary-drugs' },
+  { label: 'Cosmetics', link: '/products/cosmetics' },
+];
+
 // Local fallback content keeps the homepage usable when Strapi is unavailable
 // or when the deployed frontend has not been connected to a live CMS yet.
 export const heroFallback: HeroContent = {
@@ -34,22 +41,17 @@ export const topBarFallback: TopBarContent = {
   leftLinks: [
     { label: 'Home', link: '/' },
     {
+      label: 'Products',
+      link: '',
+      children: productLineLinks,
+    },
+    {
       label: 'About Us',
       link: '',
       children: [
         { label: 'Our Company', link: '/about-us/our-company' },
         { label: 'Our Locations', link: '/about-us/our-locations' },
-        { label: 'Our Team', link: '/about-us/our-team' },
         { label: 'Certificates', link: '/about-us/certificates' },
-        { label: 'Worldwide Warehouses', link: '/about-us/worldwide-warehouses' },
-      ],
-    },
-    {
-      label: 'Join Us',
-      link: '/join-us',
-      children: [
-        { label: 'Why Choose Us', link: '/join-us/why-choose-us' },
-        { label: 'Jobs', link: '/join-us/jobs' },
       ],
     },
     {
@@ -61,6 +63,7 @@ export const topBarFallback: TopBarContent = {
       //   { label: 'Trade Shows', link: '/news/trade-shows' },
       // ],
     },
+    { label: 'Join Us', link: '/join-us' },
     { label: 'Contact Us', link: '/contact' },
   ],
   rightLinks: [],
@@ -72,12 +75,7 @@ export const mainNavigationFallback: MainNavigationContent = {
   showSearch: false,
   logoAlt: 'Fordtek logo',
   navlinks: [],
-  productLinks: [
-    { label: 'Human Nutrition', link: '/products/human-nutrition' },
-    { label: 'Animal Health', link: '/products/animal-health' },
-    { label: 'Veterinary Drugs', link: '/products/veterinary-drugs' },
-    { label: 'Cosmetics', link: '/products/cosmetics' },
-  ],
+  productLinks: productLineLinks,
 };
 
 export const servicesFallback: ServicesContent = {
@@ -117,7 +115,7 @@ export const servicesFallback: ServicesContent = {
     },
     {
       title: 'Cosmetic',
-      subtitle: 'materials',
+      subtitle: 'Materials',
       description:
         'We offer high-purity cosmetic raw materials and functional ingredients, supporting stable sourcing and innovative formulation for global care brands.',
       buttonText: 'More',
@@ -159,6 +157,51 @@ export const newsFallback: NewsContent = {
       buttonText: 'Read more',
       publishedDate: '2026-04-09',
     },
+    {
+      title: 'Fordtek expands coordination for European market support',
+      summary: 'Fordtek continues strengthening local coordination in Europe to improve response speed, account support and market-facing execution across the region.',
+      slug: 'fordtek-expands-coordination-for-european-market-support',
+      coverImageUrl: brieflyImg,
+      coverImageAlt: 'Exhibition discussion.',
+      buttonText: 'Read more',
+      publishedDate: '2026-04-08',
+    },
+    {
+      title: 'New sourcing alignment improves delivery planning at headquarters',
+      summary: 'Cross-functional collaboration between sourcing, logistics and key-account teams is helping Fordtek improve planning rhythm for major customer programs.',
+      slug: 'new-sourcing-alignment-improves-delivery-planning-at-headquarters',
+      coverImageUrl: hardworkImg,
+      coverImageAlt: 'Team at exhibition booth.',
+      buttonText: 'Read more',
+      publishedDate: '2026-04-07',
+    },
+    {
+      title: 'Fordtek highlights long-term investment in overseas operations',
+      summary: 'Recent company updates continue to emphasize Fordtek\'s long-term approach to overseas warehousing, local service capability and regional market presence.',
+      slug: 'fordtek-highlights-long-term-investment-in-overseas-operations',
+      coverImageUrl: vietShrimpImg,
+      coverImageAlt: 'Business conversation.',
+      buttonText: 'Read more',
+      publishedDate: '2026-04-06',
+    },
+    {
+      title: 'Global exhibition calendar supports closer customer engagement',
+      summary: 'By participating in international industry events, Fordtek keeps expanding face-to-face communication with customers, suppliers and market partners.',
+      slug: 'global-exhibition-calendar-supports-closer-customer-engagement',
+      coverImageUrl: brieflyImg,
+      coverImageAlt: 'Trade show moment.',
+      buttonText: 'Read more',
+      publishedDate: '2026-04-05',
+    },
+    {
+      title: 'Operational updates continue across core Fordtek regions',
+      summary: 'Teams in China, the United States, Europe and South America are continuing to improve coordination standards and commercial support across markets.',
+      slug: 'operational-updates-continue-across-core-fordtek-regions',
+      coverImageUrl: hardworkImg,
+      coverImageAlt: 'Fordtek event activity.',
+      buttonText: 'Read more',
+      publishedDate: '2026-04-04',
+    },
   ],
 };
 
@@ -187,7 +230,6 @@ export const footerFallback: FooterContent = {
         { label: 'Who We Are', link: '/who-we-are', isTitle: true },
         { label: 'Our company', link: '/our-company', isTitle: false },
         { label: 'Our locations', link: '/our-locations', isTitle: false },
-        { label: 'Our team', link: '/our-team', isTitle: false },
         { label: 'News', link: '/news', isTitle: false },
       ],
     },
@@ -195,7 +237,6 @@ export const footerFallback: FooterContent = {
       links: [
         { label: 'How We Do It', link: '/how-we-do-it', isTitle: true },
         { label: 'Certificates', link: '/certificates', isTitle: false },
-        { label: 'Worldwide warehouses', link: '/worldwide-warehouses', isTitle: false },
         { label: 'Join Us', link: '/join-us', isTitle: true },
         { label: 'Contact Us', link: '/contact', isTitle: true },
       ],

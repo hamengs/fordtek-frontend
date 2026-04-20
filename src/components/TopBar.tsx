@@ -1,4 +1,4 @@
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/home/logo.svg';
 import type { TopBarContent } from '../types/site-settings';
@@ -27,8 +27,6 @@ function renderNavAnchor(item: NavLink, className: string) {
 export function TopBar({
   leftLinks,
   rightLinks,
-  languageText,
-  languageIconText,
   isEnabled,
   variant = 'default',
 }: TopBarContent & { variant?: 'default' | 'overlay' }) {
@@ -41,14 +39,11 @@ export function TopBar({
     ? 'border-b border-slate-200 bg-white text-slate-900'
     : 'bg-white text-slate-900';
   const navClass = isOverlay
-    ? 'text-slate-900 transition-colors hover:text-sky-500'
-    : 'text-slate-900 transition-colors hover:text-sky-400';
+    ? 'text-slate-700 transition-colors hover:text-slate-950'
+    : 'text-slate-700 transition-colors hover:text-slate-950';
   const utilityClass = isOverlay
-    ? 'whitespace-nowrap text-slate-900 transition-colors hover:text-sky-500'
-    : 'whitespace-nowrap text-slate-900 transition-colors hover:text-black';
-  const languageClass = isOverlay
-    ? 'flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-300 px-3 py-1.5 text-slate-900 transition-colors hover:border-slate-500'
-    : 'flex items-center gap-2 whitespace-nowrap rounded-full border border-slate-400 px-3 py-1.5 text-slate-900 transition-colors hover:border-slate-700 hover:text-black';
+    ? 'text-slate-700 transition-colors hover:text-slate-950'
+    : 'text-slate-700 transition-colors hover:text-slate-950';
 
   return (
     <div className={rootClass}>
@@ -56,19 +51,19 @@ export function TopBar({
       {/* Controls the usable width of the top bar content and the left/right padding. */}
       <div className="max-w-7xl mx-auto px-5 sm:px-10 lg:px-8">
         {/* Controls the layout of the top bar: the main menu group and the language switcher. */}
-        <div className="flex min-h-[64px] items-center justify-between gap-7">
+        <div className="flex min-h-[56px] items-center justify-around gap-5">
           {isOverlay ? (
             <Link to="/" className="flex shrink-0 items-center" aria-label="Go to homepage">
-              <img src={logoImg} alt="Fordtek logo" className="h-11 w-auto" />
+              <img src={logoImg} alt="Fordtek logo" className="h-8 w-auto" />
             </Link>
           ) : (
-            <Link to="/" className="hidden shrink-0 items-center lg:flex" aria-label="Go to homepage">
-              <img src={logoImg} alt="Fordtek logo" className="h-11 w-auto" />
+            <Link to="/" className="flex shrink-0 items-center" aria-label="Go to homepage">
+              <img src={logoImg} alt="Fordtek logo" className="h-8 w-auto" />
             </Link>
           )}
 
           {/* Controls the main top bar menu text: Home, About Us, Join Us, News, Contact Us. */}
-          <div className="flex flex-wrap items-center justify-end gap-y-2 text-[14px] font-semibold uppercase tracking-[0.14em]">
+          <div className="flex flex-wrap items-center justify-end gap-y-1 text-[12.5px] font-semibold tracking-[0.04em]">
             {leftLinks.map((item) => {
               const hasChildren = Boolean(item.children?.length);
               const isClickable = Boolean(item.link);
@@ -76,31 +71,31 @@ export function TopBar({
               return (
                 <div
                   key={`${item.label}-${item.link}`}
-                  className={`group relative ${hasChildren ? 'mr-10' : 'mr-15'} last:mr-0`}
+                  className={`group relative ${hasChildren ? 'mr-6' : 'mr-7'} last:mr-0`}
                 >
                   {/* Controls each visible top-level menu label and its hover color. */}
                   {isClickable && item.link.startsWith('/') ? (
                     <Link
                       to={item.link}
-                      className={`flex items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
+                      className={`flex items-center gap-1 whitespace-nowrap py-2 ${navClass}`}
                     >
                       {item.label}
-                      {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
+                      {hasChildren ? <ChevronDown className="h-2.5 w-2.5" /> : null}
                     </Link>
                   ) : isClickable ? (
                     <a
                       href={item.link}
-                      className={`flex items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
+                      className={`flex items-center gap-1 whitespace-nowrap py-2 ${navClass}`}
                     >
                       {item.label}
-                      {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
+                      {hasChildren ? <ChevronDown className="h-2.5 w-2.5" /> : null}
                     </a>
                   ) : (
                     <span
-                      className={`flex cursor-default items-center gap-1.5 whitespace-nowrap py-3 ${navClass}`}
+                      className={`flex cursor-default items-center gap-1 whitespace-nowrap py-2 ${navClass}`}
                     >
                       {item.label}
-                      {hasChildren ? <ChevronDown className="h-3.5 w-3.5" /> : null}
+                      {hasChildren ? <ChevronDown className="h-2.5 w-2.5" /> : null}
                     </span>
                   )}
 
@@ -112,7 +107,7 @@ export function TopBar({
                           <div key={`${child.label}-${child.link}`}>
                             {renderNavAnchor(
                               child,
-                              'block rounded-lg px-3 py-2.5 text-[13px] font-medium tracking-[0.04em] transition-colors hover:bg-slate-100',
+                              'block rounded-lg px-3 py-2.5 text-[12px] font-medium tracking-[0.02em] transition-colors hover:bg-slate-100',
                             )}
                           </div>
                         ))}
@@ -125,7 +120,7 @@ export function TopBar({
           </div>
 
           {/* Controls the right-side utility area, including optional links and the language switch button. */}
-          <div className="flex items-center gap-3 text-[14px] font-semibold uppercase tracking-[0.14em]">
+          <div className="flex items-center gap-2">
             {rightLinks.map((item) => (
               <a
                 key={`${item.label}-${item.link}`}
@@ -135,16 +130,6 @@ export function TopBar({
                 {item.label}
               </a>
             ))}
-
-            {/* Controls the language switch button shown as EN plus the globe icon. */}
-            <button
-              type="button"
-              className={languageClass}
-            >
-              <span>{languageText}</span>
-              <Globe className="h-3.5 w-3.5" />
-              <span className="sr-only">{languageIconText}</span>
-            </button>
           </div>
         </div>
       </div>
