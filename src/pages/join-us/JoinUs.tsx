@@ -167,14 +167,7 @@ export default function JoinUs() {
               </div>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:col-span-2">
-                <img
-                  src={talkingWithCustomersImg}
-                  alt="Fordtek team building"
-                  className="h-full min-h-[280px] w-full object-cover"
-                />
-              </div>
+            <div className="grid gap-5 sm:grid-rows-2">
               <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
                 <img
                   src={rooftopGardenImg}
