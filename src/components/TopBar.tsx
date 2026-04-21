@@ -39,8 +39,8 @@ export function TopBar({
     ? 'border-b border-slate-200 bg-white text-slate-900'
     : 'bg-white text-slate-900';
   const navClass = isOverlay
-    ? 'text-slate-700 transition-colors hover:text-slate-950'
-    : 'text-slate-700 transition-colors hover:text-slate-950';
+    ? 'text-slate-700 transition-colors hover:text-sky-600'
+    : 'text-slate-700 transition-colors hover:text-sky-600';
   const utilityClass = isOverlay
     ? 'text-slate-700 transition-colors hover:text-slate-950'
     : 'text-slate-700 transition-colors hover:text-slate-950';
@@ -107,7 +107,7 @@ export function TopBar({
                           <div key={`${child.label}-${child.link}`}>
                             {renderNavAnchor(
                               child,
-                              'block rounded-lg px-3 py-2.5 text-[12px] font-medium tracking-[0.02em] transition-colors hover:bg-slate-100',
+                              'block rounded-lg px-3 py-2.5 text-[12px] font-medium tracking-[0.02em] transition-colors hover:bg-slate-100 hover:text-sky-600',
                             )}
                           </div>
                         ))}

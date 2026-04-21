@@ -10,11 +10,14 @@ import hqBuildingImg from '../../assets/home/hq-building.jpg';
 import receptionLoungeImg from '../../assets/home/reception-lounge.jpg';
 import meetingRoomImg from '../../assets/home/meeting-room.jpg';
 import rooftopGardenImg from '../../assets/home/rooftop-garden.jpg';
+import firstFloorEntranceImg from '../../assets/home/firstFloorEntrance.jpg';
+import talkingWithCustomersImg from '../../assets/home/talkingWithCustomers.jpg';
+import hardworkImg from '../../assets/home/hardwork.jpg';
 import pingguoIcon from '../../assets/images/about-us/pingguo.svg';
 import yuerIcon from '../../assets/images/about-us/yuer.svg';
 import yaopingIcon from '../../assets/images/about-us/yaoping.svg';
 import kouhonIcon from '../../assets/images/about-us/kouhong.svg';
-import incosPoster from '../../assets/images/about-us/incosPoster_cropped.png'
+import incosPoster from '../../assets/images/about-us/incosPoster_cropped.png';
 
 const quickLinks = [
   { label: 'Introduction', href: '#introduction' },
@@ -72,6 +75,108 @@ const strengths = [
     value: 'Cross-border delivery',
   },
 ];
+
+type MosaicImage = {
+  src: string;
+  alt: string;
+  className: string;
+};
+
+const introMosaicImages: MosaicImage[] = [
+  {
+    src: receptionLoungeImg,
+    alt: 'Fordtek reception lounge',
+    className: 'col-span-7 row-span-5',
+  },
+  {
+    src: firstFloorEntranceImg,
+    alt: 'Fordtek entrance',
+    className: 'col-span-5 row-span-3',
+  },
+  {
+    src: talkingWithCustomersImg,
+    alt: 'Fordtek customer meeting',
+    className: 'col-span-4 row-span-3',
+  },
+  {
+    src: meetingRoomImg,
+    alt: 'Fordtek meeting room',
+    className: 'col-span-9 row-span-2',
+  },
+];
+
+const purposeMosaicImages: MosaicImage[] = [
+  {
+    src: meetingRoomImg,
+    alt: 'Fordtek purpose meeting',
+    className: 'col-span-5 row-span-4',
+  },
+  {
+    src: hardworkImg,
+    alt: 'Fordtek team work',
+    className: 'col-span-7 row-span-5',
+  },
+  {
+    src: rooftopGardenImg,
+    alt: 'Fordtek rooftop garden',
+    className: 'col-span-7 row-span-3',
+  },
+  {
+    src: receptionLoungeImg,
+    alt: 'Fordtek office lounge',
+    className: 'col-span-5 row-span-4',
+  },
+];
+
+const futureMosaicImages: MosaicImage[] = [
+  {
+    src: rooftopGardenImg,
+    alt: 'Fordtek future space',
+    className: 'col-span-7 row-span-4',
+  },
+  {
+    src: firstFloorEntranceImg,
+    alt: 'Fordtek office entrance',
+    className: 'col-span-5 row-span-3',
+  },
+  {
+    src: hqBuildingImg,
+    alt: 'Fordtek headquarters',
+    className: 'col-span-5 row-span-3',
+  },
+  {
+    src: talkingWithCustomersImg,
+    alt: 'Fordtek team discussion',
+    className: 'col-span-7 row-span-2',
+  },
+];
+
+function PhotoMosaic({
+  images,
+  className = '',
+}: {
+  images: MosaicImage[];
+  className?: string;
+}) {
+  return (
+    <div
+      className={`grid h-[340px] grid-cols-12 grid-rows-8 gap-2 overflow-hidden bg-transparent sm:h-[390px] lg:h-[440px] ${className}`}
+    >
+      {images.map((image) => (
+        <div
+          key={image.alt}
+          className={`overflow-hidden rounded-sm ${image.className}`}
+        >
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function AboutUs() {
   const isHeaderVisible = useHeaderVisibility();
@@ -163,13 +268,7 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-100 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
-            <img
-              src={receptionLoungeImg}
-              alt="Fordtek introduction"
-              className="h-full min-h-[320px] w-full object-cover"
-            />
-          </div>
+          <PhotoMosaic images={introMosaicImages} />
         </section>
 
         <section
@@ -177,13 +276,7 @@ export default function AboutUs() {
           className="bg-[linear-gradient(180deg,#ffffff_0%,#f4f8fb_100%)]"
         >
           <div className="mx-auto grid max-w-7xl gap-14 px-6 py-18 sm:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-16 lg:py-24">
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-100 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
-              <img
-                src={meetingRoomImg}
-                alt="Fordtek purpose"
-                className="h-full min-h-[320px] w-full object-cover"
-              />
-            </div>
+            <PhotoMosaic images={purposeMosaicImages} />
 
             <div className="max-w-2xl lg:ml-auto">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
@@ -312,13 +405,8 @@ export default function AboutUs() {
                 keep extending it into dedicated subpages once you like the visual direction.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-slate-200 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
-              <img
-                src={rooftopGardenImg}
-                alt="Fordtek future sections"
-                className="h-full min-h-[220px] w-full object-cover lg:w-[360px]"
-              />
-            </div>
+            <img className='max-w-100 rounded-[2rem]'
+            src = {rooftopGardenImg} />
           </div>
         </section>
       </main>
