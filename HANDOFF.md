@@ -619,3 +619,115 @@ Choose one:
 - `src/pages/join-us/Jobs.tsx`
 - `src/App.tsx`
 - `HANDOFF.md`
+
+---
+
+## Update: 2026-04-20 / 2026-04-21 (Navigation, Home News, Join Us Cleanup)
+
+### What changed in this round
+
+#### Top navigation was simplified
+- The previous two-row header structure was reduced to a single `TopBar`.
+- Product links were moved into a top-level `Products` dropdown.
+- `About Us` dropdown was simplified:
+  - kept `Our Company`
+  - kept `Our Locations`
+  - kept `Certificates`
+  - removed `Our Team`
+  - removed `Worldwide Warehouses`
+- `News` was placed after `About Us`.
+- `Join Us` became a single top-level menu item.
+- Language switching was removed because the site is currently English-only.
+- Social links were tested in the top bar but removed from the header; social links remain better suited for footer / contact surfaces.
+- `TopBar` was visually tuned:
+  - smaller, lighter header style
+  - smaller logo
+  - lighter menu typography
+  - centered navigation treatment
+
+#### Our Team was removed from active routing
+- `src/pages/about-us/OurTeam.tsx` was deleted.
+- `/about-us/our-team` now redirects to `/about-us/our-company`.
+- Team portraits remain in `src/assets/team` for possible future reuse, but the active page is gone.
+
+#### Join Us was consolidated into one long page
+- The separate Jobs page was deleted:
+  - `src/pages/join-us/Jobs.tsx`
+- `JoinUs.tsx` now combines:
+  - Why Choose Us content
+  - Jobs overview
+  - external job-platform placeholders
+  - regional role placeholders
+  - resume delivery emails
+- Route behavior:
+  - `/join-us` renders the consolidated page
+  - `/join-us/why-choose-us` redirects to `/join-us`
+  - `/join-us/jobs` redirects to `/join-us`
+
+#### Home News was redesigned several times and currently uses a hybrid layout
+- `src/components/NewsSection.tsx` now supports:
+  - upper featured news section with alternating image/text layout
+  - image-dominant asymmetric layout
+  - only `Read more` links are clickable in featured news, not the whole block
+  - lower pure-text news archive area
+  - pagination controls for the text list
+- Additional fallback news items were added in `src/content/homePage.ts` so pagination can be tested without CMS data.
+- The lower text area now uses a flat light background, not a gradient.
+
+#### Product Line visual style was normalized
+- `src/components/ServicesSection.tsx` was adjusted to remove gradient panel backgrounds.
+- Product panels now use a consistent light gray background (`#f8fafc`) to better match other pages.
+
+#### Floating News drawer experiment was added
+- `Home.tsx` now includes a desktop-only right-side floating news drawer.
+- This is explicitly a preview / experiment, not necessarily final direction.
+- Current behavior:
+  - visible only on `xl` screens and above
+  - fixed to the right side of the viewport
+  - default state is collapsed
+  - a small `News` handle remains visible
+  - hovering or focusing the drawer slides the whole drawer open
+- Current implementation detail:
+  - outer drawer width: `344px`
+  - collapsed transform: `translate-x-[320px]`
+  - the short `News` handle is an absolutely positioned element attached to the left side of the drawer
+  - the main panel and handle now move as one visual unit
+
+### Important current state
+
+#### Navigation state
+- Current header menu is:
+  - `Home`
+  - `Products`
+  - `About Us`
+  - `News`
+  - `Join Us`
+  - `Contact Us`
+- `Products` dropdown currently contains:
+  - `Human Nutrition`
+  - `Animal Health`
+  - `Veterinary Drugs`
+  - `Cosmetics`
+
+#### News state
+- Home now contains both:
+  - the full in-page `NewsSection`
+  - the experimental right-side floating news drawer
+- The user may still decide to remove the floating drawer if it feels too intrusive.
+- The independent `/news` page has not been built yet.
+
+#### Known placeholders
+- Social media links are still placeholder-style in footer fallback data.
+- Job platform links are placeholders.
+- Regional job copy is placeholder copy for layout testing.
+- Extra fallback news items are placeholder content for pagination testing.
+
+### Files most relevant for the next thread
+- `src/components/TopBar.tsx`
+- `src/content/homePage.ts`
+- `src/pages/Home.tsx`
+- `src/components/NewsSection.tsx`
+- `src/components/ServicesSection.tsx`
+- `src/pages/join-us/JoinUs.tsx`
+- `src/App.tsx`
+- `HANDOFF.md`

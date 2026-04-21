@@ -74,46 +74,48 @@ export default function Home() {
       </div>
 
       <aside className="fixed right-0 top-[132px] z-30 hidden xl:block">
-        <div className="group w-[344px] translate-x-[320px] transition-transform duration-300 hover:translate-x-0 focus-within:translate-x-0">
-          <div className="flex overflow-hidden rounded-l-[2rem] border border-r-0 border-slate-200/80 bg-white/96 shadow-[0_22px_55px_rgba(15,23,42,0.12)] backdrop-blur-sm">
-            <div className="flex w-6 shrink-0 items-center justify-center border-r border-slate-200/80 bg-white/92">
+        <div className="group w-[344px] translate-x-[344px] transition-transform duration-300 hover:translate-x-0 focus-within:translate-x-0">
+          <div className="relative">
+            <div className="absolute left-0 top-16 z-10 flex h-24 w-6 -translate-x-full items-center justify-center rounded-l-2xl border border-r-0 border-slate-200/80 bg-white/92 shadow-[0_16px_40px_rgba(15,23,42,0.10)] backdrop-blur-sm">
               <span className="origin-center -rotate-90 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
                 News
               </span>
             </div>
 
-            <div className="w-[320px]">
-              <div className="border-b border-slate-200/80 px-5 py-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
-                  Floating News
-                </p>
-                <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-slate-950">
-                  Preview latest updates
-                </p>
-              </div>
+            <div className="overflow-hidden rounded-l-[2rem] border border-r-0 border-slate-200/80 bg-white/96 shadow-[0_22px_55px_rgba(15,23,42,0.12)] backdrop-blur-sm">
+              <div className="w-[320px]">
+                <div className="border-b border-slate-200/80 px-5 py-4">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-400">
+                    Floating News
+                  </p>
+                  <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-slate-950">
+                    Preview latest updates
+                  </p>
+                </div>
 
-              <div className="max-h-[70vh] overflow-y-auto px-5 py-3">
-                {newsContent.items.slice(0, 5).map((item) => (
-                  <a
-                    key={item.slug}
-                    href={`/news/${item.slug}`}
-                    className="block border-b border-slate-200/80 py-4 last:border-b-0"
-                  >
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">
-                      {item.publishedDate}
-                    </p>
-                    <p className="mt-2 text-base font-semibold leading-snug text-slate-950">
-                      {item.title}
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
-                      {item.summary}
-                    </p>
-                    <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-700 transition-colors hover:text-slate-950">
-                      Read more
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </span>
-                  </a>
-                ))}
+                <div className="max-h-[70vh] overflow-y-auto px-5 py-3">
+                  {newsContent.items.slice(0, 5).map((item) => (
+                    <a
+                      key={item.slug}
+                      href={`/news/${item.slug}`}
+                      className="block border-b border-slate-200/80 py-4 last:border-b-0"
+                    >
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">
+                        {item.publishedDate}
+                      </p>
+                      <p className="mt-2 text-base font-semibold leading-snug text-slate-950">
+                        {item.title}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">
+                        {item.summary}
+                      </p>
+                      <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-sky-700 transition-colors hover:text-slate-950">
+                        Read more
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </span>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
