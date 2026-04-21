@@ -2,6 +2,9 @@ node_modules/
 build/
 dist/
 coverage/
+src/pages/news/
+src/pages/products/
+src/pages/contact-us/
 .DS_Store
 *.log
 .env*

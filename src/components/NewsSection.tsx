@@ -20,7 +20,7 @@ export function NewsSection({ items }: NewsContent) {
   const paginatedItems = listItems.slice(pageStart, pageStart + LIST_PAGE_SIZE);
 
   return (
-    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] py-20 sm:py-24 lg:py-28">
+    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] py-18 sm:py-22 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
@@ -34,43 +34,43 @@ export function NewsSection({ items }: NewsContent) {
           </p>
         </div>
 
-        <div className="mt-14 space-y-16">
+        <div className="mt-14 space-y-12 lg:space-y-14">
           {featuredItems.map((item, index) => {
             const isReversed = index % 2 === 1;
 
             return (
               <article
                 key={item.slug}
-                className={`grid items-center gap-8 lg:gap-12 ${
-                  isReversed ? 'lg:grid-cols-[0.6fr_1.4fr]' : 'lg:grid-cols-[1.4fr_0.6fr]'
+                className={`grid items-center gap-8 lg:gap-14 ${
+                  isReversed ? 'lg:grid-cols-[0.9fr_1.1fr]' : 'lg:grid-cols-[1.1fr_0.9fr]'
                 }`}
               >
                 <div className={isReversed ? 'lg:order-2' : ''}>
-                  <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+                  <div className="overflow-hidden rounded-[1.25rem] border border-slate-200/80 bg-white shadow-[0_12px_32px_rgba(15,23,42,0.045)]">
                     <img
                       src={item.coverImageUrl}
                       alt={item.coverImageAlt}
-                      className="h-[300px] w-full object-cover sm:h-[380px] lg:h-[500px]"
+                      className="h-[260px] w-full object-cover sm:h-[320px] lg:h-[390px]"
                     />
                   </div>
                 </div>
 
-                <div className={`max-w-md ${isReversed ? 'lg:order-1 lg:justify-self-end' : ''}`}>
+                <div className={`max-w-xl ${isReversed ? 'lg:order-1 lg:justify-self-end' : ''}`}>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-400">
                     {item.publishedDate}
                   </p>
-                  <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl">
+                  <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
                     {item.title}
                   </h3>
-                  <p className="mt-6 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
+                  <p className="mt-6 max-w-lg text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
                     {item.summary}
                   </p>
                   <a
                     href={`/news/${item.slug}`}
-                    className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition-colors hover:text-sky-700"
+                    className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-950 transition-colors hover:text-sky-700"
                   >
-                    {item.buttonText}
-                    <ArrowRight className="h-4 w-4 transition-transform hover:translate-x-1" />
+                    {item.buttonText} about this update
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
               </article>
@@ -78,7 +78,7 @@ export function NewsSection({ items }: NewsContent) {
           })}
         </div>
 
-        <div className="mt-20 overflow-hidden rounded-[2.5rem] border border-slate-200/80 bg-[#f8fafc] text-slate-900 shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+        <div className="mt-16 overflow-hidden rounded-[1.5rem] border border-slate-200/80 bg-[#f8fafc] text-slate-900 shadow-[0_16px_42px_rgba(15,23,42,0.06)]">
           <div className="grid gap-10 px-6 py-10 sm:px-10 sm:py-12 lg:grid-cols-[0.3fr_0.7fr] lg:px-12 lg:py-14">
             <div className="max-w-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">

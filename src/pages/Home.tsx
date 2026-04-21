@@ -122,13 +122,9 @@ export default function Home() {
         </div>
       </aside>
 
-      <div className="pb-16 sm:pb-20 lg:pb-24">
-        <NewsSection {...newsContent} />
-      </div>
+      <NewsSection {...newsContent} />
 
-      <div className="pb-16 sm:pb-20 lg:pb-24">
-        <ServicesSection {...servicesContent} />
-      </div>
+      <ServicesSection {...servicesContent} />
       <Footer {...footerContent} />
     </div>
   );

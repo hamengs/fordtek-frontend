@@ -63,8 +63,8 @@ export const topBarFallback: TopBarContent = {
       //   { label: 'Trade Shows', link: '/news/trade-shows' },
       // ],
     },
-    { label: 'Join Us', link: '/join-us' },
     { label: 'Contact Us', link: '/contact' },
+    { label: 'Join Us', link: '/join-us' },
   ],
   rightLinks: [],
 };
