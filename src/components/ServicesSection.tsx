@@ -61,16 +61,21 @@ export function ServicesSection({ items }: ServicesContent) {
               >
                 <div
                   aria-hidden="true"
-                  className={`pointer-events-none absolute top-1/2 hidden -translate-y-1/2 select-none text-[88px] tracking-[0.01em] font-semibold uppercase tracking-[-0.08em] leading-none opacity-[0.3] sm:text-[118px] lg:block lg:text-[140px] ${theme.ghost} ${
+                  className={`pointer-events-none hidden select-none absolute top-1/2 hidden -translate-y-1/2 flex flex-col text-[88px] font-semibold uppercase tracking-[-0.06em] leading-none opacity-[0.18] sm:text-[118px] lg:flex lg:text-[120px] ${theme.ghost} ${
                     isRightAligned ? 'left-12' : 'right-12'
                   }`}
                   style={{ textShadow: '0 10px 10px rgba(15, 23, 42, 0.5)' }}
                 >
-                  {item.title}
+                  <div>
+                    {item.title}
+                  </div>
+                  <p className='text-[40px] tracking-[0.08em]'>
+                    {item.subtitle}
+                  </p>
                 </div>
 
                 <div
-                  className={`relative z-10 flex max-w-3xl flex-col ${
+                  className={`relative z-10 flex max-w-2xl flex-col ${
                     isRightAligned ? 'lg:items-end' : 'lg:items-start'
                   }`}
                 >
@@ -81,16 +86,8 @@ export function ServicesSection({ items }: ServicesContent) {
                     <span className="text-sm font-medium tabular-nums">0{index + 1}</span>
                     <span className={`h-px w-16 transition-all duration-300 group-hover:w-24 ${theme.rule}`} />
                   </div>
-                  {/* <h2
-                    className="max-w-3xl text-4xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-5xl lg:text-7xl"
-                    style={{ textShadow: '0 8px 24px rgba(148, 163, 184, 0.35)' }}
-                  >
-                    {item.title}
-                  </h2> */}
-                  <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-800 sm:text-xl lg:text-[1.7rem] lg:leading-[1.35]">
-                    {item.subtitle}
-                  </p>
-                  <span className="mt-6 max-w-2xl text-sm leading-7 text-slate-800 sm:text-[15px] lg:text-base">
+
+                  <span className="mt-6 max-w-[26rem] text-sm leading-7 text-slate-800 sm:text-[15px] lg:text-base">
                     {item.description}
                   </span>
                   <span

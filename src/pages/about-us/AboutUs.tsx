@@ -14,6 +14,7 @@ import pingguoIcon from '../../assets/images/about-us/pingguo.svg';
 import yuerIcon from '../../assets/images/about-us/yuer.svg';
 import yaopingIcon from '../../assets/images/about-us/yaoping.svg';
 import kouhonIcon from '../../assets/images/about-us/kouhong.svg';
+import incosPoster from '../../assets/images/about-us/incosPoster_cropped.png'
 
 const quickLinks = [
   { label: 'Introduction', href: '#introduction' },

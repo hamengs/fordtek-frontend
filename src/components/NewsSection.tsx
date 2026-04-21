@@ -56,11 +56,8 @@ export function NewsSection({ items }: NewsContent) {
                 </div>
 
                 <div className={`max-w-md ${isReversed ? 'lg:order-1 lg:justify-self-end' : ''}`}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-400">
                     {item.publishedDate}
-                  </p>
-                  <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-700">
-                    Featured News
                   </p>
                   <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-4xl">
                     {item.title}
@@ -120,7 +117,7 @@ export function NewsSection({ items }: NewsContent) {
                   type="button"
                   onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
                   disabled={safePage === 1}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition-opacity disabled:cursor-not-allowed disabled:opacity-35"
+                  className="inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-slate-700 transition-opacity disabled:cursor-not-allowed disabled:opacity-35"
                 >
                   <ChevronLeft className="h-4 w-4" />
                   Previous
@@ -136,7 +133,7 @@ export function NewsSection({ items }: NewsContent) {
                         key={page}
                         type="button"
                         onClick={() => setCurrentPage(page)}
-                        className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition-colors ${
+                        className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-sm font-semibold transition-colors ${
                           isActive
                             ? 'bg-slate-950 text-white'
                             : 'bg-white text-slate-700 hover:bg-slate-100'
@@ -152,7 +149,7 @@ export function NewsSection({ items }: NewsContent) {
                   type="button"
                   onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
                   disabled={safePage === totalPages}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 transition-opacity disabled:cursor-not-allowed disabled:opacity-35"
+                  className="inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-slate-700 transition-opacity disabled:cursor-not-allowed disabled:opacity-35"
                 >
                   Next
                   <ChevronRight className="h-4 w-4" />

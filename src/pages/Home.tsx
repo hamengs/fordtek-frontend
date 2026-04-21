@@ -77,7 +77,7 @@ export default function Home() {
         <div className="group w-[344px] translate-x-[344px] transition-transform duration-300 hover:translate-x-0 focus-within:translate-x-0">
           <div className="relative">
             <div className="absolute left-0 top-16 z-10 flex h-24 w-6 -translate-x-full items-center justify-center rounded-l-2xl border border-r-0 border-slate-200/80 bg-white/92 shadow-[0_16px_40px_rgba(15,23,42,0.10)] backdrop-blur-sm">
-              <span className="origin-center -rotate-90 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+              <span className="origin-center whitespace-nowrap text-xs font-bold uppercase tracking-[0.14em] text-slate-500 [backface-visibility:hidden] [transform:translateZ(0)_rotate(-90deg)]">
                 News
               </span>
             </div>

@@ -269,45 +269,6 @@ export default function OurLocations() {
           </div>
         </section>
 
-        <section className="border-y border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#f2f7fb_100%)]">
-          <div className="mx-auto max-w-7xl px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-                Country Footprint
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-[1.06] tracking-[-0.05em] text-slate-950 sm:text-4xl">
-                Nine markets in view, with room to keep growing.
-              </h2>
-            </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {countries.map((country) => (
-                <div
-                  key={country.name}
-                  className="flex items-center gap-4 rounded-[1.5rem] border border-slate-200/80 bg-white px-5 py-4 shadow-[0_12px_30px_rgba(15,23,42,0.04)]"
-                >
-                  <div className="overflow-hidden rounded-md border border-slate-200 shadow-[0_6px_16px_rgba(15,23,42,0.08)]">
-                    <img
-                      src={country.flagUrl}
-                      alt={`${country.name} flag`}
-                      className="h-10 w-14 object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div>
-                    <p className="text-base font-semibold text-slate-900">
-                      {country.name}
-                    </p>
-                    <p className="mt-1 text-sm font-medium uppercase tracking-[0.14em] text-slate-500">
-                      {country.region}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
           <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_0.82fr]">
             <div className="self-start rounded-[2.5rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] p-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:p-10 lg:p-12">
