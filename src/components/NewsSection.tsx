@@ -21,7 +21,7 @@ export function NewsSection({ items }: NewsContent) {
 
   return (
     <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)] py-18 sm:py-22 lg:py-24">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[82rem] px-6 sm:px-10 lg:px-12 xl:px-14">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
             News
@@ -29,9 +29,6 @@ export function NewsSection({ items }: NewsContent) {
           <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-slate-950 sm:text-4xl lg:text-5xl">
             Recent updates from Fordtek, presented before the product lines.
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-            A homepage news view with visual highlights first, followed by a complete text list.
-          </p>
         </div>
 
         <div className="mt-14 space-y-12 lg:space-y-14">

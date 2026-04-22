@@ -9,7 +9,6 @@ import {
 } from 'lucide-react';
 import { FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaFacebookF, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { footerFallback, topBarFallback } from '../../content/homePage';
@@ -36,24 +35,6 @@ const contactMethods = [
     value: 'Service@fordtek.com',
     href: 'mailto:Service@fordtek.com',
     icon: Mail,
-  },
-];
-
-const socialLinks = [
-  {
-    label: 'Facebook',
-    href: 'https://www.facebook.com',
-    icon: FaFacebookF,
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com',
-    icon: FaLinkedinIn,
-  },
-  {
-    label: 'X',
-    href: 'https://x.com',
-    icon: FaXTwitter,
   },
 ];
 
@@ -129,132 +110,99 @@ export default function ContactUs() {
               For product inquiries, orders or partnership opportunities, our global team is
               ready to help. Items marked by * are required.
             </p>
-
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {['Enter details', 'Required items', 'Check information'].map((item, index) => (
-                <div
-                  key={item}
-                  className="rounded-[1.25rem] border border-slate-200/80 bg-[#f8fafc] px-4 py-4"
-                >
-                  <p className="text-sm font-semibold tabular-nums text-sky-700">
-                    0{index + 1}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-slate-950">{item}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="mt-12 rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-[0_18px_45px_rgba(15,23,42,0.06)] sm:p-8 lg:p-10"
-          >
-            <div className="grid gap-5 sm:grid-cols-2">
-              {formFields.map((field) => (
-                <label key={field.name} className="block">
-                  <span className="text-sm font-semibold text-slate-700">
-                    {field.label}
-                    {field.required ? ' *' : ''}
-                  </span>
-                  <input
-                    name={field.name}
-                    type={field.type ?? 'text'}
-                    required={field.required}
-                    className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-500 focus:bg-white"
-                  />
-                </label>
-              ))}
-            </div>
-
-            <label className="mt-5 block">
-              <span className="text-sm font-semibold text-slate-700">
-                Details of inquiry *
-              </span>
-              <textarea
-                name="details"
-                required
-                rows={5}
-                className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm leading-7 text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-500 focus:bg-white"
-              />
-            </label>
-
-            <label className="mt-5 block">
-              <span className="text-sm font-semibold text-slate-700">
-                Comments / Notes
-              </span>
-              <textarea
-                name="comments"
-                rows={3}
-                className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm leading-7 text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-500 focus:bg-white"
-              />
-            </label>
-
-            <button
-              type="submit"
-              className="mt-7 inline-flex cursor-pointer items-center gap-3 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-700"
-            >
-              Check the entered information
-              <ClipboardCheck className="h-4 w-4" />
-            </button>
-          </form>
-        </section>
-
-        <section className="border-y border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#f2f7fb_100%)]">
-          <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
-            <div className="max-w-3xl">
+          <div className="mt-12 flex flex-col overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] lg:flex-row">
+            <aside className="border-b border-slate-200/80 bg-[#f8fafc] p-6 sm:p-8 lg:w-[34%] lg:border-b-0 lg:border-r lg:p-10">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-                Contact Information
+                Direct Contact
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-[1.06] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
+              <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.04em] text-slate-950 sm:text-3xl">
                 Reach the Fordtek team directly.
-              </h2>
-            </div>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {contactMethods.map(({ icon: Icon, label, value, href }) => {
-                const content = (
-                  <article className="h-full rounded-[1.5rem] border border-slate-200/80 bg-white px-6 py-6 shadow-[0_16px_40px_rgba(15,23,42,0.045)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_50px_rgba(15,23,42,0.07)]">
-                    <Icon className="h-5 w-5 text-sky-700" />
-                    <p className="mt-5 text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                      {label}
-                    </p>
-                    <p className="mt-3 text-xl font-semibold tracking-[-0.03em] text-slate-950">
-                      {value}
-                    </p>
-                  </article>
-                );
-
-                return href ? (
-                  <a key={label} href={href} className="block">
-                    {content}
-                  </a>
-                ) : (
-                  <div key={label}>{content}</div>
-                );
-              })}
-            </div>
-
-            <div className="mt-10 border-t border-slate-200 pt-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
-                Social Media
+              </h3>
+              <p className="mt-5 text-sm leading-7 text-slate-600">
+                Use the form for detailed inquiries, or contact us directly for product and
+                order support.
               </p>
-              <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                {socialLinks.map(({ icon: Icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex min-h-[96px] items-center gap-4 rounded-[1.25rem] border border-slate-200 bg-white px-5 py-5 text-base font-semibold text-slate-800 transition-all hover:-translate-y-0.5 hover:border-sky-700 hover:text-sky-700 hover:shadow-[0_16px_36px_rgba(15,23,42,0.06)]"
-                  >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-sky-50 text-sky-700">
-                      <Icon className="h-5 w-5" />
+
+              <div className="mt-8 space-y-4">
+                {contactMethods.map(({ icon: Icon, label, value, href }) => {
+                  const content = (
+                    <article className="flex gap-4 rounded-[1.25rem] border border-slate-200/80 bg-white px-5 py-5">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                          {label}
+                        </p>
+                        <p className="mt-2 text-base font-semibold tracking-[-0.02em] text-slate-950">
+                          {value}
+                        </p>
+                      </div>
+                    </article>
+                  );
+
+                  return href ? (
+                    <a key={label} href={href} className="block">
+                      {content}
+                    </a>
+                  ) : (
+                    <div key={label}>{content}</div>
+                  );
+                })}
+              </div>
+            </aside>
+
+            <form onSubmit={handleSubmit} className="flex-1 p-6 sm:p-8 lg:p-10">
+              <div className="grid gap-5 sm:grid-cols-2">
+                {formFields.map((field) => (
+                  <label key={field.name} className="block">
+                    <span className="text-sm font-semibold text-slate-700">
+                      {field.label}
+                      {field.required ? ' *' : ''}
                     </span>
-                    {label}
-                  </a>
+                    <input
+                      name={field.name}
+                      type={field.type ?? 'text'}
+                      required={field.required}
+                      className="mt-2 h-12 w-full rounded-xl border border-slate-200 bg-[#f8fafc] px-4 text-sm text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-500 focus:bg-white"
+                    />
+                  </label>
                 ))}
               </div>
-            </div>
+
+              <label className="mt-5 block">
+                <span className="text-sm font-semibold text-slate-700">
+                  Details of inquiry *
+                </span>
+                <textarea
+                  name="details"
+                  required
+                  rows={5}
+                  className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm leading-7 text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-500 focus:bg-white"
+                />
+              </label>
+
+              <label className="mt-5 block">
+                <span className="text-sm font-semibold text-slate-700">
+                  Comments / Notes
+                </span>
+                <textarea
+                  name="comments"
+                  rows={3}
+                  className="mt-2 w-full resize-none rounded-xl border border-slate-200 bg-[#f8fafc] px-4 py-3 text-sm leading-7 text-slate-950 outline-none transition-colors placeholder:text-slate-400 focus:border-sky-500 focus:bg-white"
+                />
+              </label>
+
+              <button
+                type="submit"
+                className="mt-7 inline-flex cursor-pointer items-center gap-3 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-700"
+              >
+                Check the entered information
+                <ClipboardCheck className="h-4 w-4" />
+              </button>
+            </form>
           </div>
         </section>
 

@@ -6,18 +6,16 @@ import {
 import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import hqBuildingImg from '../../assets/home/hq-building.jpg';
-import receptionLoungeImg from '../../assets/home/reception-lounge.jpg';
-import meetingRoomImg from '../../assets/home/meeting-room.jpg';
-import rooftopGardenImg from '../../assets/home/rooftop-garden.jpg';
-import firstFloorEntranceImg from '../../assets/home/firstFloorEntrance.jpg';
-import talkingWithCustomersImg from '../../assets/home/talkingWithCustomers.jpg';
-import hardworkImg from '../../assets/home/hardwork.jpg';
+import firstFloorImg from '../../assets/home/1stFloor.jpg';
+import entranceLogoImg from '../../assets/home/entranceLogo.jpg';
+import firstFloorHallImg from '../../assets/home/1stFloorHall.jpg';
+import secondFloorImg from '../../assets/home/2ndFloor.jpg';
+import thirdFloorImg from '../../assets/home/3rdFloor.jpg';
+import gateImg from '../../assets/home/gate.jpg';
 import pingguoIcon from '../../assets/images/about-us/pingguo.svg';
 import yuerIcon from '../../assets/images/about-us/yuer.svg';
 import yaopingIcon from '../../assets/images/about-us/yaoping.svg';
 import kouhonIcon from '../../assets/images/about-us/kouhong.svg';
-import incosPoster from '../../assets/images/about-us/incosPoster_cropped.png';
 
 const quickLinks = [
   { label: 'Introduction', href: '#introduction' },
@@ -84,68 +82,68 @@ type MosaicImage = {
 
 const introMosaicImages: MosaicImage[] = [
   {
-    src: receptionLoungeImg,
-    alt: 'Fordtek reception lounge',
+    src: firstFloorHallImg,
+    alt: 'Fordtek first floor hall',
     className: 'col-start-1 col-end-8 row-start-1 row-end-6',
   },
   {
-    src: firstFloorEntranceImg,
-    alt: 'Fordtek entrance',
+    src: entranceLogoImg,
+    alt: 'Fordtek entrance logo',
     className: 'col-start-8 col-end-13 row-start-1 row-end-4',
   },
   {
-    src: talkingWithCustomersImg,
-    alt: 'Fordtek customer meeting',
+    src: firstFloorImg,
+    alt: 'Fordtek first floor office',
     className: 'col-start-8 col-end-13 row-start-4 row-end-7',
   },
   {
-    src: meetingRoomImg,
-    alt: 'Fordtek meeting room',
+    src: secondFloorImg,
+    alt: 'Fordtek second floor workspace',
     className: 'col-start-2 col-end-8 row-start-6 row-end-9',
   },
 ];
 
 const purposeMosaicImages: MosaicImage[] = [
   {
-    src: meetingRoomImg,
-    alt: 'Fordtek purpose meeting',
+    src: secondFloorImg,
+    alt: 'Fordtek purpose workspace',
     className: 'col-start-1 col-end-6 row-start-2 row-end-6',
   },
   {
-    src: hardworkImg,
-    alt: 'Fordtek team work',
+    src: thirdFloorImg,
+    alt: 'Fordtek third floor office',
     className: 'col-start-6 col-end-13 row-start-1 row-end-6',
   },
   {
-    src: rooftopGardenImg,
-    alt: 'Fordtek rooftop garden',
+    src: gateImg,
+    alt: 'Fordtek company gate',
     className: 'col-start-2 col-end-8 row-start-6 row-end-9',
   },
   {
-    src: receptionLoungeImg,
-    alt: 'Fordtek office lounge',
+    src: entranceLogoImg,
+    alt: 'Fordtek entrance logo wall',
     className: 'col-start-8 col-end-12 row-start-6 row-end-8',
   },
 ];
 
 const futureMosaicImages: MosaicImage[] = [
   {
-    src: rooftopGardenImg,
+    src: thirdFloorImg,
     alt: 'Fordtek future space',
     className: 'col-start-1 col-end-8 row-start-1 row-end-5',
   },
   {
-    src: firstFloorEntranceImg,
+    src: entranceLogoImg,
     alt: 'Fordtek office entrance',
     className: 'col-start-8 col-end-13 row-start-1 row-end-4',
   },
   {
-    src: hqBuildingImg,
+    src: gateImg,
     alt: 'Fordtek headquarters',
     className: 'col-start-2 col-end-7 row-start-5 row-end-9',
   },
   {
-    src: talkingWithCustomersImg,
+    src: firstFloorImg,
     alt: 'Fordtek team discussion',
     className: 'col-start-7 col-end-12 row-start-5 row-end-8',
   },
@@ -194,7 +192,7 @@ export default function AboutUs() {
       <main>
         <section className="relative overflow-hidden bg-slate-900">
           <img
-            src={hqBuildingImg}
+            src={gateImg}
             alt="Fordtek company overview"
             className="absolute inset-0 h-full w-full object-cover opacity-46"
           />
@@ -399,8 +397,11 @@ export default function AboutUs() {
                 keep extending it into dedicated subpages once you like the visual direction.
               </p>
             </div>
-            <img className='max-w-100 rounded-[2rem]'
-            src = {rooftopGardenImg} />
+            <img
+              src={thirdFloorImg}
+              alt="Fordtek office interior"
+              className="max-w-100 rounded-[2rem]"
+            />
           </div>
         </section>
       </main>
