@@ -86,22 +86,22 @@ const introMosaicImages: MosaicImage[] = [
   {
     src: receptionLoungeImg,
     alt: 'Fordtek reception lounge',
-    className: 'col-span-7 row-span-5',
+    className: 'col-start-1 col-end-8 row-start-1 row-end-6',
   },
   {
     src: firstFloorEntranceImg,
     alt: 'Fordtek entrance',
-    className: 'col-span-5 row-span-3',
+    className: 'col-start-8 col-end-13 row-start-1 row-end-4',
   },
   {
     src: talkingWithCustomersImg,
     alt: 'Fordtek customer meeting',
-    className: 'col-span-4 row-span-3',
+    className: 'col-start-8 col-end-13 row-start-4 row-end-7',
   },
   {
     src: meetingRoomImg,
     alt: 'Fordtek meeting room',
-    className: 'col-span-9 row-span-2',
+    className: 'col-start-2 col-end-8 row-start-6 row-end-9',
   },
 ];
 
@@ -109,22 +109,22 @@ const purposeMosaicImages: MosaicImage[] = [
   {
     src: meetingRoomImg,
     alt: 'Fordtek purpose meeting',
-    className: 'col-span-5 row-span-4',
+    className: 'col-start-1 col-end-6 row-start-2 row-end-6',
   },
   {
     src: hardworkImg,
     alt: 'Fordtek team work',
-    className: 'col-span-7 row-span-5',
+    className: 'col-start-6 col-end-13 row-start-1 row-end-6',
   },
   {
     src: rooftopGardenImg,
     alt: 'Fordtek rooftop garden',
-    className: 'col-span-7 row-span-3',
+    className: 'col-start-2 col-end-8 row-start-6 row-end-9',
   },
   {
     src: receptionLoungeImg,
     alt: 'Fordtek office lounge',
-    className: 'col-span-5 row-span-4',
+    className: 'col-start-8 col-end-12 row-start-6 row-end-8',
   },
 ];
 
@@ -132,22 +132,22 @@ const futureMosaicImages: MosaicImage[] = [
   {
     src: rooftopGardenImg,
     alt: 'Fordtek future space',
-    className: 'col-span-7 row-span-4',
+    className: 'col-start-1 col-end-8 row-start-1 row-end-5',
   },
   {
     src: firstFloorEntranceImg,
     alt: 'Fordtek office entrance',
-    className: 'col-span-5 row-span-3',
+    className: 'col-start-8 col-end-13 row-start-1 row-end-4',
   },
   {
     src: hqBuildingImg,
     alt: 'Fordtek headquarters',
-    className: 'col-span-5 row-span-3',
+    className: 'col-start-2 col-end-7 row-start-5 row-end-9',
   },
   {
     src: talkingWithCustomersImg,
     alt: 'Fordtek team discussion',
-    className: 'col-span-7 row-span-2',
+    className: 'col-start-7 col-end-12 row-start-5 row-end-8',
   },
 ];
 
@@ -160,12 +160,12 @@ function PhotoMosaic({
 }) {
   return (
     <div
-      className={`grid h-[340px] grid-cols-12 grid-rows-8 gap-2 overflow-hidden bg-transparent sm:h-[390px] lg:h-[440px] ${className}`}
+      className={`grid h-[340px] grid-cols-12 grid-rows-8 gap-2 overflow-visible bg-transparent sm:h-[390px] lg:h-[440px] ${className}`}
     >
       {images.map((image) => (
         <div
           key={image.alt}
-          className={`overflow-hidden rounded-sm ${image.className}`}
+          className={`overflow-hidden ${image.className}`}
         >
           <img
             src={image.src}
