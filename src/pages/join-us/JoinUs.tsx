@@ -131,7 +131,7 @@ export default function JoinUs() {
               Join Us
             </p>
             <div className="mt-6 max-w-[44rem]">
-              <h1 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-white sm:text-5xl lg:text-[4.5rem]">
+              <h1 className="text-4xl font-semibold leading-[1.05] tracking-[0.02em] text-white sm:text-5xl lg:text-[4.5rem]">
                 Why Choose FORDTEK
               </h1>
               <p className="mt-5 text-lg font-medium text-sky-100 sm:text-xl">

@@ -1,4 +1,4 @@
-import forestImg from '../assets/home/home-hero.jpg';
+import forestImg from '../assets/home/home-hero.png';
 import humanImg from '../assets/home/human.png';
 import animalImg from '../assets/home/animal.jpg';
 import veterinaryImg from '../assets/home/veterinary.jpg';

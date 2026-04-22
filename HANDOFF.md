@@ -731,3 +731,174 @@ Choose one:
 - `src/pages/join-us/JoinUs.tsx`
 - `src/App.tsx`
 - `HANDOFF.md`
+
+---
+
+## Update: 2026-04-22 (Contact, News, Products, Tailwind Source Notes)
+
+### What changed in this round
+
+#### Contact Us page was built, then temporarily ignored for commit
+- New folder:
+  - `src/pages/contact-us`
+- Main file:
+  - `src/pages/contact-us/ContactUs.tsx`
+- Current intended route:
+  - `/contact`
+  - `/contact/success`
+- The page follows the proposal document:
+  - hero
+  - inquiry form
+  - contact information
+  - social media
+  - company address
+- The form is currently frontend-only:
+  - submit prevents default browser behavior
+  - then routes to `/contact/success`
+  - no email is sent
+  - no backend or Strapi record is created
+- Contact info used from the proposal:
+  - Tel: `+86 23 67683887`
+  - Fax: `+86 23 63026176`
+  - Email: `Service@fordtek.com`
+- Social media links are placeholder links until official company profile URLs are supplied.
+
+#### News page and detail page were built
+- New folder:
+  - `src/pages/news`
+- Main file:
+  - `src/pages/news/News.tsx`
+- Current intended routes:
+  - `/news`
+  - `/news/:slug`
+- Page follows the proposal structure:
+  - hero
+  - category filters:
+    - `All news`
+    - `Exhibition news`
+    - `Company dynamics`
+    - `Trade news`
+  - list cards with date, title, summary and `Read more`
+- Since the current `news` data type does not include a real category field, the page currently uses keyword-based frontend categorization.
+  - Replace this with a real Strapi `category` field later.
+- News list pagination was added:
+  - `NEWS_PAGE_SIZE = 5`
+  - pagination appears only when there is more than one page
+  - category changes reset to page 1
+- Extra fallback news items were added in:
+  - `src/content/homePage.ts`
+  - This is for local pagination testing.
+- Detail page scroll behavior was fixed:
+  - opening a detail page scrolls to top
+  - clicking `Back to news` restores the saved list scroll position and category/page state
+  - implementation uses `sessionStorage`
+
+#### News hero overlay issue
+- The News hero originally used a Tailwind arbitrary gradient class for the overlay.
+- It looked like the overlay was not being applied in browser.
+- The overlay was changed to an inline `style` gradient with explicit z-index layers:
+  - image: `z-0`
+  - overlay: `z-10`
+  - text: `z-20`
+- Relevant file:
+  - `src/pages/news/News.tsx`
+
+#### Product pages were built, then temporarily ignored for commit
+- New folder:
+  - `src/pages/products`
+- Main file:
+  - `src/pages/products/ProductPage.tsx`
+- Current intended route:
+  - `/products/:productSlug`
+- Supported product slugs:
+  - `human-nutrition`
+  - `animal-health`
+  - `veterinary-drugs`
+  - `cosmetics`
+- Each page follows the proposal structure:
+  - hero
+  - product line advantage introduction
+  - product matrix
+- Important placeholder note:
+  - The proposal gives high-level product matrix titles, but not the complete real product list.
+  - Current product names are representative placeholders and should be replaced with the real product list later.
+
+#### App routes were temporarily commented for ignored pages
+- The user wanted to keep these folders out of the next commit:
+  - `src/pages/news`
+  - `src/pages/products`
+  - `src/pages/contact-us`
+- `.gitignore` currently ignores those directories.
+- `src/App.tsx` has been partially commented to avoid importing ignored pages when committing without those folders.
+- Important:
+  - Do not commit routes/imports that reference ignored folders unless those folders are also committed.
+
+#### TopBar social icons were tested
+- Social media icons were added to the top bar as a design test.
+- Current implementation uses:
+  - `react-icons/fa6`
+  - `FaFacebookF`
+  - `FaLinkedinIn`
+  - `FaXTwitter`
+- New dependency added:
+  - `react-icons`
+- `package.json` and `package-lock.json` changed because of this.
+- The icons were later styled as small round buttons:
+  - light background
+  - border
+  - hover blue state
+- User may still decide these are not final.
+
+#### About Us / Our Company image mosaic was adjusted
+- `src/pages/about-us/AboutUs.tsx` has a `PhotoMosaic` helper.
+- The user wanted the images to feel less like a single aligned rectangle.
+- Current direction:
+  - grid-based, no overlap
+  - small `gap-2` between images
+  - deliberately uneven outer silhouette
+- Important:
+  - Do not use overlapping absolute-position photos for this request.
+  - Desired look is non-overlapping collage pieces with breathing room.
+
+### Important Tailwind v4 gotcha discovered
+
+#### `.gitignore` affects Tailwind automatic source detection
+- Tailwind v4 automatic source detection respects `.gitignore`.
+- Because these folders were ignored:
+  - `src/pages/news`
+  - `src/pages/products`
+  - `src/pages/contact-us`
+- Tailwind did not scan them automatically.
+- Symptom seen:
+  - `py-3` worked
+  - `py-10` worked
+  - `py-5` did not work and computed padding became 0
+- Root cause:
+  - `.py-5` was only used inside an ignored folder, so Tailwind never generated the CSS rule.
+  - `py-3` and `py-10` worked because those utilities existed elsewhere in non-ignored files.
+- Fix added in:
+  - `src/index.css`
+- Current explicit source lines:
+```css
+@source "./pages/news";
+@source "./pages/contact-us";
+@source "./pages/products";
+```
+- If additional ignored folders contain Tailwind-only classes, add them with `@source` too.
+
+### Validation status
+- `npm run lint` passed after the current changes.
+- `npm run build` passed after adding explicit Tailwind sources.
+
+### Files most relevant for the next thread
+- `src/pages/news/News.tsx`
+- `src/pages/contact-us/ContactUs.tsx`
+- `src/pages/products/ProductPage.tsx`
+- `src/pages/about-us/AboutUs.tsx`
+- `src/components/TopBar.tsx`
+- `src/content/homePage.ts`
+- `src/index.css`
+- `src/App.tsx`
+- `.gitignore`
+- `package.json`
+- `package-lock.json`
