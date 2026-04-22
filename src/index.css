@@ -1,2 +1,5 @@
 @import "tailwindcss";
+@source "./pages/news";
+@source "./pages/contact-us";
+@source "./pages/products";
 /* Global styles and Tailwind entry file for the Vite frontend. */

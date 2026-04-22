@@ -167,7 +167,7 @@ export default function JoinUs() {
               </div>
             </div>
 
-            <div className="flex items-center">
+            <div className="flex items-end">
               <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-transparent shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
                 <img
                   src={rooftopGardenImg}

@@ -382,15 +382,6 @@ export default function OurLocations() {
                 </div>
               ))}
 
-              <div className="rounded-[2rem] border border-slate-200/80 bg-[linear-gradient(180deg,#f8fafc_0%,#eef5fb_100%)] p-8 shadow-[0_16px_40px_rgba(15,23,42,0.04)]">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">
-                  Location Strategy
-                </p>
-                <p className="mt-4 text-base leading-8 text-slate-600">
-                  We keep expanding where logistics responsiveness, local service and
-                  customer collaboration can create lasting operational value.
-                </p>
-              </div>
             </div>
           </div>
         </section>

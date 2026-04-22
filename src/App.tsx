@@ -4,7 +4,7 @@ import AboutUs from './pages/about-us/AboutUs';
 import OurLocations from './pages/about-us/OurLocations';
 // import ContactUs, { ContactSuccess } from './pages/contact-us/ContactUs';
 import JoinUs from './pages/join-us/JoinUs';
-// import News, { NewsDetail } from './pages/news/News';
+import News, { NewsDetail } from './pages/news/News';
 // import ProductPage from './pages/products/ProductPage';
 
 export default function App() {
@@ -18,9 +18,9 @@ export default function App() {
       <Route path="/join-us" element={<JoinUs />} />
       <Route path="/join-us/why-choose-us" element={<Navigate to="/join-us" replace />} />
       <Route path="/join-us/jobs" element={<Navigate to="/join-us" replace />} />
-      {/* <Route path="/news" element={<News />} />
+      <Route path="/news" element={<News />} />
       <Route path="/news/:slug" element={<NewsDetail />} />
-      <Route path="/contact" element={<ContactUs />} />
+      {/* <Route path="/contact" element={<ContactUs />} />
       <Route path="/contact/success" element={<ContactSuccess />} />
       <Route path="/products/:productSlug" element={<ProductPage />} /> */}
       <Route path="/human-nutrition" element={<Navigate to="/products/human-nutrition" replace />} />
