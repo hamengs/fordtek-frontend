@@ -84,7 +84,7 @@ export const servicesFallback: ServicesContent = {
       title: 'Human',
       subtitle: 'Nutrition & others',
       description:
-        'We supply certified, high-grade nutritional ingredients for food, dietary supplements and health industries, with stable global supply and complete quality certifications.',
+        'We supply certified high-grade nutritional ingredients for food, supplements and healthcare, with stable global supply.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: humanImg,
@@ -95,7 +95,7 @@ export const servicesFallback: ServicesContent = {
       title: 'Animal',
       subtitle: 'Health & Others',
       description:
-        'We provide a full range of certified nutritional additives and feed raw materials, delivering cost-effective and reliable solutions for global animal farming.',
+        'We offer certified nutritional additives and feed materials, delivering reliable solutions for global animal farming.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: animalImg,
@@ -106,7 +106,7 @@ export const servicesFallback: ServicesContent = {
       title: 'Veterinary',
       subtitle: 'Drugs & Antibiotics',
       description:
-        'We distribute standard-compliant veterinary raw materials and APIs, adhering to global pharmacopoeia requirements to ensure animal health and regulatory compliance.',
+        'We distribute compliant veterinary raw materials and APIs, meeting global pharmacopoeia standards to ensure animal health.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: veterinaryImg,
@@ -117,7 +117,7 @@ export const servicesFallback: ServicesContent = {
       title: 'Cosmetic',
       subtitle: 'Materials',
       description:
-        'We offer high-purity cosmetic raw materials and functional ingredients, supporting stable sourcing and innovative formulation for global care brands.',
+        'We provide high-purity cosmetic and functional ingredients, ensuring stable supply for global care brands.',
       buttonText: 'More',
       buttonLink: '#',
       imageUrl: cosmeticImg,

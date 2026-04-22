@@ -61,17 +61,21 @@ export function ServicesSection({ items }: ServicesContent) {
               >
                 <div
                   aria-hidden="true"
-                  className={`pointer-events-none hidden select-none absolute top-1/2 hidden -translate-y-1/2 flex flex-col text-[88px] font-semibold uppercase tracking-[-0.06em] leading-none opacity-[0.18] sm:text-[118px] lg:flex lg:text-[120px] ${theme.ghost} ${
+                  className={`pointer-events-none hidden select-none absolute top-1/2 hidden -translate-y-1/2
+                    flex flex-col text-[88px] font-semibold uppercase tracking-[-0.06em] leading-none opacity-[0.18] sm:text-[118px] lg:flex lg:text-[125px] ${theme.ghost} ${
                     isRightAligned ? 'left-12' : 'right-12'
                   }`}
                   style={{ textShadow: '0 10px 10px rgba(15, 23, 42, 0.5)' }}
                 >
-                  <div>
-                    {item.title}
+                  <div className='flex flex-col items-center'>
+                    <div>
+                      {item.title}
+                    </div>
+                    <p className='text-[40px] tracking-[0.08em]'>
+                      {item.subtitle}
+                    </p>
                   </div>
-                  <p className='text-[40px] tracking-[0.08em]'>
-                    {item.subtitle}
-                  </p>
+
                 </div>
 
                 <div

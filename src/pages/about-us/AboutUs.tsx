@@ -260,11 +260,9 @@ export default function AboutUs() {
               A professional distributor connecting high-quality ingredients with global demand.
             </h2>
             <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-              Founded in 2015, Fordtek is a global provider of nutritional ingredients and
-              comprehensive chemicals. We are committed to bringing high quality and safe
-              products to our customers around the world. With cooperation from over one
-              hundred reliable suppliers and support from more than ten overseas warehouses,
-              we offer efficient and time-competitive service to our customers.
+              Founded in 2015, Fordtek is a global supplier of nutritional ingredients and specialty chemicals, 
+              providing high-quality, safe products and efficient services to customers worldwide through over 
+              100 reliable suppliers and 10 overseas warehouses.
             </p>
           </div>
 
@@ -286,12 +284,8 @@ export default function AboutUs() {
                 Growing globally alongside "Made in China"
               </h2>
               <p className="mt-8 text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-                Since its establishment, Fordtek has remained committed to its original
-                vision of growing globally alongside "Made in China". That commitment has
-                helped us build the capability to deliver goods to end users across multiple
-                countries and regions under DDP terms. We continue to strengthen the
-                operational foundation that makes international supply more direct, more
-                reliable and more responsive for our partners.
+                Since its founding, Fordtek has stayed true to its vision of global growth alongside "Made in China", 
+                enabling DDP delivery to end-users across multiple countries and regions.
               </p>
             </div>
           </div>
