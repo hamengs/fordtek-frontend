@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   ClipboardCheck,
   Mail,
-  MapPin,
   Phone,
   Printer,
 } from 'lucide-react';
@@ -14,8 +13,6 @@ import { TopBar } from '../../components/TopBar';
 import { footerFallback, topBarFallback } from '../../content/homePage';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import firstFloorEntranceImg from '../../assets/home/firstFloorEntrance.jpg';
-import hqBuildingImg from '../../assets/home/hq-building.jpg';
-import worldMapImg from '../../assets/home/world-map.svg';
 
 const contactMethods = [
   {
@@ -46,6 +43,33 @@ const formFields = [
   { label: 'Company', name: 'company' },
   { label: 'Country / Region', name: 'country', required: true },
 ];
+
+const officeContacts = [
+  {
+    country: 'China',
+    company: 'Fordtek HQ',
+    address: 'C7 No.6 Yuekang Rd. Beibei Distr. 401122, Chongqing, China',
+    phone: '+86 23 67683887',
+  },
+  {
+    country: 'United States',
+    company: 'Fordtek Inc.',
+    address: '2040 S. Carlos Ave Ontario CA 91761, United States',
+    phone: '909-518-3956',
+  },
+  {
+    country: 'Germany',
+    company: 'Fordtek GmbH',
+    address: 'Bredeneyer Str. 117 45133 Essen, Germany',
+    phone: '+49(0)201-8158-7327',
+  },
+  {
+    country: 'Vietnam',
+    company: 'CT Tnhh Fordtek Inc.',
+    address: 'C14-3 Sky Center, No 10 Pho Quang, Ward 2, District Tan Binh, Ho Chi Minh City, Viet Nam',
+    phone: '079 515 7015',
+  },
+] as const;
 
 function Header() {
   const isHeaderVisible = useHeaderVisibility();
@@ -206,47 +230,47 @@ export default function ContactUs() {
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-7xl gap-12 px-6 py-18 sm:px-10 lg:grid-cols-[0.9fr_1.1fr] lg:px-16 lg:py-24">
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-slate-100 shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
-            <img
-              src={hqBuildingImg}
-              alt="Fordtek headquarters"
-              className="h-full min-h-[320px] w-full object-cover"
-            />
-          </div>
-
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-slate-200/80 bg-white px-6 py-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:px-8 lg:px-10">
-            <img
-              src={worldMapImg}
-              alt=""
-              aria-hidden="true"
-              className="pointer-events-none absolute right-0 top-0 h-full w-full object-contain object-right opacity-[0.05]"
-            />
-            <div className="relative">
-              <MapPin className="h-6 w-6 text-sky-700" />
-              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-                Company Address
+        <section className="border-t border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]">
+          <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
+                Regional Contacts
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-slate-950 sm:text-4xl">
-                Fordtek Headquarters
+              <h2 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
+                Reach the nearest Fordtek office.
               </h2>
-              <p className="mt-6 max-w-xl text-base leading-8 text-slate-600 sm:text-lg sm:leading-9">
-                Based in Chongqing, China, Fordtek supports global nutritional and chemical
-                ingredient cooperation through responsive sourcing, logistics and customer
-                service.
-              </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="border-t border-slate-200 pt-5">
-                  <p className="text-sm font-semibold text-slate-950">Headquarters</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">Chongqing, China</p>
-                </div>
-                <div className="border-t border-slate-200 pt-5">
-                  <p className="text-sm font-semibold text-slate-950">Global support</p>
-                  <p className="mt-2 text-sm leading-7 text-slate-600">
-                    Nutritional & chemical ingredients
+            </div>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+              {officeContacts.map((office) => (
+                <article
+                  key={office.country}
+                  className="flex h-full flex-col rounded-[1.75rem] border border-slate-200/80 bg-white px-6 py-6 shadow-[0_16px_40px_rgba(15,23,42,0.045)]"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-700">
+                    {office.country}
                   </p>
-                </div>
-              </div>
+                  <h3 className="mt-4 text-xl font-semibold tracking-[-0.03em] text-slate-950">
+                    {office.company}
+                  </h3>
+                  <div className="mt-6 border-t border-slate-200 pt-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      Address
+                    </p>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">
+                      {office.address}
+                    </p>
+                  </div>
+                  <div className="mt-auto border-t border-slate-200 pt-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+                      Telephone
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-slate-950">
+                      {office.phone}
+                    </p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
