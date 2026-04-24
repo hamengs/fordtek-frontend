@@ -2,10 +2,12 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/about-us/AboutUs';
 import OurLocations from './pages/about-us/OurLocations';
+import Certificates from './pages/about-us/Certificates'
 import ContactUs, { ContactSuccess } from './pages/contact-us/ContactUs';
 import JoinUs from './pages/join-us/JoinUs';
 import News, { NewsDetail } from './pages/news/News';
 import ProductPage from './pages/products/ProductPage';
+
 
 export default function App() {
   return (
@@ -14,7 +16,7 @@ export default function App() {
       <Route path="/about-us" element={<Navigate to="/about-us/our-company" replace />} />
       <Route path="/about-us/our-company" element={<AboutUs />} />
       <Route path="/about-us/our-locations" element={<OurLocations />} />
-      <Route path="/about-us/our-team" element={<Navigate to="/about-us/our-company" replace />} />
+      <Route path="/about-us/certificates" element = {<Certificates/>}/>
       <Route path="/join-us" element={<JoinUs />} />
       <Route path="/join-us/why-choose-us" element={<Navigate to="/join-us" replace />} />
       <Route path="/join-us/jobs" element={<Navigate to="/join-us" replace />} />
