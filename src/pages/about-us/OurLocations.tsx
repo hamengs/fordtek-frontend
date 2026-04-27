@@ -270,16 +270,37 @@ export default function OurLocations() {
         </section>
 
         <section className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
-          <div className="grid items-start gap-10 lg:grid-cols-[1.18fr_0.82fr]">
-            <div className="self-start rounded-[2.5rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] p-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:p-10 lg:p-12">
+          <div className="rounded-[2.5rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f5f8fb_100%)] p-8 shadow-[0_18px_45px_rgba(15,23,42,0.05)] sm:p-10 lg:p-12">
+            <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-sky-700">
                 Global Layout
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-[1.06] tracking-[-0.05em] text-slate-950 sm:text-4xl">
                 A clearer view of Fordtek&apos;s international footprint.
               </h2>
+            </div>
 
-              <div className="relative mt-10 overflow-hidden rounded-[2rem] border border-slate-200/80 bg-[radial-gradient(circle_at_top,#eef6ff_0%,#f8fbff_34%,#ffffff_100%)] px-3 py-3 sm:px-4 sm:py-4">
+            <div className="mt-10 grid gap-8 lg:grid-cols-[1.18fr_0.82fr]">
+              {stats.map((stat) => (
+                <div
+                  key={stat.eyebrow}
+                  className="rounded-[1.8rem] border border-slate-200/80 bg-white p-7 shadow-[0_14px_35px_rgba(15,23,42,0.04)]"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+                    {stat.eyebrow}
+                  </p>
+                  <p className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-slate-950">
+                    {stat.value}
+                  </p>
+                  <p className="mt-4 text-base leading-8 text-slate-600">
+                    {stat.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid items-start gap-8 lg:grid-cols-[1.18fr_0.82fr]">
+              <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/80 bg-[radial-gradient(circle_at_top,#eef6ff_0%,#f8fbff_34%,#ffffff_100%)] px-3 py-3 sm:px-4 sm:py-4">
                 <div className="relative mx-auto max-w-[920px]">
                   <img
                     src={worldMapImg}
@@ -333,9 +354,7 @@ export default function OurLocations() {
                   })}
                 </div>
               </div>
-            </div>
 
-            <div className="space-y-5">
               <div className="rounded-[2rem] border border-slate-200/80 bg-white p-8 shadow-[0_16px_40px_rgba(15,23,42,0.05)]">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
                   Selected Location
@@ -364,24 +383,6 @@ export default function OurLocations() {
                   {selectedCountry.description}
                 </p>
               </div>
-
-              {stats.map((stat) => (
-                <div
-                  key={stat.eyebrow}
-                  className="rounded-[2rem] border border-slate-200/80 bg-white p-8 shadow-[0_16px_40px_rgba(15,23,42,0.05)]"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
-                    {stat.eyebrow}
-                  </p>
-                  <p className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-slate-950">
-                    {stat.value}
-                  </p>
-                  <p className="mt-4 text-base leading-8 text-slate-600">
-                    {stat.description}
-                  </p>
-                </div>
-              ))}
-
             </div>
           </div>
         </section>
