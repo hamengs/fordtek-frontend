@@ -902,3 +902,81 @@ Choose one:
 - `.gitignore`
 - `package.json`
 - `package-lock.json`
+
+---
+
+## Update: 2026-04-27 (Certificates, Our Locations layout)
+
+### What changed in this round
+
+#### Certificates page was built and revised
+- Main file:
+  - `src/pages/about-us/Certificates.tsx`
+- Current route:
+  - `/about-us/certificates`
+- The page now follows the proposal direction while also reflecting the user's preference to show all available qualification assets:
+  - hero
+  - company qualification text introduction
+  - full qualification mark display
+  - separate PDF certificate file list
+- Proposal text kept on the page:
+  - hero subtitle: `To supply our every valuable customer with safe and high-quality products.`
+  - qualification intro mentions `GMP+`, `HACCP`, `ISO9001`, `ISO22000`, `HALAL`, `FAMI-QS`, `QMS`, and `Kosher Certification`.
+- Important design decision:
+  - Do not mix `View certificate` buttons and `Certificate image` labels inside the same logo card grid.
+  - The logo/mark grid should stay visually consistent and only show marks plus short descriptions.
+  - The downloadable/viewable PDFs should live in the separate `Certificate Files` section below.
+- Earlier duplicate logo display inside the first qualification intro section was removed.
+  - Keep the first section as text + supporting image only.
+  - Keep all logos in the lower `Certificate Display` section.
+
+#### Certificate assets were added
+- New logo/mark asset folder:
+  - `src/assets/images/about-us/certificates/`
+- Current assets copied in:
+  - `FAMIQS.webp`
+  - `FAMIQS2.webp`
+  - `FSPCA.png`
+  - `GMP+.jpg`
+  - `HACCP.webp`
+  - `HALAL.jpg`
+  - `ISO.webp`
+  - `QMS.png`
+- New public PDF folder:
+  - `public/certificates/`
+- Current PDF files:
+  - `fami-qs-2025.pdf`
+  - `gmp-plus-2025.pdf`
+  - `qms-2025.pdf`
+- Note:
+  - No FSPCA PDF was found in the provided source certificate folder, only the FSPCA image/logo.
+
+#### Our Locations final section was reorganized
+- Main file:
+  - `src/pages/about-us/OurLocations.tsx`
+- The final `Global Layout` section now uses one large shared container.
+- Layout structure:
+  1. section heading
+  2. `Global Reach` and `Global Services` stat cards horizontally above the map
+  3. map and `Selected Location` card side by side below
+- User preference:
+  - `Global Reach` and `Global Services` should not sit under `Selected Location`.
+  - The stats should feel like a top-level part of the same final section.
+  - The map and selected-location card should be on the same hierarchy.
+- Alignment decision:
+  - Do not shrink the map to make the vertical gap align.
+  - Instead, make the top stat grid use the same desktop columns as the lower map/detail row:
+    - `lg:grid-cols-[1.18fr_0.82fr]`
+    - `gap-8`
+  - This keeps the map generous while aligning the central gutter.
+
+### Validation status
+- `npm run lint` passed after these changes.
+- `npm run build` passed after these changes.
+
+### Files most relevant for the next thread
+- `src/pages/about-us/Certificates.tsx`
+- `src/pages/about-us/OurLocations.tsx`
+- `src/assets/images/about-us/certificates/`
+- `public/certificates/`
+- `src/App.tsx`
