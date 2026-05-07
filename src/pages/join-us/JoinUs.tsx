@@ -81,7 +81,8 @@ const regionalJobs = [
   },
 ];
 
-const contactEmails = ['penny.tang@fordtek.com', 'judy.zhu@fordtek.com'];
+const contactEmails = ['penny.tang@fordtek.com'];
+const resumeEmail = contactEmails[0];
 
 export default function JoinUs() {
   return (
@@ -221,29 +222,45 @@ export default function JoinUs() {
         </section>
 
         <section className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-              Resume Delivery
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-[1.06] tracking-[-0.05em] text-slate-950 sm:text-4xl">
-              Send your resume directly by email.
-            </h2>
-          </div>
+          <div className="grid gap-10 rounded-[2.5rem] border border-slate-200/80 bg-[linear-gradient(135deg,#ffffff_0%,#f8fbff_54%,#eef6ff_100%)] p-8 shadow-[0_20px_55px_rgba(15,23,42,0.06)] sm:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:p-12">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
+                Resume Delivery
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-[1.06] tracking-[-0.05em] text-slate-950 sm:text-4xl">
+                Send your resume directly by email.
+              </h2>
+              <p className="mt-6 text-base leading-8 text-slate-600">
+                Share your resume and the role or region you are interested in. The recruiting
+                team will review your information and follow up when there is a suitable fit.
+              </p>
+            </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {contactEmails.map((email) => (
-              <a
-                key={email}
-                href={`mailto:${email}`}
-                className="rounded-[1.8rem] border border-slate-200/80 bg-white px-6 py-6 shadow-[0_16px_40px_rgba(15,23,42,0.05)] transition-all hover:-translate-y-0.5 hover:border-slate-300"
-              >
-                <Mail className="h-5 w-5 text-sky-700" />
-                <p className="mt-4 text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">
-                  Email
+            <a
+              href={`mailto:${resumeEmail}`}
+              className="group flex min-h-56 flex-col justify-between rounded-[2rem] border border-slate-200/80 bg-white px-7 py-7 shadow-[0_18px_45px_rgba(15,23,42,0.07)] transition-all hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_24px_60px_rgba(14,165,233,0.12)] sm:px-8 sm:py-8"
+            >
+              <div className="flex items-start justify-between gap-6">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sky-50 text-sky-700">
+                  <Mail className="h-5 w-5" />
+                </span>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors group-hover:bg-sky-700 group-hover:text-white">
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  Hiring Contact
                 </p>
-                <p className="mt-2 text-lg font-semibold text-slate-950">{email}</p>
-              </a>
-            ))}
+                <p className="mt-3 break-words text-2xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-3xl">
+                  {resumeEmail}
+                </p>
+                <p className="mt-5 text-sm font-semibold text-sky-700">
+                  Send resume
+                </p>
+              </div>
+            </a>
           </div>
         </section>
     </PageShell>
