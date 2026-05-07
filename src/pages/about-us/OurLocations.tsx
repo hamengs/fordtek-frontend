@@ -6,9 +6,9 @@ import {
 import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import firstFloorEntrance from '../../assets/home/firstFloorEntrance.jpg';
-import receptionLoungeImg from '../../assets/home/reception-lounge.jpg';
-import worldMapImg from '../../assets/home/world-map.svg';
+import firstFloorEntrance from '../../assets/about/office/firstFloorEntrance.jpg';
+import receptionLoungeImg from '../../assets/about/office/reception-lounge.jpg';
+import worldMapImg from '../../assets/about/world-map.svg';
 import cnFlag from '../../assets/flags/cn.png';
 import usFlag from '../../assets/flags/us.png';
 import deFlag from '../../assets/flags/de.png';

@@ -102,9 +102,8 @@ export default function ContactUs() {
           <img
             src={contactHeroImg}
             alt="Fordtek contact"
-            className="absolute inset-0 h-full w-full object-cover opacity-42"
+            className="absolute inset-0 h-full w-full object-cover opacity-50"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(2,6,23,0.82)_0%,rgba(15,23,42,0.68)_42%,rgba(30,41,59,0.4)_100%)]" />
 
           <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">

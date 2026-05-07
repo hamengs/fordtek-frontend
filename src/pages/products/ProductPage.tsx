@@ -12,10 +12,10 @@ import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { footerFallback, topBarFallback } from '../../content/homePage';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import animalImg from '../../assets/home/animal.jpg';
-import cosmeticImg from '../../assets/home/cosmetic.png';
-import humanImg from '../../assets/home/human.png';
-import veterinaryImg from '../../assets/home/veterinary.jpg';
+import animalImg from '../../assets/products/animal.jpg';
+import cosmeticImg from '../../assets/products/cosmetic.png';
+import humanImg from '../../assets/products/human.png';
+import veterinaryImg from '../../assets/products/veterinary.jpg';
 
 type ProductLine = {
   slug: string;
@@ -184,10 +184,9 @@ export default function ProductPage() {
           <img
             src={productLine.image}
             alt={productLine.imageAlt}
-            className="absolute inset-0 h-full w-full object-cover opacity-36"
+            className="absolute inset-0 h-full w-full object-cover opacity-75"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(2,6,23,0.88)_0%,rgba(15,23,42,0.74)_42%,rgba(30,41,59,0.48)_100%)]" />
-
+          
           <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">
               {productLine.eyebrow}

@@ -7,12 +7,12 @@ import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import certificatesHeroImg from '../../assets/page-heroes/certificates-hero.png';
-import famiqsMarkLogo from '../../assets/images/about-us/certificates/famiqss.webp';
-import fspcaLogo from '../../assets/images/about-us/certificates/FSPCA.png';
-import gmpLogo from '../../assets/images/about-us/certificates/GMP.png';
-import haccpLogo from '../../assets/images/about-us/certificates/haccpp.webp';
-import halalLogo from '../../assets/images/about-us/certificates/HALAL.jpg';
-import isoLogo from '../../assets/images/about-us/certificates/iso.png';
+import famiqsMarkLogo from '../../assets/certificates/famiqss.webp';
+import fspcaLogo from '../../assets/certificates/FSPCA.png';
+import gmpLogo from '../../assets/certificates/GMP.png';
+import haccpLogo from '../../assets/certificates/haccpp.webp';
+import halalLogo from '../../assets/certificates/HALAL.jpg';
+import isoLogo from '../../assets/certificates/iso.png';
 
 const certificateDisplays = [
   {
@@ -70,10 +70,9 @@ export default function Certificates() {
           <img
             src={certificatesHeroImg}
             alt="Fordtek certificates hero"
-            className="absolute inset-0 h-full w-full object-cover opacity-46"
+            className="absolute inset-0 h-full w-full object-cover opacity-75"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(2,6,23,0.84)_0%,rgba(15,23,42,0.66)_42%,rgba(30,41,59,0.36)_100%)]" />
-
+          
           <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">
               About Us

@@ -1,12 +1,12 @@
 import forestImg from '../assets/page-heroes/home-hero.png';
-import humanImg from '../assets/home/human.png';
-import animalImg from '../assets/home/animal.jpg';
-import veterinaryImg from '../assets/home/veterinary.jpg';
-import cosmeticImg from '../assets/home/cosmetic.png';
-import brieflyImg from '../assets/home/briefly.jpg';
-import vietShrimpImg from '../assets/home/viet-shrimp.jpg';
-import hardworkImg from '../assets/home/hardwork.jpg';
-import slogan from '../assets/home/slogan.svg'
+import humanImg from '../assets/products/human.png';
+import animalImg from '../assets/products/animal.jpg';
+import veterinaryImg from '../assets/products/veterinary.jpg';
+import cosmeticImg from '../assets/products/cosmetic.png';
+import brieflyImg from '../assets/news/briefly.jpg';
+import vietShrimpImg from '../assets/news/viet-shrimp.jpg';
+import hardworkImg from '../assets/news/hardwork.jpg';
+import slogan from '../assets/brand/slogan.svg'
 import type { HeroContent } from '../types/hero';
 import type { NewsContent } from '../types/news';
 import type { ServicesContent } from '../types/services';

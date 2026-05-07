@@ -6,16 +6,16 @@ import {
 import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import firstFloorImg from '../../assets/home/1stFloor.jpg';
-import entranceLogoImg from '../../assets/home/entranceLogo.jpg';
-import firstFloorHallImg from '../../assets/home/1stFloorHall.jpg';
-import secondFloorImg from '../../assets/home/2ndFloor.jpg';
-import thirdFloorImg from '../../assets/home/3rdFloor.jpg';
-import gateImg from '../../assets/home/gate.jpg';
-import pingguoIcon from '../../assets/images/about-us/pingguo.svg';
-import yuerIcon from '../../assets/images/about-us/yuer.svg';
-import yaopingIcon from '../../assets/images/about-us/yaoping.svg';
-import kouhonIcon from '../../assets/images/about-us/kouhong.svg';
+import firstFloorImg from '../../assets/about/office/1stFloor.jpg';
+import entranceLogoImg from '../../assets/about/office/entranceLogo.jpg';
+import firstFloorHallImg from '../../assets/about/office/1stFloorHall.jpg';
+import secondFloorImg from '../../assets/about/office/2ndFloor.jpg';
+import thirdFloorImg from '../../assets/about/office/3rdFloor.jpg';
+import gateImg from '../../assets/about/office/gate.jpg';
+import pingguoIcon from '../../assets/about/business-icons/pingguo.svg';
+import yuerIcon from '../../assets/about/business-icons/yuer.svg';
+import yaopingIcon from '../../assets/about/business-icons/yaoping.svg';
+import kouhonIcon from '../../assets/about/business-icons/kouhong.svg';
 
 const quickLinks = [
   { label: 'Introduction', href: '#introduction' },

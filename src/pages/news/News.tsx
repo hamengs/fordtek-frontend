@@ -7,7 +7,7 @@ import { TopBar } from '../../components/TopBar';
 import { footerFallback, newsFallback, topBarFallback } from '../../content/homePage';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import type { NewsItem } from '../../types/news';
-import worldMapImg from '../../assets/home/world-map.svg';
+import worldMapImg from '../../assets/about/world-map.svg';
 import newsHeroImg from '../../assets/page-heroes/news-hero.png';
 
 type NewsCategory = 'all' | 'exhibition' | 'company' | 'trade';
@@ -176,14 +176,7 @@ export default function News() {
           <img
             src={newsHeroImg}
             alt="Fordtek news"
-            className="absolute inset-0 z-0 h-full w-full object-cover"
-          />
-          <div
-            className="absolute inset-0 z-10"
-            style={{
-              background:
-                'linear-gradient(120deg, rgba(2, 6, 23, 0.86) 0%, rgba(15, 23, 42, 0.72) 42%, rgba(30, 41, 59, 0.42) 100%)',
-            }}
+            className="absolute inset-0 z-0 h-full w-full object-cover opacity-75"
           />
           
           <div className="relative z-20 mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
