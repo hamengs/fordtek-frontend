@@ -1086,3 +1086,124 @@ Choose one:
   - `src/pages/about-us/Certificates.tsx` imports `../../assets/images/about-us/certificates/haccp.webp`
   - the current working tree showed certificate asset rename activity
   - do not assume the SEO/link changes caused the build failure
+
+---
+
+## Update: 2026-05-07 (Asset Cleanup, Page Shell, Join Us Email)
+
+### What changed in this round
+
+#### Desktop hero images were installed
+- Desktop images were copied into:
+  - `src/assets/page-heroes/`
+- Current page hero assets:
+  - `home-hero.png` -> Home fallback hero
+  - `news-hero.png` -> News page hero
+  - `certificates-hero.png` -> Certificates page hero
+  - `contact-us-hero.png` -> Contact page hero
+- Relevant files:
+  - `src/content/homePage.ts`
+  - `src/pages/news/News.tsx`
+  - `src/pages/about-us/Certificates.tsx`
+  - `src/pages/contact-us/ContactUs.tsx`
+
+#### Asset folders were reorganized
+- The old mixed `src/assets/home` and old `src/assets/images` structure was cleaned up.
+- Current intended asset structure:
+  - `src/assets/brand/` for `logo.svg` and `slogan.svg`
+  - `src/assets/products/` for product line imagery
+  - `src/assets/news/` for news fallback images
+  - `src/assets/about/office/` for company and office photos
+  - `src/assets/about/business-icons/` for About page business-unit icons
+  - `src/assets/about/world-map.svg` for the locations map
+  - `src/assets/certificates/` for certificate marks
+  - `src/assets/page-heroes/` for page-opening hero images
+  - `src/assets/flags/` for location flags
+  - `src/assets/join-us/` for Join Us images
+- Removed old empty or obsolete directories:
+  - `src/assets/home`
+  - `src/assets/images`
+  - `src/assets/team`
+- Removed duplicate / unused old assets, including the old duplicate `src/assets/home/home-hero.png`.
+- Current code scan found no remaining references to:
+  - `assets/home`
+  - `assets/images`
+  - `assets/team`
+
+#### Large images were compressed
+- The site is still in layout/content refinement and will later connect more deeply to Strapi, so no CMS architecture change was made here.
+- Existing filenames and imports were preserved.
+- Large local JPGs were resized/compressed for frontend performance:
+  - `src/assets/about/office/3rdFloor.jpg`: about `22.47MB` -> about `0.51MB`
+  - `src/assets/join-us/anual-meeting.jpg`: about `20.57MB` -> about `0.39MB`
+  - `src/assets/about/office/reception-lounge.jpg`: about `5.91MB` -> about `0.35MB`
+  - `src/assets/join-us/meeting.jpg`: about `5.14MB` -> about `0.38MB`
+  - `src/assets/about/office/firstFloorEntrance.jpg`: about `4.57MB` -> about `0.63MB`
+- Compressed images retain a 2400px longest side for current page design preview.
+
+#### Common inner-page shell was added
+- New files:
+  - `src/components/StandardHeader.tsx`
+  - `src/components/PageShell.tsx`
+- `StandardHeader` owns the shared sticky header behavior for normal inner pages:
+  - sticky top header
+  - shadow
+  - scroll-hide / scroll-show behavior via `useHeaderVisibility`
+  - renders `TopBar` with `topBarFallback`
+- `PageShell` owns the normal inner-page structure:
+  - page root styling
+  - `StandardHeader`
+  - `<main>{children}</main>`
+  - `Footer` with `footerFallback`
+- Updated normal inner pages to use `PageShell`:
+  - `src/pages/about-us/AboutUs.tsx`
+  - `src/pages/about-us/OurLocations.tsx`
+  - `src/pages/about-us/Certificates.tsx`
+  - `src/pages/contact-us/ContactUs.tsx`
+  - `src/pages/join-us/JoinUs.tsx`
+  - `src/pages/news/News.tsx`
+  - `src/pages/products/ProductPage.tsx`
+- Important:
+  - `src/pages/Home.tsx` intentionally still keeps its custom header structure because the homepage uses a special overlay header and floating scroll header.
+
+#### Join Us resume email section was redesigned
+- The user removed one hiring email, leaving only:
+  - `penny.tang@fordtek.com`
+- The old two-column email grid left too much empty space.
+- The Resume Delivery section in `src/pages/join-us/JoinUs.tsx` was redesigned as:
+  - left-side explanatory copy
+  - right-side large email CTA card
+  - `mailto:` link preserved
+
+### Current known messy areas remaining
+- Footer still contains title links that do not have real pages yet:
+  - `/what-we-do`
+  - `/who-we-are`
+  - `/how-we-do-it`
+- Current catch-all route redirects unknown paths to `/`, so those links can look like they jump to the homepage.
+- Some page content is still hardcoded while the project is in layout/content refinement. This is intentional for now; Strapi integration will come later.
+- Some text still has historical encoding artifacts in older page content, especially in location descriptions and footer copyright.
+- SEO helper exists but is not yet applied consistently to all pages.
+
+### Validation status in this round
+- `npm run typecheck` passed.
+- `npm run build` passed.
+- `npm run clean && npm run build` passed after image compression to ensure old large hashed files were removed from `dist`.
+- Dev server was restarted on:
+  - `http://localhost:3000`
+
+### Files most relevant for the next thread
+- `src/components/PageShell.tsx`
+- `src/components/StandardHeader.tsx`
+- `src/components/TopBar.tsx`
+- `src/components/Footer.tsx`
+- `src/content/homePage.ts`
+- `src/pages/Home.tsx`
+- `src/pages/join-us/JoinUs.tsx`
+- `src/pages/news/News.tsx`
+- `src/pages/about-us/AboutUs.tsx`
+- `src/pages/about-us/OurLocations.tsx`
+- `src/pages/about-us/Certificates.tsx`
+- `src/pages/contact-us/ContactUs.tsx`
+- `src/pages/products/ProductPage.tsx`
+- `src/assets/`

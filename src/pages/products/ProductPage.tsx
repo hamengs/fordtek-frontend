@@ -2,7 +2,6 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
-  FlaskConical,
   Globe2,
   PackageCheck,
   ShieldCheck,
@@ -237,17 +236,19 @@ export default function ProductPage() {
               {productLine.products.map((product) => (
                 <article
                   key={product}
-                  className="group rounded-[1.25rem] border border-slate-200/80 bg-white px-5 py-5 shadow-[0_14px_34px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_20px_42px_rgba(15,23,42,0.07)]"
+                  className="group relative overflow-hidden rounded-[1.25rem] border border-slate-200/80 bg-white shadow-[0_14px_34px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-0.5 hover:border-sky-200 hover:shadow-[0_20px_42px_rgba(15,23,42,0.07)]"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-sky-50 text-sky-700">
-                    <FlaskConical className="h-4 w-4" />
+                  <div className="px-5 pb-5 pt-5">
+                    <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                      Product
+                    </p>
+                    <h3 className="mt-3 min-h-[3.5rem] text-lg font-semibold leading-snug text-slate-950 transition-colors group-hover:text-sky-800">
+                      {product}
+                    </h3>
                   </div>
-                  <h3 className="mt-5 text-lg font-semibold leading-snug tracking-[-0.02em] text-slate-950">
-                    {product}
-                  </h3>
-                  <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-slate-500 transition-colors group-hover:text-sky-700">
+                  <div className="flex items-center gap-2 border-t border-slate-100 px-5 py-4 text-sm font-medium text-slate-500">
+                      <CheckCircle2 className="h-3.5 w-3.5" />
                     Available for inquiry
-                    <CheckCircle2 className="h-4 w-4" />
                   </div>
                 </article>
               ))}
