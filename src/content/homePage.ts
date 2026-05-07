@@ -273,10 +273,10 @@ export const footerFallback: FooterContent = {
     {
       links: [
         { label: 'What We Do', link: '/what-we-do', isTitle: true },
-        { label: 'Human nutrition', link: '/human-nutrition', isTitle: false },
-        { label: 'Animal health', link: '/animal-health', isTitle: false },
-        { label: 'Veterinary drugs', link: '/veterinary-drugs', isTitle: false },
-        { label: 'Cosmetics', link: '/cosmetics', isTitle: false },
+        { label: 'Human nutrition', link: '/products/human-nutrition', isTitle: false },
+        { label: 'Animal health', link: '/products/animal-health', isTitle: false },
+        { label: 'Veterinary drugs', link: '/products/veterinary-drugs', isTitle: false },
+        { label: 'Cosmetics', link: '/products/cosmetics', isTitle: false },
       ],
     },
     {

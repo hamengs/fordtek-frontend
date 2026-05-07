@@ -10,7 +10,7 @@ import gateImg from '../../assets/home/gate.jpg';
 import famiqsMarkLogo from '../../assets/images/about-us/certificates/famiqss.webp';
 import fspcaLogo from '../../assets/images/about-us/certificates/FSPCA.png';
 import gmpLogo from '../../assets/images/about-us/certificates/GMP.png';
-import haccpLogo from '../../assets/images/about-us/certificates/haccp.webp';
+import haccpLogo from '../../assets/images/about-us/certificates/haccpp.webp';
 import halalLogo from '../../assets/images/about-us/certificates/HALAL.jpg';
 import isoLogo from '../../assets/images/about-us/certificates/iso.png';
 
