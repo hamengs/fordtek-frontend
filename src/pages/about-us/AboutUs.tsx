@@ -1,11 +1,5 @@
 import { ArrowRight, Building2, Globe2, ShieldCheck, Users2 } from 'lucide-react';
-import {
-  footerFallback,
-  topBarFallback,
-} from '../../content/homePage';
-import { Footer } from '../../components/Footer';
-import { TopBar } from '../../components/TopBar';
-import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
+import { PageShell } from '../../components/PageShell';
 import firstFloorImg from '../../assets/about/office/1stFloor.jpg';
 import entranceLogoImg from '../../assets/about/office/entranceLogo.jpg';
 import firstFloorHallImg from '../../assets/about/office/1stFloorHall.jpg';
@@ -177,19 +171,8 @@ function PhotoMosaic({
 }
 
 export default function AboutUs() {
-  const isHeaderVisible = useHeaderVisibility();
-
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <header
-        className={`sticky top-0 z-50 w-full shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 ${
-          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <TopBar {...topBarFallback} />
-      </header>
-
-      <main>
+    <PageShell>
         <section className="relative overflow-hidden bg-slate-900">
           <img
             src={gateImg}
@@ -404,9 +387,6 @@ export default function AboutUs() {
             />
           </div>
         </section>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+    </PageShell>
   );
 }

@@ -8,10 +8,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import { Footer } from '../../components/Footer';
-import { TopBar } from '../../components/TopBar';
-import { footerFallback, topBarFallback } from '../../content/homePage';
-import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
+import { PageShell } from '../../components/PageShell';
 import animalImg from '../../assets/products/animal.jpg';
 import cosmeticImg from '../../assets/products/cosmetic.png';
 import humanImg from '../../assets/products/human.png';
@@ -153,20 +150,6 @@ const advantageItems = [
   },
 ];
 
-function Header() {
-  const isHeaderVisible = useHeaderVisibility();
-
-  return (
-    <header
-      className={`sticky top-0 z-50 w-full shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 ${
-        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
-      <TopBar {...topBarFallback} />
-    </header>
-  );
-}
-
 function getProductLine(slug?: string) {
   return productLines.find((line) => line.slug === slug) ?? productLines[0];
 }
@@ -176,10 +159,7 @@ export default function ProductPage() {
   const productLine = getProductLine(productSlug);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <Header />
-
-      <main>
+    <PageShell>
         <section className="relative overflow-hidden bg-slate-950">
           <img
             src={productLine.image}
@@ -274,9 +254,6 @@ export default function ProductPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+    </PageShell>
   );
 }

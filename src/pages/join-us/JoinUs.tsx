@@ -9,13 +9,7 @@ import {
   Trophy,
   Users2,
 } from 'lucide-react';
-import {
-  footerFallback,
-  topBarFallback,
-} from '../../content/homePage';
-import { Footer } from '../../components/Footer';
-import { TopBar } from '../../components/TopBar';
-import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
+import { PageShell } from '../../components/PageShell';
 import meeting from '../../assets/join-us/meeting.jpg';
 import anualMeeting from '../../assets/join-us/anual-meeting.jpg';
 
@@ -68,19 +62,6 @@ const benefits = [
   },
 ];
 
-const jobPlatforms = [
-  {
-    name: 'BOSS Zhipin',
-    description: 'Browse Fordtek openings on a dedicated external recruitment platform.',
-    href: '#',
-  },
-  {
-    name: 'Zhaopin',
-    description: 'Explore current roles and broader hiring information through Zhaopin.',
-    href: '#',
-  },
-];
-
 const regionalJobs = [
   {
     region: 'China HQ',
@@ -103,19 +84,8 @@ const regionalJobs = [
 const contactEmails = ['penny.tang@fordtek.com', 'judy.zhu@fordtek.com'];
 
 export default function JoinUs() {
-  const isHeaderVisible = useHeaderVisibility();
-
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <header
-        className={`sticky top-0 z-50 w-full shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 ${
-          isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <TopBar {...topBarFallback} />
-      </header>
-
-      <main>
+    <PageShell>
         <section className="relative overflow-hidden bg-slate-950">
           <img
             src={anualMeeting}
@@ -217,44 +187,6 @@ export default function JoinUs() {
           </div>
         </section>
 
-        <section className="border-t border-slate-200 bg-white">
-          <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
-            <div className="max-w-3xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
-                Open Platforms
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-[1.06] tracking-[-0.05em] text-slate-950 sm:text-4xl lg:text-5xl">
-                Explore current Fordtek openings through external hiring channels.
-              </h2>
-            </div>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
-              {jobPlatforms.map((platform) => (
-                <a
-                  key={platform.name}
-                  href={platform.href}
-                  className="group rounded-[2rem] border border-slate-200/80 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] px-6 py-6 shadow-[0_18px_45px_rgba(15,23,42,0.05)] transition-all hover:-translate-y-0.5 hover:border-sky-300 hover:shadow-[0_22px_55px_rgba(15,23,42,0.08)]"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-3">
-                      <BriefcaseBusiness className="h-5 w-5 text-sky-700" />
-                      <p className="text-lg font-semibold text-slate-950">{platform.name}</p>
-                    </div>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-colors group-hover:bg-sky-700 group-hover:text-white">
-                      <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-7 text-slate-600">{platform.description}</p>
-                  <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky-700">
-                    Visit platform
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="border-y border-slate-200 bg-[linear-gradient(180deg,#f8fafc_0%,#f2f7fb_100%)]">
           <div className="mx-auto max-w-7xl px-6 py-18 sm:px-10 lg:px-16 lg:py-24">
             <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr]">
@@ -314,9 +246,6 @@ export default function JoinUs() {
             ))}
           </div>
         </section>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+    </PageShell>
   );
 }

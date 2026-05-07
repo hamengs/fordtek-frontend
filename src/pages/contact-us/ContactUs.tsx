@@ -8,10 +8,7 @@ import {
 } from 'lucide-react';
 import { FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Footer } from '../../components/Footer';
-import { TopBar } from '../../components/TopBar';
-import { footerFallback, topBarFallback } from '../../content/homePage';
-import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
+import { PageShell } from '../../components/PageShell';
 import contactHeroImg from '../../assets/page-heroes/contact-us-hero.png';
 
 const contactMethods = [
@@ -71,20 +68,6 @@ const officeContacts = [
   },
 ] as const;
 
-function Header() {
-  const isHeaderVisible = useHeaderVisibility();
-
-  return (
-    <header
-      className={`sticky top-0 z-50 w-full shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 ${
-        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
-      <TopBar {...topBarFallback} />
-    </header>
-  );
-}
-
 export default function ContactUs() {
   const navigate = useNavigate();
 
@@ -94,10 +77,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <Header />
-
-      <main>
+    <PageShell>
         <section className="relative overflow-hidden bg-slate-950">
           <img
             src={contactHeroImg}
@@ -273,19 +253,14 @@ export default function ContactUs() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+    </PageShell>
   );
 }
 
 export function ContactSuccess() {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <Header />
-
-      <main className="mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center px-6 py-24 text-center sm:px-10">
+    <PageShell>
+      <section className="mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center px-6 py-24 text-center sm:px-10">
         <CheckCircle2 className="h-12 w-12 text-sky-700" />
         <p className="mt-6 text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
           Inquiry Received
@@ -312,9 +287,7 @@ export function ContactSuccess() {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+      </section>
+    </PageShell>
   );
 }

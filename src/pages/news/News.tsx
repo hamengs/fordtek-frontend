@@ -2,10 +2,8 @@ import { ArrowLeft, ArrowRight, CalendarDays } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { getNewsContent } from '../../api/news';
-import { Footer } from '../../components/Footer';
-import { TopBar } from '../../components/TopBar';
-import { footerFallback, newsFallback, topBarFallback } from '../../content/homePage';
-import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
+import { PageShell } from '../../components/PageShell';
+import { newsFallback } from '../../content/homePage';
 import type { NewsItem } from '../../types/news';
 import worldMapImg from '../../assets/about/world-map.svg';
 import newsHeroImg from '../../assets/page-heroes/news-hero.png';
@@ -44,20 +42,6 @@ function saveNewsListState(activeCategory: NewsCategory, currentPage: number) {
   window.sessionStorage.setItem(NEWS_SCROLL_KEY, String(window.scrollY));
   window.sessionStorage.setItem(NEWS_CATEGORY_KEY, activeCategory);
   window.sessionStorage.setItem(NEWS_PAGE_KEY, String(currentPage));
-}
-
-function Header() {
-  const isHeaderVisible = useHeaderVisibility();
-
-  return (
-    <header
-      className={`sticky top-0 z-50 w-full shadow-[0_10px_30px_rgba(15,23,42,0.08)] transition-transform duration-300 ${
-        isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
-      }`}
-    >
-      <TopBar {...topBarFallback} />
-    </header>
-  );
 }
 
 function getNewsCategory(item: NewsItem): Exclude<NewsCategory, 'all'> {
@@ -168,10 +152,7 @@ export default function News() {
   }, [currentPage, totalPages]);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <Header />
-
-      <main>
+    <PageShell>
         <section className="relative overflow-hidden bg-slate-950">
           <img
             src={newsHeroImg}
@@ -321,10 +302,7 @@ export default function News() {
             </div>
           ) : null}
         </section>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+    </PageShell>
   );
 }
 
@@ -342,10 +320,7 @@ export function NewsDetail() {
   }, [slug]);
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
-      <Header />
-
-      <main>
+    <PageShell>
         <section className="mx-auto max-w-4xl px-6 py-18 sm:px-10 lg:py-24">
           <Link
             to="/news"
@@ -381,9 +356,6 @@ export function NewsDetail() {
 
           <p className="mt-10 text-lg leading-9 text-slate-600">{item.summary}</p>
         </section>
-      </main>
-
-      <Footer {...footerFallback} />
-    </div>
+    </PageShell>
   );
 }
