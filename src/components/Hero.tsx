@@ -6,8 +6,6 @@ import type { HeroContent } from '../types/hero';
 export function Hero({
   title,
   description,
-  buttonText,
-  buttonLink,
   imageUrl,
   imageAlt,
 }: HeroContent) {
@@ -35,14 +33,6 @@ export function Hero({
         <p className="mt-8 max-w-2xl text-lg leading-8 font-medium text-white/92 sm:text-xl sm:leading-9 lg:text-2xl">
           {description}
         </p>
-        <motion.a
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          href={buttonLink}
-          className="mt-10 inline-block cursor-pointer rounded-full border border-white/30 bg-white/14 px-8 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white hover:text-slate-900 sm:px-10 sm:py-4 sm:text-lg"
-        >
-          {buttonText}
-        </motion.a>
       </motion.div>
     </section>
   );

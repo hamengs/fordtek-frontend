@@ -28,8 +28,8 @@ const productLineLinks = [
 export const heroFallback: HeroContent = {
   title: 'Welcome to Fordtek',
   description: 'Innovating in nutrition and chemicals to bring health to life.',
-  buttonText: 'Explore our Impact',
-  buttonLink: '#',
+  buttonText: '',
+  buttonLink: '',
   imageUrl: forestImg,
   imageAlt: 'Forest background',
 };
@@ -86,7 +86,7 @@ export const servicesFallback: ServicesContent = {
       description:
         'We supply certified high-grade nutritional ingredients for food, supplements and healthcare, with stable global supply.',
       buttonText: 'More',
-      buttonLink: '#',
+      buttonLink: '/products/human-nutrition',
       imageUrl: humanImg,
       imageAlt: 'Human nutrition',
       theme: 'green',
@@ -97,7 +97,7 @@ export const servicesFallback: ServicesContent = {
       description:
         'We offer certified nutritional additives and feed materials, delivering reliable solutions for global animal farming.',
       buttonText: 'More',
-      buttonLink: '#',
+      buttonLink: '/products/animal-health',
       imageUrl: animalImg,
       imageAlt: 'Animal health',
       theme: 'blue',
@@ -108,7 +108,7 @@ export const servicesFallback: ServicesContent = {
       description:
         'We distribute compliant veterinary raw materials and APIs, meeting global pharmacopoeia standards to ensure animal health.',
       buttonText: 'More',
-      buttonLink: '#',
+      buttonLink: '/products/veterinary-drugs',
       imageUrl: veterinaryImg,
       imageAlt: 'Veterinary products',
       theme: 'green',
@@ -119,7 +119,7 @@ export const servicesFallback: ServicesContent = {
       description:
         'We provide high-purity cosmetic and functional ingredients, ensuring stable supply for global care brands.',
       buttonText: 'More',
-      buttonLink: '#',
+      buttonLink: '/products/cosmetics',
       imageUrl: cosmeticImg,
       imageAlt: 'Cosmetic materials',
       theme: 'blue',
@@ -265,9 +265,9 @@ export const footerFallback: FooterContent = {
   email: 'service@fordtek.com',
   tagline: 'Ingredients you can trust',
   socialLinks: [
-    { platform: 'twitter', link: '/x.com' },
-    { platform: 'youtube', link: '/youtube.com' },
-    { platform: 'linkedin', link: '/linkedin.com' },
+    { platform: 'twitter', link: 'https://x.com' },
+    { platform: 'youtube', link: 'https://youtube.com' },
+    { platform: 'linkedin', link: 'https://linkedin.com' },
   ],
   footerColumns: [
     {
@@ -282,15 +282,15 @@ export const footerFallback: FooterContent = {
     {
       links: [
         { label: 'Who We Are', link: '/who-we-are', isTitle: true },
-        { label: 'Our company', link: '/our-company', isTitle: false },
-        { label: 'Our locations', link: '/our-locations', isTitle: false },
+        { label: 'Our company', link: '/about-us/our-company', isTitle: false },
+        { label: 'Our locations', link: '/about-us/our-locations', isTitle: false },
         { label: 'News', link: '/news', isTitle: false },
       ],
     },
     {
       links: [
         { label: 'How We Do It', link: '/how-we-do-it', isTitle: true },
-        { label: 'Certificates', link: '/certificates', isTitle: false },
+        { label: 'Certificates', link: '/about-us/certificates', isTitle: false },
         { label: 'Join Us', link: '/join-us', isTitle: true },
         { label: 'Contact Us', link: '/contact', isTitle: true },
       ],

@@ -7,7 +7,7 @@ import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import gateImg from '../../assets/home/gate.jpg';
-import famiqsMarkLogo from '../../assets/images/about-us/certificates/famiqs.webp';
+import famiqsMarkLogo from '../../assets/images/about-us/certificates/famiqss.webp';
 import fspcaLogo from '../../assets/images/about-us/certificates/FSPCA.png';
 import gmpLogo from '../../assets/images/about-us/certificates/GMP.png';
 import haccpLogo from '../../assets/images/about-us/certificates/haccp.webp';
