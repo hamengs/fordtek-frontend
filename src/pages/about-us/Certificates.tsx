@@ -7,12 +7,12 @@ import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import gateImg from '../../assets/home/gate.jpg';
-import famiqsMarkLogo from '../../assets/images/about-us/certificates/FAMIQS2.webp';
+import famiqsMarkLogo from '../../assets/images/about-us/certificates/famiqs.webp';
 import fspcaLogo from '../../assets/images/about-us/certificates/FSPCA.png';
-import gmpLogo from '../../assets/images/about-us/certificates/GMP+.jpg';
-import haccpLogo from '../../assets/images/about-us/certificates/HACCP.webp';
+import gmpLogo from '../../assets/images/about-us/certificates/GMP.png';
+import haccpLogo from '../../assets/images/about-us/certificates/haccp.webp';
 import halalLogo from '../../assets/images/about-us/certificates/HALAL.jpg';
-import isoLogo from '../../assets/images/about-us/certificates/ISO.webp';
+import isoLogo from '../../assets/images/about-us/certificates/iso.png';
 
 const certificateDisplays = [
   {
