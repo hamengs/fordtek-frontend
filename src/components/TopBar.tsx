@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import { FaFacebookF, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FaLinkedinIn } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/home/logo.svg';
 import type { TopBarContent } from '../types/site-settings';
@@ -22,9 +22,7 @@ function renderNavAnchor(item: NavLink, className: string) {
 }
 
 const socialLinks = [
-  { label: 'Facebook', href: 'https://www.facebook.com', icon: FaFacebookF },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com', icon: FaLinkedinIn },
-  { label: 'X', href: 'https://x.com', icon: FaXTwitter },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/fordtekbiochemical/', icon: FaLinkedinIn },
 ];
 
 // Renders the upper navigation row used for company-level links such as
@@ -138,18 +136,31 @@ export function TopBar({
               </a>
             ))}
             <div className="ml-1 flex items-center gap-2 border-l border-slate-200 pl-4">
-              {socialLinks.map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={label}
-                  className="group flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-[#f8fafc] text-slate-500 shadow-[0_8px_18px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-600 hover:text-white hover:shadow-[0_12px_24px_rgba(14,165,233,0.18)]"
-                >
-                  <Icon className="h-3.5 w-3.5 transition-transform group-hover:scale-105" />
-                </a>
-              ))}
+              {socialLinks.map(({ icon: Icon, label, href }) => {
+                const className =
+                  'group flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 bg-[#f8fafc] text-slate-500 shadow-[0_8px_18px_rgba(15,23,42,0.04)] transition-all hover:-translate-y-0.5 hover:border-sky-200 hover:bg-sky-600 hover:text-white hover:shadow-[0_12px_24px_rgba(14,165,233,0.18)]';
+
+                if (!href) {
+                  return (
+                    <span key={label} aria-label={label} title={label} className={className}>
+                      <Icon className="h-3.5 w-3.5 transition-transform group-hover:scale-105" />
+                    </span>
+                  );
+                }
+
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className={className}
+                  >
+                    <Icon className="h-3.5 w-3.5 transition-transform group-hover:scale-105" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import {
 import { Footer } from '../components/Footer';
 import { Hero } from '../components/Hero';
 import { NewsSection } from '../components/NewsSection';
+import { SEO } from '../components/SEO';
 import { ServicesSection } from '../components/ServicesSection';
 import { TopBar } from '../components/TopBar';
 import { useHomePageData } from '../hooks/useHomePageData';
@@ -46,6 +47,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800 selection:bg-green-100">
+      <SEO
+        title="Fordtek | Nutrition & Chemical Ingredients"
+        description="Fordtek supplies trusted nutrition, animal health, veterinary, and cosmetic ingredient solutions for global partners."
+        canonicalPath="/"
+      />
+
       <header
         className={`fixed inset-x-0 top-0 z-50 w-full bg-white shadow-[0_10px_30px_rgba(15,23,42,0.06)] transition-transform duration-300 ${
           isFloatingHeaderVisible ? 'translate-y-0' : '-translate-y-full'

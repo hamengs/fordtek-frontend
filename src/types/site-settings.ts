@@ -55,7 +55,7 @@ export type MainNavigationContent = {
 };
 
 export type SocialLink = {
-  platform: 'twitter' | 'youtube' | 'linkedin' | 'facebook' | 'instagram' | 'other';
+  platform: 'linkedin' | 'other';
   link: string;
 };
 

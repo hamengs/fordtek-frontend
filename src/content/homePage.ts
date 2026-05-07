@@ -1,4 +1,4 @@
-import forestImg from '../assets/home/home-hero.png';
+import forestImg from '../assets/page-heroes/home-hero.png';
 import humanImg from '../assets/home/human.png';
 import animalImg from '../assets/home/animal.jpg';
 import veterinaryImg from '../assets/home/veterinary.jpg';
@@ -265,9 +265,7 @@ export const footerFallback: FooterContent = {
   email: 'service@fordtek.com',
   tagline: 'Ingredients you can trust',
   socialLinks: [
-    { platform: 'twitter', link: 'https://x.com' },
-    { platform: 'youtube', link: 'https://youtube.com' },
-    { platform: 'linkedin', link: 'https://linkedin.com' },
+    { platform: 'linkedin', link: 'https://www.linkedin.com/in/fordtekbiochemical/' },
   ],
   footerColumns: [
     {

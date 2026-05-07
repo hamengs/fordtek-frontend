@@ -437,11 +437,9 @@ Choose one:
 #### Real office photos replaced placeholder visuals
 - Photos were reviewed from:
   - `C:\Users\Teresa Tu\Desktop\总部办公楼照片`
-- New local assets copied into `src/assets/home`:
-  - `hq-building.jpg`
+- New local assets copied into `src/assets/home` at the time:
   - `reception-lounge.jpg`
-  - `meeting-room.jpg`
-  - `rooftop-garden.jpg`
+  - Note: `hq-building.jpg`, `meeting-room.jpg`, and `rooftop-garden.jpg` were later removed during unused asset cleanup.
 - These were used to replace placeholder imagery on:
   - `src/pages/about-us/AboutUs.tsx`
   - `src/pages/about-us/OurLocations.tsx`
@@ -483,10 +481,7 @@ Choose one:
 - `src/content/homePage.ts`
 - `src/App.tsx`
 - `src/assets/home/world-map.svg`
-- `src/assets/home/hq-building.jpg`
 - `src/assets/home/reception-lounge.jpg`
-- `src/assets/home/meeting-room.jpg`
-- `src/assets/home/rooftop-garden.jpg`
 - `src/assets/flags`
 - `HANDOFF.md`
 
@@ -496,11 +491,12 @@ Choose one:
 
 ### What changed in this round
 
-#### Our Team page was created
+#### Our Team page was created, then later removed
 - New page:
   - `src/pages/about-us/OurTeam.tsx`
 - Route added:
   - `/about-us/our-team`
+- Note: this page and route were later removed from the active site.
 - The page structure now includes:
   - hero with founder portrait
   - founder profile section
@@ -518,7 +514,7 @@ Choose one:
   - overseas employees
   - team philosophy
 
-#### Local leadership portraits were added
+#### Local leadership portraits were added, then later removed
 - Local image assets were copied into:
   - `src/assets/team`
 - Current portraits added:
@@ -527,12 +523,13 @@ Choose one:
   - `tang-xiaoni.jpg`
   - `zhang-bing.jpg`
   - `zhang-guoju.jpg`
+- Note: the `src/assets/team` portraits were later removed during unused asset cleanup.
 
 ### Important current state
 
 #### Team page copy status
-- The `Our Team` page has now been revised against the proposal Word document.
-- The current structure follows the document direction:
+- Historical note: the `Our Team` page was revised against the proposal Word document before it was removed from the active site.
+- The removed structure followed the document direction:
   - cover
   - management profiles
   - team introduction
@@ -548,9 +545,7 @@ Choose one:
   - portrait coverage for overseas managers
 
 ### Files most relevant for the next thread
-- `src/pages/about-us/OurTeam.tsx`
 - `src/App.tsx`
-- `src/assets/team`
 - `HANDOFF.md`
 
 ---
@@ -648,7 +643,7 @@ Choose one:
 #### Our Team was removed from active routing
 - `src/pages/about-us/OurTeam.tsx` was deleted.
 - `/about-us/our-team` now redirects to `/about-us/our-company`.
-- Team portraits remain in `src/assets/team` for possible future reuse, but the active page is gone.
+- Team portraits were later removed from `src/assets/team` during unused asset cleanup.
 
 #### Join Us was consolidated into one long page
 - The separate Jobs page was deleted:
@@ -980,3 +975,114 @@ Choose one:
 - `src/assets/images/about-us/certificates/`
 - `public/certificates/`
 - `src/App.tsx`
+
+---
+
+## Update: 2026-05-07 (Links, Social Media, SEO Direction)
+
+### Current stack clarification
+- Despite the folder name containing `remix`, the active frontend is not Remix.
+- The current stack is Vite + React + React Router + TypeScript.
+- It is currently a Vite SPA, not server-side rendered.
+
+### SPA vs SSR decision
+- Current rendering model:
+  - browser downloads `index.html`
+  - JavaScript renders the React app
+  - frontend fetches Strapi/CMS data afterward
+- SSR model would instead:
+  - receive a request for a route like `/products/human-nutrition`
+  - fetch needed data on the server
+  - return HTML that already contains page content and SEO metadata
+- SSR would be stronger for SEO than the current SPA setup.
+- Remix or Next.js would be reasonable SSR options.
+- Decision for now:
+  - do not migrate yet
+  - keep the Vite SPA
+  - improve SEO inside the current architecture first
+- Rationale:
+  - content, links, and page structure are still being refined
+  - migrating now would be a medium architecture change
+  - many React components could be reused later if a Remix/Next migration becomes necessary
+
+### SEO work started
+- Added baseline SEO tags in:
+  - `index.html`
+- Added a minimal page-level SEO helper:
+  - `src/components/SEO.tsx`
+- Homepage now uses the SEO helper in:
+  - `src/pages/Home.tsx`
+- Current SEO helper updates:
+  - `document.title`
+  - `meta[name="description"]`
+  - `meta[property="og:title"]`
+  - `meta[property="og:description"]`
+  - canonical URL
+
+### Important SEO limitation
+- Because this remains a Vite SPA, dynamically updated metadata is not as robust as SSR or static generation.
+- Google usually handles JavaScript-rendered pages reasonably well.
+- Some crawlers and social preview bots may not process SPA metadata as reliably.
+- If organic search becomes a major acquisition channel, reconsider migrating to Remix or Next.js.
+
+### Recommended SEO next steps for current Vite SPA
+1. Add page-level `SEO` usage to:
+   - Home
+   - four product pages
+   - About / Our Company
+   - Our Locations
+   - Certificates
+   - News list
+   - each News detail page
+   - Contact
+   - Join Us
+2. Add `public/robots.txt`.
+3. Add `public/sitemap.xml`.
+4. Ensure important page content is real text, not only images.
+5. Keep image `alt` text meaningful.
+6. Avoid broken internal links or routes that fall through to the homepage.
+7. Consider Open Graph images later for better external sharing previews.
+
+### Link cleanup completed in this round
+- Removed the homepage hero CTA:
+  - `Explore our Impact`
+- Updated homepage product `More` links to:
+  - `/products/human-nutrition`
+  - `/products/animal-health`
+  - `/products/veterinary-drugs`
+  - `/products/cosmetics`
+- Updated footer product links to the same `/products/...` routes.
+- Updated footer About links:
+  - `Our company` -> `/about-us/our-company`
+  - `Our locations` -> `/about-us/our-locations`
+  - `Certificates` -> `/about-us/certificates`
+- Left these footer title links alone for now per user request:
+  - `What We Do` -> `/what-we-do`
+  - `Who We Are` -> `/who-we-are`
+  - `How We Do It` -> `/how-we-do-it`
+- Note:
+  - nonexistent internal paths currently hit the `path="*"` route in `src/App.tsx` and redirect to `/`, which makes bad links look like they jump back to the homepage.
+
+### Social media cleanup
+- Company-operated external social media should currently only show LinkedIn.
+- LinkedIn URL:
+  - `https://www.linkedin.com/in/fordtekbiochemical/`
+- Removed / suppressed:
+  - Facebook
+  - X / Twitter
+  - YouTube
+  - WeChat / WeChat Official Account
+- Reason for removing WeChat:
+  - the site is for external/global visitors, and WeChat is not necessary for the public English site right now.
+- Relevant files:
+  - `src/components/TopBar.tsx`
+  - `src/components/Footer.tsx`
+  - `src/content/homePage.ts`
+  - `src/types/site-settings.ts`
+
+### Validation status in this round
+- `npm run typecheck` passed after link/social/SEO edits.
+- `npm run build` was attempted earlier and failed due to an unrelated certificate asset issue:
+  - `src/pages/about-us/Certificates.tsx` imports `../../assets/images/about-us/certificates/haccp.webp`
+  - the current working tree showed certificate asset rename activity
+  - do not assume the SEO/link changes caused the build failure

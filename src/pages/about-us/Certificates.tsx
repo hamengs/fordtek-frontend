@@ -6,7 +6,7 @@ import {
 import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import gateImg from '../../assets/home/gate.jpg';
+import certificatesHeroImg from '../../assets/page-heroes/certificates-hero.png';
 import famiqsMarkLogo from '../../assets/images/about-us/certificates/famiqss.webp';
 import fspcaLogo from '../../assets/images/about-us/certificates/FSPCA.png';
 import gmpLogo from '../../assets/images/about-us/certificates/GMP.png';
@@ -68,7 +68,7 @@ export default function Certificates() {
       <main>
         <section className="relative overflow-hidden bg-slate-950">
           <img
-            src={gateImg}
+            src={certificatesHeroImg}
             alt="Fordtek certificates hero"
             className="absolute inset-0 h-full w-full object-cover opacity-46"
           />

@@ -12,7 +12,7 @@ import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { footerFallback, topBarFallback } from '../../content/homePage';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import firstFloorEntranceImg from '../../assets/home/firstFloorEntrance.jpg';
+import contactHeroImg from '../../assets/page-heroes/contact-us-hero.png';
 
 const contactMethods = [
   {
@@ -100,7 +100,7 @@ export default function ContactUs() {
       <main>
         <section className="relative overflow-hidden bg-slate-950">
           <img
-            src={firstFloorEntranceImg}
+            src={contactHeroImg}
             alt="Fordtek contact"
             className="absolute inset-0 h-full w-full object-cover opacity-42"
           />

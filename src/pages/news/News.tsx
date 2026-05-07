@@ -8,7 +8,7 @@ import { footerFallback, newsFallback, topBarFallback } from '../../content/home
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
 import type { NewsItem } from '../../types/news';
 import worldMapImg from '../../assets/home/world-map.svg';
-import hqBuildingImg from '../../assets/home/hq-building.jpg';
+import newsHeroImg from '../../assets/page-heroes/news-hero.png';
 
 type NewsCategory = 'all' | 'exhibition' | 'company' | 'trade';
 
@@ -174,7 +174,7 @@ export default function News() {
       <main>
         <section className="relative overflow-hidden bg-slate-950">
           <img
-            src={hqBuildingImg}
+            src={newsHeroImg}
             alt="Fordtek news"
             className="absolute inset-0 z-0 h-full w-full object-cover"
           />

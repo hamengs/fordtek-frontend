@@ -1,4 +1,4 @@
-import { Twitter, Youtube, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/home/logo.svg';
 import type { FooterContent, SocialLink } from '../types/site-settings';
@@ -6,14 +6,6 @@ import type { NavLink } from '../types/site-settings';
 
 // Picks the correct icon component for each social platform supported by the footer.
 function SocialIcon({ platform }: { platform: SocialLink['platform'] }) {
-  if (platform === 'twitter') {
-    return <Twitter className="w-6 h-6" fill="currentColor" stroke="none"  />;
-  }
-
-  if (platform === 'youtube') {
-    return <Youtube className="w-6 h-6" />;
-  }
-
   if (platform === 'linkedin') {
     return <Linkedin className="w-6 h-6" fill="currentColor" stroke="none" />;
   }
@@ -22,14 +14,6 @@ function SocialIcon({ platform }: { platform: SocialLink['platform'] }) {
 }
 
 function getSocialHoverClass(platform:SocialLink['platform']){
-  if(platform==='twitter'){
-    return 'hover:text-sky-500';
-  }
-
-    if (platform === 'youtube') {
-    return 'hover:text-red-600';
-  }
-
   if (platform === 'linkedin') {
     return 'hover:text-blue-700';
   }
@@ -55,6 +39,14 @@ function renderFooterLink(link: NavLink, className: string) {
       {link.label}
     </a>
   );
+}
+
+function getSocialLabel(platform: SocialLink['platform']) {
+  if (platform === 'linkedin') {
+    return 'LinkedIn';
+  }
+
+  return platform;
 }
 
 // Footer renders the brand mark, contact details, footer link columns,
@@ -105,15 +97,31 @@ export function Footer({
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-100 gap-8">
           <p className="text-[10px] text-slate-400 uppercase tracking-[0.6em] font-bold">{tagline}</p>
           <div className="flex space-x-8">
-            {socialLinks.map((social) => (
-              <a
-                key={`${social.platform}-${social.link}`}
-                href={social.link}
-                className={`cursor-pointer text-slate-400 transition-colors ${getSocialHoverClass(social.platform)}`}
-              >
-                <SocialIcon platform={social.platform} />
-              </a>
-            ))}
+            {socialLinks.map((social) => {
+              const label = getSocialLabel(social.platform);
+              const className = `text-slate-400 transition-colors ${getSocialHoverClass(social.platform)}`;
+
+              if (!social.link) {
+                return (
+                  <span key={social.platform} aria-label={label} title={label} className={className}>
+                    <SocialIcon platform={social.platform} />
+                  </span>
+                );
+              }
+
+              return (
+                <a
+                  key={`${social.platform}-${social.link}`}
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                  className={`cursor-pointer ${className}`}
+                >
+                  <SocialIcon platform={social.platform} />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

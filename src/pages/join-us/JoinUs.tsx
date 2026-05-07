@@ -16,10 +16,8 @@ import {
 import { Footer } from '../../components/Footer';
 import { TopBar } from '../../components/TopBar';
 import { useHeaderVisibility } from '../../hooks/useHeaderVisibility';
-import talkingWithCustomersImg from '../../assets/home/talkingWithCustomers.jpg';
-import rooftopGardenImg from '../../assets/home/rooftop-garden.jpg';
-import meetingRoomImg from '../../assets/home/meeting-room.jpg';
-import receptionLoungeImg from '../../assets/home/reception-lounge.jpg';
+import meeting from '../../assets/join-us/meeting.jpg';
+import anualMeeting from '../../assets/join-us/anual-meeting.jpg';
 
 const cultureHighlights = [
   {
@@ -120,7 +118,7 @@ export default function JoinUs() {
       <main>
         <section className="relative overflow-hidden bg-slate-950">
           <img
-            src={meetingRoomImg}
+            src={anualMeeting}
             alt="Why choose Fordtek"
             className="absolute inset-0 h-full w-full object-cover opacity-35"
           />
@@ -170,9 +168,9 @@ export default function JoinUs() {
             <div className="flex items-end">
               <div className="overflow-hidden rounded-[2rem] border border-slate-200/80 bg-transparent shadow-[0_18px_45px_rgba(15,23,42,0.06)]">
                 <img
-                  src={rooftopGardenImg}
+                  src={meeting}
                   alt="Fordtek rooftop garden"
-                  className="h-full min-h-[220px] w-full object-cover"
+                  className="max-h-[550px] min-h-[200px] w-full object-cover"
                 />
               </div>
             </div>
