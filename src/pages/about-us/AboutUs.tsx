@@ -177,10 +177,8 @@ export default function AboutUs() {
           <img
             src={gateImg}
             alt="Fordtek company overview"
-            className="absolute inset-0 h-full w-full object-cover opacity-46"
+            className="absolute inset-0 h-full w-full object-cover opacity-65"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.62)_0%,rgba(30,41,59,0.48)_42%,rgba(51,65,85,0.28)_100%)]" />
-
           <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">
               About Us

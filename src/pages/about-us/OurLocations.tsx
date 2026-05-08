@@ -206,9 +206,8 @@ export default function OurLocations() {
           <img
             src={firstFloorEntrance}
             alt="Fordtek locations hero"
-            className="absolute inset-0 h-full w-full object-cover opacity-90"
+            className="absolute inset-0 h-full w-full object-cover opacity-75"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(15,23,42,0.72)_0%,rgba(17,24,39,0.54)_45%,rgba(30,41,59,0.36)_100%)]" />
 
           <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-10 lg:px-16 lg:py-32">
             <p className="text-sm font-semibold uppercase tracking-[0.32em] text-sky-200">
