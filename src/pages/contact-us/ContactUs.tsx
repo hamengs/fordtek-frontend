@@ -202,7 +202,7 @@ export default function ContactUs() {
                 type="submit"
                 className="mt-7 inline-flex cursor-pointer items-center gap-3 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-sky-700"
               >
-                Check the entered information
+                Submit the form
                 <ClipboardCheck className="h-4 w-4" />
               </button>
             </form>

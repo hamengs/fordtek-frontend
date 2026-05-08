@@ -17,7 +17,6 @@ export function Hero({
         alt={imageAlt}
         className="absolute inset-0 h-full w-full object-cover brightness-[0.85]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.3)_0%,rgba(209, 201, 201, 0.08)_30%,rgba(2,6,23,0.01)_100%)]" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
