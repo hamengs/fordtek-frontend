@@ -6,6 +6,7 @@ import firstFloorHallImg from '../../assets/about/office/1stFloorHall.jpg';
 import secondFloorImg from '../../assets/about/office/2ndFloor.jpg';
 import thirdFloorImg from '../../assets/about/office/3rdFloor.jpg';
 import gateImg from '../../assets/about/office/gate.jpg';
+import fouthFloorImg from '../../assets/about/office/4thfloor.jpg'
 import pingguoIcon from '../../assets/about/business-icons/pingguo.svg';
 import yuerIcon from '../../assets/about/business-icons/yuer.svg';
 import yaopingIcon from '../../assets/about/business-icons/yaoping.svg';
@@ -91,7 +92,7 @@ const introMosaicImages: MosaicImage[] = [
     className: 'col-start-8 col-end-13 row-start-4 row-end-7',
   },
   {
-    src: secondFloorImg,
+    src: fouthFloorImg,
     alt: 'Fordtek second floor workspace',
     className: 'col-start-2 col-end-8 row-start-6 row-end-9',
   },
@@ -112,11 +113,6 @@ const purposeMosaicImages: MosaicImage[] = [
     src: gateImg,
     alt: 'Fordtek company gate',
     className: 'col-start-2 col-end-8 row-start-6 row-end-9',
-  },
-  {
-    src: entranceLogoImg,
-    alt: 'Fordtek entrance logo wall',
-    className: 'col-start-8 col-end-12 row-start-6 row-end-8',
   },
 ];
 
